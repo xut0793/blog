@@ -330,7 +330,8 @@ module.exports = {
       title: "Vue工程实践",
       collapsable: false,
       children: [
-        
+        'vue-practice-1-setenv',
+        'vue-practice-2-jsx'
       ],
     },
     {

@@ -717,7 +717,9 @@ TemplateRenderer.prototype.renderState = function renderState (context, options)
 
 当客户端发起了请求，服务端返回 HTML，用户就已经可以看到页面渲染结果了，不用等待js加载和执行。
 
-但此时页面还不能交互，需要激活客户页面，即 hydirating 过程。 这里就涉及 Vue 的源码部分
+但此时页面还不能交互，需要激活客户页面，即 hydirating 过程。 这里就涉及 Vue 的源码部分。
+
+> 先来解释一下 hydration，这个概念和同构应用中数据的获取和消费有关。在服务器端渲染时，需要在服务端请求接口预取数据，处理并准备好数据状态（如果用 vuex，就进行 store 更新）。为了避免客户端重复请求这部分已经预取的数据，我们需要保留住这个状态，一般的做法是在服务器端返回 HTML 字符串的时候，将数据一并返回，这个过程称为**脱水（dehydrate）**。`<script>window.____INITIAL_STATE__ = context.state;</script>`；<br />在客户端渲染时，就不再需要进行这部分数据状态的请求，可以直接使用服务器下发的数据，这个过程叫做**注水（hydrate）**。`if (window.__INITIAL_STATE__) {store.replaceState(window.__INITIAL_STATE__)}`
 
 ```js
 /**

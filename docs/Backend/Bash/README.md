@@ -61,6 +61,23 @@ Windows：普通用户基本都是纯图形界面下操作使用，依靠鼠标�
 
 如果确定脚本解释程序的路径，可以直接写死完整路径。如 #!/bin/bash 和 #!/usr/bin/bash。但脚本程序在不同的系统中执行，不能保证解释程序都安装在同样的绝对路径中，因为在不同的系统，命令或程序存放的位置可能不同，但是大部分程序都会在 $PATH中设置环境变量，这时为了能在不同的系统上具有更大的通用性，不写死路径，而是从系统安装的环境变量中查的解释程序的路径。这时可以使用 #!/usr/bin/env bash 和 #!/usr/bin/env node
 
+## package.json 中的 bin 字段
+
+- 为什么可以直接 `npm run xxx` 运行 package.json 文件中 script 字段定义的命令？
+- package.json 中的 bin 字段作用
+
+`npm run` 会创建一个 shell，执行指定的命令。但执行命令前，`npm run`命令会先自动临时将 `node_modules/.bin` 路径加入环境变量 $PATH 中，所以 scripts 字段里面调用命令时不用加上路径，可以直接运行，这就避免了全局安装NPM模块。
+```json
+"scripts": {
+  "eslint": "./node_modules/.bin/eslint .",
+  // 可以简写成
+  "eslint": "eslint ."
+}
+```
+而 `node_modules/.bin` 目录是随 `node_modules` 目录自动创建的。当使用 `npm install` 安装一个包时，除了将包代码放在 `node_modules`目录中，还是查找该包的 `package.json` 文件中是否有定义 `bin` 字段，如果有，会使用 `bin` 字段的值在 `node_modules/.bin` 目录会生成两个文件`bash 文件和.cmd 文件`，指向ESLint模块的可执行脚本。
+
+如果本地开发npm 的包，需要在项目中调试使用，可以使用 `npm link` 手动建立软链，这样项目可以使用 `require('xxx')` 引入，进行调试开发。 [具体 npm link](https://javascript.ruanyifeng.com/nodejs/npm.html#toc18)
+
 参考链接：
 - [LINUX上的SHEBANG符号(#!)](http://smilejay.com/2012/03/linux_shebang/)
 - [bash教程 Shebang行](https://wangdoc.com/bash/script.html#shebang-%E8%A1%8C)

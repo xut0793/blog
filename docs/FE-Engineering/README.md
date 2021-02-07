@@ -300,6 +300,14 @@ CD，Continuous Deployment，持续部署。持续部署是持续交付的更高
   - Gitlab-CI 
 4. 实践
 
+## 测试
+
+1. 单元测试 unit
+  工具：Jest ava
+
+2. 端到端测试 E2E
+  工具： cypress
+
 ## 性能
 
 1. 主题
