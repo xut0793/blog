@@ -31,18 +31,33 @@ catalog 目录
     1. 编写 plugin
 
 ```
-/****** modle / chunk / bundle 区别 ****/
-modle / chunk / bundle 是同一份逻辑代码在不同场景下的称呼。
+/****** module / chunk / bundle 区别 ****/
+module / chunk / bundle 是同一份逻辑代码在不同场景下的称呼。
 我们直接写出来的是 module; webpack 处理时是 chunk; 最后生成浏览器可以直接运行的 bundle。
+
+/******* entry *******/
+context: 绝对路径，用于告诉 webpack 从哪里解析入口文件。默认当前目录。如果 context: '/path/app', entry: './main.js'，那 webapck 解析到 entry 文件的路径是 '/path/app/main.js'。
 
 /****** output *******/
 path: 表示打包文件输出到的**绝对路径**，即bundle.js放在哪里
-publicPath: 表示打包生成的 index.html 中引用静态资源的前缀，即放置的文件夹，如 static。
+publicPath: public 公共资源路径，表示打包生成的 index.html 中引用静态资源的前缀，即放置的文件夹，如 static。
 
 /****** devServer ****/
 devServer 开启时会内存中实时编译打包运行，相当于当前内存中常驻了一个开发服务器。
 contentBase: 表示启动本地服务器 devServer 时访问内容 index.html 的路径。不设置的话，默认是当前执行的目录，一般是项目根目录 '/'。会在项目根目录查找 index.html 文件。
 publicPath: 表示启动本地服务器 devServer 时，引用静态文件资源的路径，如果没有默认 output 中设置的 publicPath 目录。
+
+/******* hash / chunkhash / contenthash ******/
+首选这三者都是根据文件内容计算出来的 hash 值，只是它们所计算的文件不一样。
+hash: 根据全部参与打包的文件计算出来的，根据打包中所有的文件计算出的 hash 值。在一次打包中，所有出口文件的 filename 获得的 [hash] 都是一样的。
+chunkhash：根据当前打包的chunk计算出来的，根据打包过程中当前chunk计算出的hash值。如果Webpack配置是多入口配置，那么通常会生成多个chunk，每个chunk对应的出口filename获得的[chunkhash]是不一样的。
+contenthash: 是根据打包时CSS内容计算出的hash值。一般在使用提取CSS的插件的时候，我们使用contenthash。
+
+plugins:[
+    new miniExtractPlugin({
+        filename: 'main.[contenthash:8].css'
+    })
+]
 ```
 
 参考书籍：

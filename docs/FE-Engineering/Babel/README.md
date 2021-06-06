@@ -3,6 +3,7 @@
 [[toc]]
 
 **WWHD**方法论：
+
 - wath: 是什么
 - why: 解决什么问题
 - how: 怎么使用
@@ -23,6 +24,7 @@ Babel 是一个 JavaScript 语法转译器，需要通过配置插件实现主�
 ## How: 如何使用？
 
 Babel 严然已经成为 JS 工具链中重要的一环，它遵循了大部分 js 工具库类似的结构，提供了以下工具：
+
 - 核心功能库：@babel/core
 - 命令行工具：@babel/cli
 - 配置文件： .babelrc / babel.config.json / babel.config.js
@@ -35,22 +37,26 @@ Babel 严然已经成为 JS 工具链中重要的一环，它遵循了大部分 
 # 安装核心工具包
 npm install --save-dev @babel/cli @babel/core
 ```
-> Babel7.x 以上版本 npm 包都是放在 babel 域下的，即在安装 npm 包的时候，使用 @babel/xx 这种方式，例如 @babel/cli、@babel/core等。
-> Babel6.x 以下版本安装的包名是 babel-cli，babel-core等。其实它们本质是一样的，只是官方包文件组织方式改变了。
+
+> Babel7.x 以上版本 npm 包都是放在 babel 域下的，即在安装 npm 包的时候，使用 @babel/xx 这种方式，例如 @babel/cli、@babel/core 等。
+> Babel6.x 以下版本安装的包名是 babel-cli，babel-core 等。其实它们本质是一样的，只是官方包文件组织方式改变了。
 
 由于 Babel 是一个可以通过插件实现各种花样功能的通用编译器，因此默认情况只负责转译代码，没有插件时默认什么都不做。你必须明确地告诉 Babel 应该要做什么。所以通过配置文件定义插件 plugins 或预设 presets 来指示 babel 去做什么事件。
+
 ### 配置文件
 
 babel 配置文件写法支持以下三种形式：
+
 - 项目范围文件配置：babel.config.json / babel.config.js ，也支持 .cjs / .mjs 扩展名。
 - 相对文件配置：.babelrc / .babelrc.json / .babelrc.js，同样支持 .cjs / .mjs 扩展名。
 - package.json 文件内定义 "babel” 选项。
 
-> 如果是单结构项目，在项目根目录下使用 babel.config.json 和  .babelrc 基本一样。但对于现在流行的 Monorepos 结构的项目，两者配置会有区别，自行查阅。
+> 如果是单结构项目，在项目根目录下使用 babel.config.json 和 .babelrc 基本一样。但对于现在流行的 Monorepos 结构的项目，两者配置会有区别，自行查阅。
 
-> 使用 .js 和 .json 后缀也有细微差别。.js 配置文件非常方便，特别是当导出函数时可以使用 babel 提供的 api 参数，做一些灵活操作。但 JS 配置无法进行静态分析，因此对可缓存性，使IDE自动缓存它变得更困难。Babel希望避免每次编译文件时都重新解析 config 文件，因为那样的话，它还需要重新执行该配置中引用的所有插件和预设函数（在 .js 配置文件导出函数时可以使用 api.cache.forever 表示永久缓存计算出的配置，不再调用该函数）。由于 babel.config.json和.babelrc.json都是静态JSON文件，因此它允许使用 Babel的其他工具来缓存结果，这对项目构建性能有利。
+> 使用 .js 和 .json 后缀也有细微差别。.js 配置文件非常方便，特别是当导出函数时可以使用 babel 提供的 api 参数，做一些灵活操作。但 JS 配置无法进行静态分析，因此对可缓存性，使 IDE 自动缓存它变得更困难。Babel 希望避免每次编译文件时都重新解析 config 文件，因为那样的话，它还需要重新执行该配置中引用的所有插件和预设函数（在 .js 配置文件导出函数时可以使用 api.cache.forever 表示永久缓存计算出的配置，不再调用该函数）。由于 babel.config.json 和.babelrc.json 都是静态 JSON 文件，因此它允许使用 Babel 的其他工具来缓存结果，这对项目构建性能有利。
 
 在项目根目录建立配置文件 babel.config.json，写入最主要的两个配置项： `presets / plugins`
+
 ```json
 {
   "presets": [],
@@ -76,43 +82,47 @@ Babel 核心功能只负责转译源代码成 AST，具体对 AST 如何处理�
 
 // 省略更多插件....
 ```
+
 > [babel 官方插件列表](https://babeljs.io/docs/en/plugins/),还可以在 [https://www.npmjs.com/search?q=babel-plugin](https://www.npmjs.com/search?q=babel-plugin) 上搜索社区的功能插件。
 
 Babel 插件的数量非常多，假如只配置插件数组，那我们前端工程要把 ES2015, ES2016, ES2017, ES next 下的所有语法转换插件都写到`plugins`配置项数组里，我们的 Babel 配置文件会非常臃肿。
 
 所以我们会把一批功能的插件集合起来，统一成一个插件包，这就是预设 preset。
+
 ### 预设 preset
 
 preset 预设是一组 Babel 插件的集合，用大白话说就是插件包，例如 babel-preset-es2015 就是所有处理 es2015 的二十多个 Babel 插件的集合。这样我们就不用写一大堆插件配置项了,只需要用一个预设代替就可以了。
 
-另外，预设也可以是插件和其它预设的集合。Babel官方已经对常用的环境做了一些 preset 包，比如 @babel/preset-env。
+另外，预设也可以是插件和其它预设的集合。Babel 官方已经对常用的环境做了一些 preset 包，比如 @babel/preset-env。
 
 ```sh
 npm install --save-dev @babel/preset-env
 ```
+
 ```json
 {
   "presets": ["@babel/preset-env"], // 用一个预设包代替一系列 plugins 的配置。
   "plugins": []
 }
 ```
+
 > 插件和预设的开发参考下面深入章节。
 
 ### Plugin/Preset 排序
 
 plugins 插件数组和 presets 预设数组是有顺序要求的。如果两个插件或预设都要处理同一个代码片段，那么会根据插件和预设的顺序来执行。规则如下：
+
 - Plugin 会运行在 Preset 之前。
 - Plugin 会从第一个开始顺序执行。
 - Preset 的顺序则刚好相反(从最后一个逆序执行)。**一定要记得 preset 的顺序是反向的**
 
 > 这主要是为了保证向后兼容，因为大多数用户会在 "stage-0" 之前列出 "es2015" {"presets: ["es2015", "stage-0"]}
 
-### plugin 与preset 的短名称
+### plugin 与 preset 的短名称
 
 插件可以在配置文件里写短名称，如果插件是支持 babel 6.x 前的 npm 包名称的前缀为 插件：`babel-plugin-xxx`，预设：`babel-preset-xxx`，此时可以省略前缀，直接写成 xxx；
 
 如果插件本身带用作用域，如插件 plugin: `@scoped/babel-plugin-xxx`, 短名称可以写成 `@scoped/xxx`；预设 preset: `@scoped/preset-xxx`，同样可以简写成 `@scoped/xxx`。
-
 
 ```json
 {
@@ -132,9 +142,10 @@ plugins 插件数组和 presets 预设数组是有顺序要求的。如果两个
 
   "presets": ["@babel/preset-env"],
   // 等效于
-  "presets": ["@babel/env"],
+  "presets": ["@babel/env"]
 }
 ```
+
 但仍然建议全称书写。
 
 ### plugin 与 preset 的参数
@@ -142,10 +153,12 @@ plugins 插件数组和 presets 预设数组是有顺序要求的。如果两个
 每个插件是插件数组 plugins 的一成员项，每个预设是预设数组 presets 的一成员项，默认情况下，成员项都是用字符串来表示的，例如 `"presets": ["@babel/preset-env"]`。
 
 如果要给插件或预设设置参数，那么成员项就不能写成字符串了，而要改写成一个数组:
+
 - 数组的第一项是插件或预设的名称字符串
 - 第二项是个对象，该对象用来设置第一项代表的插件或预设的参数。
 
-例如给@babel/preset-env设置参数：
+例如给@babel/preset-env 设置参数：
+
 ```json
 {
   "presets": [
@@ -158,16 +171,18 @@ plugins 插件数组和 presets 预设数组是有顺序要求的。如果两个
   ]
 }
 ```
+
 各个插件和预设可配置的选项，可具体搜索插件或预设仓库。
 
 ### plugin 与 preset 相关的 browserslist
 
-Browserslist 叫做目标环境配置表，用于在不同的前端工具之间共享目标浏览器或Node环境。
+Browserslist 叫做目标环境配置表，用于在不同的前端工具之间共享目标浏览器或 Node 环境。
 
 比如 babel 使用了 @babel/preset-env 这个预设，此时 babel 就是读取 browserslist 的配置来确定哪些 ES next 语法需要转换成兼容语法。比如 browserslist 配置的目标浏览器支持箭头函数，那 babel 就不会转译代码中的箭头代码。
-另外比如 Autoprefixer、postcss 等就可以根据我们的browserslist，来自动判断是否要增加 CSS 前缀（例如"-webkit-"）。
+另外比如 Autoprefixer、postcss 等就可以根据我们的 browserslist，来自动判断是否要增加 CSS 前缀（例如"-webkit-"）。
 
 截止目前，有以下工具会自动读取项目中的 browserslist 信息：
+
 - Autoprefix
 - babel
 - postcss-preset-env
@@ -194,9 +209,11 @@ browserslist 配置可以直接写在 package.json 文件的 `browserslist` 属�
   ]
 }
 ```
+
 也可以在项目根目录上单独建立配置文件 `.browserslistrc`
+
 ```rc
-# Browsers that we support 
+# Browsers that we support
 > 0.5%
 last 2 versions
 Firefox ESR
@@ -204,7 +221,7 @@ not dead
 ```
 
 2. **browserslist 查询路径**
-Browserslist 会按以下路径查找配置文件：
+   Browserslist 会按以下路径查找配置文件：
 
 - package.json 中 browserslist 属性值，推荐这种方式。
 - .browserslistrc 当前或父目录中的配置文件。
@@ -264,6 +281,7 @@ browserslist config：                                  在Browserslist配置中
 babel 为了实现将 ES next 高阶语法的 js 代码转为 ES5 等向后兼容的 JS 代码，会在每个待转换的源文件头部注入一些额外的**辅助函数**来实现。
 
 比如下面这段简单使用 ES6 Class 语法的代码：
+
 ```js
 class Person {
   constructor(name) {
@@ -276,7 +294,9 @@ class Person {
 const john = new Person('john')
 console.log(john.sayname())
 ```
+
 使用下面简单的配置
+
 ```json
 // babel.config.json
 {
@@ -284,43 +304,66 @@ console.log(john.sayname())
   "plugins": []
 }
 ```
+
 然后使用 babel-cli 执行：
+
 ```sh
 npx babel es-class.js -o es.js
 ```
+
 看到转译后的文件
+
 ```js
-"use strict";
+'use strict'
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function')
+  }
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i]
+    descriptor.enumerable = descriptor.enumerable || false
+    descriptor.configurable = true
+    if ('value' in descriptor) descriptor.writable = true
+    Object.defineProperty(target, descriptor.key, descriptor)
+  }
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps)
+  if (staticProps) _defineProperties(Constructor, staticProps)
+  return Constructor
+}
 
-var Person = /*#__PURE__*/function () {
+var Person = /*#__PURE__*/ (function() {
   function Person(name) {
-    _classCallCheck(this, Person);
+    _classCallCheck(this, Person)
 
-    this.name = name;
+    this.name = name
   }
 
-  _createClass(Person, [{
-    key: "sayname",
-    value: function sayname() {
-      return this.name;
-    }
-  }]);
+  _createClass(Person, [
+    {
+      key: 'sayname',
+      value: function sayname() {
+        return this.name
+      },
+    },
+  ])
 
-  return Person;
-}();
+  return Person
+})()
 
-var john = new Person('john');
-console.log(john.sayname());
+var john = new Person('john')
+console.log(john.sayname())
 ```
+
 可以看到转换后的代码上面增加了好几个函数声明，这就是注入的函数，我们称之为**辅助函数**。
 
-@babel/preset-env在做语法转换的时候，注入了这些函数声明，以便语法转换后使用。
+@babel/preset-env 在做语法转换的时候，注入了这些函数声明，以便语法转换后使用。
 
 但在实际项目开发中，源代码可能有几百个或更多的文件，每个文件的头部都注入一些转换高阶语法的辅助函数，会导致文件体积膨胀，并且这些辅助函数大部分是相同的代码，在不同文件中重复注入，这不是我们希望的结果。
 
@@ -332,17 +375,23 @@ console.log(john.sayname());
 # 作为开发依赖安装
 npm install --save @babel/runtime
 ```
+
 在安装包内可以找到我们需求的辅助函数导入
+
 ```js
-var _classCallCheck = require("@babel/runtime/helpers/classCallCheck");
-var _defineProperties = require("@babel/runtime/helpers/defineProperties");
-var _createClass = require("@babel/runtime/helpers/createClass");
+var _classCallCheck = require('@babel/runtime/helpers/classCallCheck')
+var _defineProperties = require('@babel/runtime/helpers/defineProperties')
+var _createClass = require('@babel/runtime/helpers/createClass')
 ```
+
 但我们不可能在每个使用高阶语法的文件中，手动导入对应语法转换的辅助函数，这人为操作是基本不现实的，我们需要一个工具自动帮我们引入这些辅助函数。这就是 `@babel/plugin-transform-runtime` 插件的功能，自动替换辅助函数。
+
 ```sh
 npm install -D @babel/plugin-transform-runtime
 ```
+
 配置文件的插件选项中增加：
+
 ```json
 // babel.config.json
 {
@@ -350,28 +399,33 @@ npm install -D @babel/plugin-transform-runtime
   "plugins": ["@babel/plugin-transform-runtime"]
 }
 ```
+
 这样就解决了辅助函数注入导致代码冗余膨胀的问题了。
 
 实际上，`@babel/plugin-transform-runtime` 插件主要有三个功能：
+
 1. 自动移除语法转换后内联的辅助函数（inline Babel helpers），使用 @babel/runtime/helpers 里的辅助函数来替代；
-2. 当代码里使用了core-js的 API，自动引入 @babel/runtime-corejs3/core-js-stable/，以此来替代全局引入的core-js/stable;
+2. 当代码里使用了 core-js 的 API，自动引入 @babel/runtime-corejs3/core-js-stable/，以此来替代全局引入的 core-js/stable;
 3. 当代码里使用了 Generator/async 函数，自动引入 @babel/runtime/regenerator，以此来替代全局引入的 regenerator-runtime/runtime；
 
-功能1 上面已经讲了，功能2和3其实是在做API转换，对内置对象进行重命名，以防止污染全局环境。
+功能 1 上面已经讲了，功能 2 和 3 其实是在做 API 转换，对内置对象进行重命名，以防止污染全局环境。
 
 这就需要了解 `polyfill` 的概念了。
+
 ### polyfill
 
-**Babel默认只转换新的 JavaScript 语法（syntax），而不转换新的 API**
+**Babel 默认只转换新的 JavaScript 语法（syntax），而不转换新的 API**
 
-babel 可以通过插件转译新标准引入的语法，比如 ES6 的箭头函数转译成 ES5 的普通函数等；而新标准引入的新的原生对象（Promise、Map、Symbol、Proxy、Iterator）、以及部分原生对象新增的原型方法（Object.assign、Array.prototype.flat等），这些 babel 是不会转译的。需要用户自行引入 polyfill 来解决。
+babel 可以通过插件转译新标准引入的语法，比如 ES6 的箭头函数转译成 ES5 的普通函数等；而新标准引入的新的原生对象（Promise、Map、Symbol、Proxy、Iterator）、以及部分原生对象新增的原型方法（Object.assign、Array.prototype.flat 等），这些 babel 是不会转译的。需要用户自行引入 polyfill 来解决。
 
-要实现旧浏览器兼容新的API，可以使用的 polyfill 库既有 babel 官方提供的 `@babel/polyfill`，也有社区提供的第三方库。
+要实现旧浏览器兼容新的 API，可以使用的 polyfill 库既有 babel 官方提供的 `@babel/polyfill`，也有社区提供的第三方库。
+
 > @babel/polyfill 使用了优秀的 core-js 用作 polyfill，并且定制化的 regenerator 来让 generators（生成器）和 async functions（异步函数）正常工作。因为 @babel/polyfill 主要由以下两个库实现，所以从 babel 7.x 开始，@babel/polyfill 已经废弃，建议直接使用这两个库。
+
 ```js
 // 实现 @babel/polyfill 等同效果
-  import 'core-js/stable'
-  import 'regenerator-runtime/runtime' 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 ```
 
 应用程序中直接引入 polyfill 功能的库，虽然实现了新 API 功能的补齐，但这样全局使用，也带了一个问题：**污染了全局变量**。
@@ -380,40 +434,49 @@ babel 可以通过插件转译新标准引入的语法，比如 ES6 的箭头函
 
 虽然这对于应用程序或命令行工具来说可能是好事，但如果你打算将的代码发布为供其他人使用的库，或你无法完全控制代码运行的环境，这就会成为问题。
 
-所以我们需求一种方法，即能实现 polyfill 的功能，又不会造成全局环境污染。这就是 `@babel/plugin-transform-runtime` 插件的功能 2 和3。它不使用 polyfill 的全局库，而是开启 @babel/plugin-transform-runtime 的 API转换功能，通过内部导入实现对应功能的库来实现。
+所以我们需求一种方法，即能实现 polyfill 的功能，又不会造成全局环境污染。这就是 `@babel/plugin-transform-runtime` 插件的功能 2 和 3。它不使用 polyfill 的全局库，而是开启 @babel/plugin-transform-runtime 的 API 转换功能，通过内部导入实现对应功能的库来实现。
 
 比如为了低版本浏览器补齐 promise API，如果导入全局的 polyfill 库，像为低版浏览器生成一个全局的 `window.Promise`对象，然后我们业务代码仍然像高版本一样使用 promise API
+
 ```js
-  var obj = Promise.resolve();
+var obj = Promise.resolve()
 ```
-但如果开启 @babel/plugin-transform-runtime 的API转换功能。那么Babel转换后的代码将是：
+
+但如果开启 @babel/plugin-transform-runtime 的 API 转换功能。那么 Babel 转换后的代码将是：
+
 ```js
-  var _interopRequireDefault = require("@babel/runtime-corejs3/helpers/interopRequireDefault");
-  var _promise = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/promise"));
-  var obj = _promise["default"].resolve();
+var _interopRequireDefault = require('@babel/runtime-corejs3/helpers/interopRequireDefault')
+var _promise = _interopRequireDefault(
+  require('@babel/runtime-corejs3/core-js-stable/promise')
+)
+var obj = _promise['default'].resolve()
 ```
+
 它没有生成全局的 ``window.Promise`，而是引入了一个实现 promise 全部功能的模块来实现。
 
-要让 `@babel/plugin-transform-runtime` 实现功能2和3，需求在插件配置中传入对应的选项。
+要让 `@babel/plugin-transform-runtime` 实现功能 2 和 3，需求在插件配置中传入对应的选项。
 
 ```json
 {
-  "presets": [
-    "@babel/env"
-  ],
+  "presets": ["@babel/env"],
   "plugins": [
-    ["@babel/plugin-transform-runtime", {
-      "corejs": 3
-    }]
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3
+      }
+    ]
   ]
 }
 ```
-> 在我们不需要开启core-js相关API转换功能的时候，我们只需要安装@babel/runtime就可以了。上面我们已经知道，@babel/runtime里存放的是Babel做语法转换的辅助函数。
-> 在我们需要开启 core-js 相关API转换功能的时候，就需要安装@babel/runtime的进化版@babel/runtime-corejs3。这个npm包里除了包含Babel做语法转换的辅助函数，也包含了core-js的API转换函数。
+
+> 在我们不需要开启 core-js 相关 API 转换功能的时候，我们只需要安装@babel/runtime 就可以了。上面我们已经知道，@babel/runtime 里存放的是 Babel 做语法转换的辅助函数。
+> 在我们需要开启 core-js 相关 API 转换功能的时候，就需要安装@babel/runtime 的进化版@babel/runtime-corejs3。这个 npm 包里除了包含 Babel 做语法转换的辅助函数，也包含了 core-js 的 API 转换函数。
 
 插件的配置选项主要有以下几个：
+
 ```json
-{ 
+{
   "plugins": ["@babel/plugin-transform-runtime"],
   // 等效于下面选项的默认值：
   "plugins": [
@@ -431,20 +494,24 @@ babel 可以通过插件转译新标准引入的语法，比如 ES6 的箭头函
   ]
 }
 ```
+
 `@babel/plugin-transform-runtime`选项的值：
+
 ```
 "helpers": 设置是否要自动引入辅助函数包，这个当然要引入了，这是@babel/plugin-transform-runtime的核心用途，所以默认开启
-"corejs": 用来设置是否做 API 转换以避免污染全局环境, corejs取值是false、2 和 3, 在前端业务项目里，我们一般对corejs取false，即不对Promise这一类的API进行转换。而在开发JS库的时候设置为2或3
+"corejs": 用来设置是否做 API 转换以避免污染全局环境, corejs取值是false、2 和 3, 在前端业务项目里，我们一般对corejs取false，即不对Promise这一类的API进行转换。而在开发JS库的时候设置为2或3.corejs取值为2的时候，需要安装并引入core-js@2版本，或者直接安装并引入polyfill也可以。如果corejs取值为3，必须安装并引入core-js@3版本才可以，否则Babel会转换失败
 "regenerator": 实现 generators（生成器）和 async functions（异步函数）API 的 polyfill 默认开启
 "useESModules": 设置是否使用ES6的模块化用法，取值是布尔值。默认是fasle，在用webpack一类的打包工具的时候，我们可以设置为true，以便做静态分析。
 "absoluteRuntime": 用来自定义@babel/plugin-transform-runtime引入@babel/runtime/模块的路径规则，取值是布尔值或字符串。没有特殊需求，我们不需要修改，保持默认false即可。
 "version": 用来指定 runtime 包的版本号。根据需求只需要安装一个即可：@babel/runtime及其进化版@babel/runtime-corejs2、@babel/runtime-corejs3的版本号。
 ```
 
-> 单独安装单独安装core-js与regenerator-runtime这两个npm包，这种方式core-js是默认是3.x.x版本。而目前已经废弃的 @babel/polyfill使用的core-js已经锁死为2.x.x版本了。core-js的2.x.x版本里并没有stable文件目录，所以安装@babel/polyfill后再引入core-js/stable会报错。
+> 单独安装单独安装 core-js 与 regenerator-runtime 这两个 npm 包，这种方式 core-js 是默认是 3.x.x 版本。而目前已经废弃的 @babel/polyfill 使用的 core-js 已经锁死为 2.x.x 版本了。core-js 的 2.x.x 版本里并没有 stable 文件目录，所以安装@babel/polyfill 后再引入 core-js/stable 会报错。
 
 `@babel/preset-env` 的选项：
+
 > [https://github.com/babel/babel-preset-env](https://github.com/babel/babel-preset-env)
+
 ```json
 {
   "presets": [
@@ -467,12 +534,13 @@ babel 可以通过插件转译新标准引入的语法，比如 ES6 的箭头函
           useBuiltIns这个参数项主要和polyfill的行为有关:
           false: 没有配置该参数项或是取值为false的时候，polyfill就是我们上面讲的那样，会全部引入到最终的代码里。
           entry：Babel根据 tagets 或 browserslist 来补齐目标环境缺失的API。
-          usage: Babel 除了会考虑目标环境缺失的API模块，同时考虑我们项目代码里实际使用到的ES6特性。只有我们使用到的ES6特性API在目标环境缺失的时候，Babel才会引入core-js的API补齐模块。
+          usage: Babel 除了会考虑目标环境缺失的API模块，同时考虑我们项目代码里实际使用到的ES6特性。只有我们使用到的ES6特性API在目标环境缺失的时候，Babel才会引入对应的core-js@x 的API补齐模块。
         */
         "useBuiltIns": "entry",
         /**
           参数项的取值可以是2或3，没有设置的时候取默认值为2。这个参数项只有useBuiltIns设置为’usage’或’entry’时，才会生效。
           取默认值或2的时候，Babel转码的时候需要安装 core-js@2版本（即core-js2.x.x）或 @babel/runtime-corejs2。因为某些新API只有core-js@3里才有，例如数组的flat方法，我们需要使用core-js@3 或 @babel/runtime-corejs3 的API模块进行补齐，这个时候我们就把该项设置为3。
+          @babel/runtime-corejsx 已废弃，官方推荐 core-js@x
         */
         "corejs": 2,
         /**
@@ -495,15 +563,15 @@ babel 可以通过插件转译新标准引入的语法，比如 ES6 的箭头函
 - babel 配置基本就是 预设`@babel/preset-env` 搭配插件 `@babel/plugin-transform-runtime`
 - 但安装了插件 `@babel/plugin-transform-runtime` 就要有选择性的安装 `@babel/runtime及其进化版@babel/runtime-corejs2、@babel/runtime-corejs3`中的一个，并配置插件的选项 corejs 为对应的值。
 
-
 > [polyfill 和 shim 区别](https://www.zhihu.com/question/22129715)
-> shim 是硬垫片，polyfill （直译为填充物） 是软垫片。所谓垫片，是指垫平不同浏览器之间差异的东西。polyfill 可以理解为用在浏览器 API上的shim，用来为旧浏览器提供它没有原生支持的较新的功能。shim 指代范围更广，不局限于 web，但 polyfill 通常特指用于兼容旧浏览器 API 的一种 shim 库。
+> shim 是硬垫片，polyfill （直译为填充物） 是软垫片。所谓垫片，是指垫平不同浏览器之间差异的东西。polyfill 可以理解为用在浏览器 API 上的 shim，用来为旧浏览器提供它没有原生支持的较新的功能。shim 指代范围更广，不局限于 web，但 polyfill 通常特指用于兼容旧浏览器 API 的一种 shim 库。
 
 [一文搞清楚前端 polyfill --- 讲解了多种 Polyfill 的使用](https://zhuanlan.zhihu.com/p/71640183)
 
 ## Deep: 深入理解 Babel
 
 TODO:
+
 - Babel 转译过程
 - 自定义插件和预设
 

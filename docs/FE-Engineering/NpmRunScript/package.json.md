@@ -1090,7 +1090,7 @@ process.argv.forEach((val, index) => {
 ```json
 {
   "scripts": {
-      "example": "./example.js",
+    "example": "./example.js",
   }
 }
 ```
@@ -1100,3 +1100,19 @@ process.argv.forEach((val, index) => {
 > 其他脚本文件也可以使用这个命令。比如 Node.js 脚本的 Shebang 行，可以写成这样 /usr/bin/env node。
 
 关于 bash 更多内容可以查看 `Backend/Bash/README.md`
+
+如果是开发脚手架工具，需要实现命令行调用功能，可以把上述文件路径作为 package.json 文件 `bin` 字段的值。
+```json
+{
+  "bin": "./example.js"
+}
+```
+这样如果是一个规范的 npm 包，那就可以直接在 run-script 配置：
+```json
+{
+  "scripts": {
+      "example": "example",
+  }
+}
+```
+关于 npm 包的开发和调试，可以搜索 `npm link` 命令的用法。

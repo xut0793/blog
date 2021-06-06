@@ -819,4 +819,4 @@ ES6 模块的运行机制与 CommonJS 不一样。JS 引擎对脚本静态分析
 
 [Webpack、Browserify和Gulp三者之间到底是怎样的关系？](https://www.zhihu.com/question/37020798/answer/71621266)
 
-![modlue-tools.png](./images/module-tools.png)
+![modlue-tools.png](./images/module-tools.jpg)

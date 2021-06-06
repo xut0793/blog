@@ -11,13 +11,13 @@
 软件工程化所关注的目标就是应用的性能、稳定性、可用性、可维护性，所以一切以这些为目标的工作都是工程化的内容之一。在实现软件工程目标的具体实践中，会借助各种工具，形成各种更优的方法实践。
 
 总结：
+
 - 工程：前端工程化里面的工程指软件工程。
 - 理解：一切能提升前端开发效率，提高前端应用质量的手段和工具都是前端工程化内容。
 - 目标（道）：软件工程化关注的是性能、稳定性、可用性、可维护性、团队效率等内容。
 - 实践（术）：模块化、组件化、规范化、自动化
 
-> [谁能介绍下web前端工程化？](https://www.zhihu.com/question/24558375)<br>[「前端工程化」该怎么理解？](https://mp.weixin.qq.com/s/XwK9J1OD5SfjbBwKYA-cpA)
-
+> [谁能介绍下 web 前端工程化？](https://www.zhihu.com/question/24558375)<br>[「前端工程化」该怎么理解？](https://mp.weixin.qq.com/s/XwK9J1OD5SfjbBwKYA-cpA)
 
 ## 学习路线
 
@@ -27,86 +27,106 @@
 
 很多人会混淆模块化开发和组件化开发。但是严格来讲，组件（component）和模块（module）应该是两个不同的概念。两者的区别主要在颗粒度方面。
 
-简单讲，module侧重的是对属性的封装，不关注runtime的逻辑；而component是一个可以独立部署的软件单元，面向的是runtime，侧重于产品的功能性。这两者都对开发和维护大型开发项目带来了方便。
+简单讲，module 侧重的是对属性的封装，不关注 runtime 的逻辑；而 component 是一个可以独立部署的软件单元，面向的是 runtime，侧重于产品的功能性。这两者都对开发和维护大型开发项目带来了方便。
 
 从具体实践角度理解：
-- 模块是在文件层面上，对代码和资源的拆分，比如js模块，css模块。模块化能很大程度上提高了代码的**可维护性**。
-- 组件是在UI层面上的拆分，比如页头，页脚，评论区等。组件化提高前端代码的**可复用性**。
+
+- 模块是在文件层面上，对代码和资源的拆分，比如 js 模块，css 模块。模块化能很大程度上提高了代码的**可维护性**。
+- 组件是在 UI 层面上的拆分，比如页头，页脚，评论区等。组件化提高前端代码的**可复用性**。
 
 ## 模块化
 
-模块化按钮逻辑和功能的独立性将文件拆分。比如 JS 模块按照独立的算法和数据单元，拆分成网络请求、应用配置、工具函数等，CSS 模块按照功能性拆分成重置CSS、通用CSS、字体图标、动画、以及各组件CSS单元。
+模块化按钮逻辑和功能的独立性将文件拆分。比如 JS 模块按照独立的算法和数据单元，拆分成网络请求、应用配置、工具函数等，CSS 模块按照功能性拆分成重置 CSS、通用 CSS、字体图标、动画、以及各组件 CSS 单元。
 
-模块化的文件拆分只在开发阶段，在项目发布上线前，在构建阶段，又需要将模块进行打包合并，符合最原始的前端项目组成：HTML文件、JS文件、CSS文件、静态资源等基本内容。
+模块化的文件拆分只在开发阶段，在项目发布上线前，在构建阶段，又需要将模块进行打包合并，符合最原始的前端项目组成：HTML 文件、JS 文件、CSS 文件、静态资源等基本内容。
 
 ### JS 模块化
 
 1. 主题
-  - JS 模块化
-2. 规范
-  - CommonJS
-  - AMD
-  - CMD
-  - UMD
-  - ES module
-3. 模块打包工具
-  - Require.JS
-  - SeaJS
-  - Browserify
-  - Webpack
-  - Rollup
-  - parcel
 
-  现阶段 Webpack 模块打包方式最为流行。因为 Webpack 除了集成打包功能外，基本一个工具实现了前端工程化的大部分内容，包括模块打包、规范校验、编译构建等。
+- JS 模块化
+
+2. 规范
+
+- CommonJS
+- AMD
+- CMD
+- UMD
+- ES module
+
+3. 模块打包工具
+
+- Require.JS
+- SeaJS
+- Browserify
+- Webpack
+- Rollup
+- parcel
+
+现阶段 Webpack 模块打包方式最为流行。因为 Webpack 除了集成打包功能外，基本一个工具实现了前端工程化的大部分内容，包括模块打包、规范校验、编译构建等。
 
 ### CSS 模块化
 
-  CSS 模块化实现了代码拆分，但由于 CSS 语言特性：声明式、层叠的特殊性等，要解决的重要问题是：如何样式的全局污染问题。
+CSS 模块化实现了代码拆分，但由于 CSS 语言特性：声明式、层叠的特殊性等，要解决的重要问题是：如何样式的全局污染问题。
 
-  理论上，一个模块化的文件要实现的目的就是要隐藏内部作用域，只暴露少量接口给使用者。但按照目前预处理器的方式，导入一个CSS模块后，仍然存在的样式有被覆盖的问题。虽然重写样式是原生CSS的一个优势，但这并不利于团队中多人协作。
+理论上，一个模块化的文件要实现的目的就是要隐藏内部作用域，只暴露少量接口给使用者。但按照目前预处理器的方式，导入一个 CSS 模块后，仍然存在的样式有被覆盖的问题。虽然重写样式是原生 CSS 的一个优势，但这并不利于团队中多人协作。
 
 1. 主题
-  - CSS 模块化
+
+- CSS 模块化
+
 2. 规范
-  - BEM
-  - OOCSS
-  - SMACSS
-  - ACSS: tomic CSS
-  - Bootstrap风格
-  - Semantic UI风格
+
+- BEM
+- OOCSS
+- SMACSS
+- ACSS: tomic CSS
+- Bootstrap 风格
+- Semantic UI 风格
+
 3. 工具
-  - Sass / Scss
-  - Less
-  - Stylus
-  - Potcss
+
+- Sass / Scss
+- Less
+- Stylus
+- Potcss
+
 4. 实践方案
-  - Shadow DOM 是 WebComponents 的标准。它能解决全局污染问题，但目前很多浏览器不兼容，对我们来说还很久远；
-  - CSS in JS 是彻底抛弃 CSS，使用 JS 或 JSON 来写样式。这种方法很激进，不能利用现有的 CSS 技术，而且处理伪类等问题比较困难；
-  - CSS Modules 仍然使用 CSS，只是让 JS 来管理依赖。它能够最大化地结合 CSS 生态和 JS 模块化能力，目前来看是最好的解决方案。Vue 的 scoped style 也算是一种。
+
+- Shadow DOM 是 WebComponents 的标准。它能解决全局污染问题，但目前很多浏览器不兼容，对我们来说还很久远；
+- CSS in JS 是彻底抛弃 CSS，使用 JS 或 JSON 来写样式。这种方法很激进，不能利用现有的 CSS 技术，而且处理伪类等问题比较困难；
+- CSS Modules 仍然使用 CSS，只是让 JS 来管理依赖。它能够最大化地结合 CSS 生态和 JS 模块化能力，目前来看是最好的解决方案。Vue 的 scoped style 也算是一种。
 
 ## 组件化
 
-从UI拆分下来的每个包含模板(HTML)+样式(CSS)+逻辑(JS)功能完备的结构单元，我们称之为组件。
+从 UI 拆分下来的每个包含模板(HTML)+样式(CSS)+逻辑(JS)功能完备的结构单元，我们称之为组件。
 
 组件化实际上是一种按照模板(HTML)+样式(CSS)+逻辑(JS)于一体的形式对面向对象的进一步抽象。
 
 组件化规范和实现基本依赖于所选择的前端框架。这里以 Vue 为例：
 
 1. 主题
-  - 组件化
+
+- 组件化
+
 2. 规范
-  - Vue 组件规范
+
+- Vue 组件规范
+
 3. 工具
-  - Vue / Vue-loader
+
+- Vue / Vue-loader
+
 4. 实践
 
-[聊聊vue组件开发的“边界把握”和“状态驱动”](https://www.cnblogs.com/lvdabao/p/vue-component.html)
+[聊聊 vue 组件开发的“边界把握”和“状态驱动”](https://www.cnblogs.com/lvdabao/p/vue-component.html)
 
 ## 规范化
 
 规范化其实是工程化中很重要的一个部分，项目初期规范制定的好坏会直接影响到后期的开发质量。规范的目的是统一团队成员的编码规范，便于团队协作和代码维护。
 
 在规范化包括的内容，主要有以下主题：
+
 - 项目结构规范
 - 编码规范
 - 源代码管理规范
@@ -118,84 +138,127 @@
 ### 项目结构规范
 
 1. 主题
-  - 项目结构
+
+- 项目结构
+
 2. 规范
-  - 项目结构规范：没有统一性，基本根据开发框架按社区主流的实践
+
+- 项目结构规范：没有统一性，基本根据开发框架按社区主流的实践
+
 3. 工具
-  - Yeoman
+
+- Yeoman
+
 4. 实践
-  - 脚手架封装集成
+
+- 脚手架封装集成
 
 ### 编码规范
 
 **JS 编码**
 
 1. 主题
-  - JS 编码规范
+
+- JS 编码规范
+
 2. 规范
-  - Airbnb JavaScript Style Guide
-  - Google JavaScript Style Guide
-  - JavaScript Standard Style Guide
+
+- Airbnb JavaScript Style Guide
+- Google JavaScript Style Guide
+- JavaScript Standard Style Guide
+
 3. 工具
-  - ESLint + Prettier
+
+- ESLint + Prettier
+
 4. 实践
-  - IDE 编码规范校验
-  - git hooks 提交校验
-  - CI 构建前校验
+
+- IDE 编码规范校验
+- git hooks 提交校验
+- CI 构建前校验
 
 **CSS 编码**
 
 1. 主题
-  - CSS 编码规范
+
+- CSS 编码规范
+
 2. 规范
-  - 社区或各大公司流行的规范
+
+- 社区或各大公司流行的规范
+
 3. 工具
-  - StyleLint
+
+- StyleLint
+
 4. 实践
-  - IDE 编码规范校验
+
+- IDE 编码规范校验
 
 ### 源代码管理
 
 1. 主题
-  - 源代码管理
+
+- 源代码管理
+
 2. 规范
-  - Git 工作流与分支管理规范
+
+- Git 工作流与分支管理规范
+
 3. 工具
-  - Git
+
+- Git
+
 4. 实践
 
 ### Commit Message 规范
 
 1. 主题
-  - Commit Message 规范
+
+- Commit Message 规范
+
 2. 规范
-  - angular 团队的 git commit 规范
+
+- angular 团队的 git commit 规范
+
 3. 工具
-  - commitizen
-  - cz-conventional-changelog
-  - commitlint
-  - husky
+
+- commitizen
+- cz-conventional-changelog
+- commitlint
+- husky
+
 4. 实践
 
 ### 接口规范
 
 1. 主题
-  - API 接口规范
+
+- API 接口规范
+
 2. 规范
-  - RESTfull
-  - GraphQL
+
+- RESTfull
+- GraphQL
+
 3. 工具
-  - Mock Server
-  - Swagger
+
+- Mock Server
+- Swagger
+
 4. 实践
 
 ### 文档规范
 
 1. 主题
-  - 文档规范
+
+- 文档规范
+
 2. 规范
-  - JsDoc
-  - EsDoc
+
+- JsDoc
+- EsDoc
+
 3. 工具
 4. 实践
 
@@ -211,7 +274,8 @@
 
 编译是指将源代码变为目标代码的过程，从源代码的语言转变为另外一种计算机语言（一般为比源代码语言更为底层的语言）。
 
-前端的编译主要是指将超集的语言编译为浏览器识别的基础的HTML/CSS/JS。为了更好的编程体验和更高的可维护性，会使用一些超集的语言，然后再转译为浏览器可以运行的语言。例如：
+前端的编译主要是指将超集的语言编译为浏览器识别的基础的 HTML/CSS/JS。为了更好的编程体验和更高的可维护性，会使用一些超集的语言，然后再转译为浏览器可以运行的语言。例如：
+
 - 对 es5/6/7 等语法的转译为对应环境支持的代码；
 - less、sass 等转译为 css；
 - typescript、coffeescript 等转译 javascript 。
@@ -221,6 +285,7 @@
 构建是指一系列的处理，包括编译。不同的语言构建会有不通的处理步骤，构建结果一般生成为一个或多个文件，里面包括直接可以在部署在特定环境中的所有内容。
 
 前端构建的常见处理步骤包括：
+
 - 代码检查
 - 运行单元测试
 - 语言编译
@@ -231,7 +296,7 @@
 
 每一次成功构建后产出的结果，被称为 Artifacts，比如 html/css/js/images 等等。Artifacts 可以直接部署到特定环境中并正常运行。每个构建结果一般都会有版本保存，为后续部署、回滚、灰度等。
 
-可能是因为构建的速度，后端都会有一个 Artifacts 制品库。而早期一般的前端项目对 Artifacts 的概念比较弱化（更早的前端项目直接没有构建的概念）一般会从 Code 直接构建部署到指定的环境。现有的规范化的项目都会有对构建产物所有版本的保存，一般都提供CND来访问。
+可能是因为构建的速度，后端都会有一个 Artifacts 制品库。而早期一般的前端项目对 Artifacts 的概念比较弱化（更早的前端项目直接没有构建的概念）一般会从 Code 直接构建部署到指定的环境。现有的规范化的项目都会有对构建产物所有版本的保存，一般都提供 CND 来访问。
 
 4. 部署
 
@@ -267,63 +332,82 @@ CD，Continuous Deployment，持续部署。持续部署是持续交付的更高
 
 流程很简单清晰，现有的 CI/CD 方案都已经很成熟，Jenkins、Travis、Gitlab-CI 等。
 
-前端构建后产物都会带版本号，采用hash指纹，构建出来的文件没有改变则hash也不会变，可以先发布新版的静态资源文件，旧版同时存在。控制好入口文件（一般为html）的发布的顺序，一般就可正常上线。如果有依赖的后端接口的更改便需要先上线新版本的接口（向上兼容或新版本），再上线前端项目。
+前端构建后产物都会带版本号，采用 hash 指纹，构建出来的文件没有改变则 hash 也不会变，可以先发布新版的静态资源文件，旧版同时存在。控制好入口文件（一般为 html）的发布的顺序，一般就可正常上线。如果有依赖的后端接口的更改便需要先上线新版本的接口（向上兼容或新版本），再上线前端项目。
 
 静态资源大多会使用 CDN，发布到源站后，CDN 则会自动拉取源站的文件。
 
 ### 编译和构建
 
-目前前端项目的自动化编译和构建，以及部分优化都可以集成在　Webpack 内完成。
+目前前端项目的自动化编译和构建，以及部分优化都可以集成在　 Webpack 内完成。
 
 1. 主题
-  - 编译和构建
+
+- 编译和构建
+
 2. 规范
-  
+
 3. 工具
-  - postcss
-  - babel
-  - webpack
-  - gulp
+
+- postcss
+- babel
+- webpack
+- gulp
 
 4. 实践
-  - webpack 实践
+
+- webpack 实践
 
 ### CI / CD
 
 1. 主题
-  - 自动化部署，持续集成
+
+- 自动化部署，持续集成
+
 2. 规范
 
 3. 工具
-  - web hooks + Jenkins
-  - Travis CI
-  - Gitlab-CI 
+
+- sftp / ssh
+- Jenkins
+- Travis CI
+- Circle CI
+- Gitlab CI
+- Github Actions
+
+[Jenkins，Travis CI，Circle CI，TeamCity，Codeship，GitLab CI，Bamboo 介绍](https://blog.csdn.net/danpu0978/article/details/106768483)
+
 4. 实践
 
 ## 测试
 
+[JavaScript 单元测试框架：Jasmine, Mocha, AVA, Tape 和 Jest 的比较](https://blog.csdn.net/weixin_34332905/article/details/87942007)
+
 1. 单元测试 unit
-  工具：Jest ava
+   工具：Jest ava
 
 2. 端到端测试 E2E
-  工具： cypress
+   工具： cypress
 
 ## 性能
 
 1. 主题
-  - 性能优化
+
+- 性能优化
+
 2. 规范或标准
-  - 性能指标
+
+- 性能指标
+
 3. 性能检测工具
 
 4. 实践
 
-[2020前端性能优化清单之一](https://mp.weixin.qq.com/s/iIbm1pVPYsOvpAeAjVziiQ)<br>
-[2020前端性能优化清单之二](https://mp.weixin.qq.com/s/Y2osbl9CZggA0poci9rv3w)<br>
-[2020前端性能优化清单之三](https://mp.weixin.qq.com/s/ohCDUyo8xqtKhYfbSs5wuQ)<br>
-[2020前端性能优化清单之四](https://mp.weixin.qq.com/s/i5fNnTnmfAx7CufC00oaKQ)<br>
-[2020前端性能优化清单之五](https://mp.weixin.qq.com/s/VDARTCShm0KivV_ouYvVGA)<br>
-[2020前端性能优化清单之六](https://mp.weixin.qq.com/s/GHUMw2RFK-sXklJTPqoMdg)<br>
+[2020 前端性能优化清单之一](https://mp.weixin.qq.com/s/iIbm1pVPYsOvpAeAjVziiQ)<br>
+[2020 前端性能优化清单之二](https://mp.weixin.qq.com/s/Y2osbl9CZggA0poci9rv3w)<br>
+[2020 前端性能优化清单之三](https://mp.weixin.qq.com/s/ohCDUyo8xqtKhYfbSs5wuQ)<br>
+[2020 前端性能优化清单之四](https://mp.weixin.qq.com/s/i5fNnTnmfAx7CufC00oaKQ)<br>
+[2020 前端性能优化清单之五](https://mp.weixin.qq.com/s/VDARTCShm0KivV_ouYvVGA)<br>
+[2020 前端性能优化清单之六](https://mp.weixin.qq.com/s/GHUMw2RFK-sXklJTPqoMdg)<br>
 
 ## 安全
 
