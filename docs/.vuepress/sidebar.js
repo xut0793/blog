@@ -131,7 +131,7 @@ module.exports = {
       title: '基础',
       collapsable: false,
       children: [
-        '0-introTs',
+        '0-introTS',
         '1-type-declaration-1.1-basic-type',
         '1-type-declaration-1.2-function',
         '1-type-declaration-1.3-class',

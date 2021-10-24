@@ -238,7 +238,10 @@ jobs:
 #### 表达式
 在 GitHub Actions 中 `job.if` `step.if` 输入和输出中都可以定义任务或步骤执行的条件语句，只有返回 true，才可继续执行。
 
-表达式语法：`${{ <expression> }}`
+表达式语法:
+```
+${{ <expression> }}
+```
 
 其中 expression 中可以直接使用纯量值 、简单的运算符和平台特定的函数方法
 
@@ -262,8 +265,11 @@ jobs:
 
 #### 上下文对象
 
-上下文是一种访问工作流程运行 workflow、运行器环境 env、作业 job及步骤 setp 中相关信息的方式。 上下文变量在表达式语法：`${{ <context> }}`
-> 简单理解上下文就是在 GitHub Actions 语法表达式 `${{ <context> }}` 中可以直接使用的全局对象
+上下文是一种访问工作流程运行 workflow、运行器环境 env、作业 job及步骤 setp 中相关信息的方式。 上下文变量在表达式语法：
+```
+${{ <context> }}
+```
+> 简单理解上下文就是在 GitHub Actions 语法表达式中可以直接使用的全局对象
 
 GitHub Actions 提供了可访问的上下文环境对象包括：`github / env / job / steps / runner / secrets / strategy / matrix / needs`。具体可以查看
 - [上下文对象](https://docs.github.com/cn/actions/reference/context-and-expression-syntax-for-github-actions#steps-context)
