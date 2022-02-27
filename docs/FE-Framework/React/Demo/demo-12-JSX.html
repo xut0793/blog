@@ -1,0 +1,75 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-22 23:50:41
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Heloo React JSX</title>
+        <style>
+            .bgcolor {
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+    <!-- <script>
+        // React.createElement
+         const root = document.getElementById('root')
+        //  class HelloReact extends React.Component {
+        //      render() {
+        //          return React.createElement(
+        //              'h1',
+        //              {
+        //                  id: 'uid',
+        //                  className: 'bgcolor',
+        //                  style: { color: 'red' },
+        //                  onClick: function(e) {
+        //                      alert('click')
+        //                  }
+        //              },
+        //              'Hello React'
+        //          )
+        //      }
+        //  }
+        //  let el = React.createElement(HelloReact, null)
+        //  ReactDOM.render(el, root)
+    </script> -->
+    <script type="text/babel">
+        const root = document.getElementById('root')
+
+        // JSX
+        class HelloReact extends React.Component {
+            render() {
+                return (
+                    <h1
+                        id="uid"
+                        className="bgcolor"
+                        style={{ color: 'red' }}
+                        onClick={() => {
+                            alert('click')
+                        }}
+                    >
+                        Hello React
+                    </h1>
+                )
+            }
+        }
+        ReactDOM.render(<HelloReact />, root)
+    </script>
+</html>

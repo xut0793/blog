@@ -1,0 +1,59 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-21 07:52:26
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>React propTypes</title>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script>
+        const root = document.getElementById('root')
+        // 组件类
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props)
+                // 初始化当前时间
+                this.state = {
+                    currentTime: new Date().toLocaleString()
+                }
+
+                // 调用更新时间方法
+                this.updateTime()
+            }
+
+            updateTime() {
+                setInterval(() => {
+                    console.log('Updating time...')
+                    this.setState({
+                        currentTime: new Date().toLocaleString()
+                    })
+                }, 1000)
+            }
+
+            // 输出视图
+            render() {
+                console.log('Rendering....')
+                return React.createElement('h1', null, this.state.currentTime)
+            }
+        }
+
+        const el = React.createElement(Clock)
+        ReactDOM.render(el, root)
+    </script>
+</html>

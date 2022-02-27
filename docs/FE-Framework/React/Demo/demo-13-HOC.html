@@ -1,0 +1,86 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-24 00:30:02
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Heloo React JSX</title>
+        <style>
+            .bgcolor {
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+
+    <script type="text/babel">
+        const root = document.getElementById('root')
+
+        //封装了一个按钮，它的功能和显示完全由外部传入的属性传入
+        class Button extends React.Component {
+            render() {
+                return (
+                    <button onClick={this.props.handler}>
+                        {this.props.label}
+                    </button>
+                )
+            }
+        }
+
+        // const Button = props => {
+        //     return (
+        //         <button onClick={this.props.handler}>{this.props.label}</button>
+        //     )
+        // }
+
+        // 定义一个高阶组件，给普通按钮添加submit交互
+        const EnhancedComponent = Component => {
+            class _EnhancedComponent extends Component {
+                constructor(props) {
+                    super(props)
+                    this.state = {
+                        label: 'submit'
+                    }
+                    this.handleClick = this.handleClick.bind(this)
+                }
+
+                handleClick(e) {
+                    alert('submit')
+                }
+
+                render() {
+                    return (
+                        <Component
+                            {...this.props}
+                            {...this.state}
+                            handler={this.handleClick}
+                        />
+                    )
+                }
+            }
+
+            _EnhancedComponent.displayName = 'EnhancedComponent'
+            return _EnhancedComponent
+        }
+
+        const EnhancedButton = EnhancedComponent(Button)
+
+        ReactDOM.render(<EnhancedButton />, root)
+    </script>
+</html>

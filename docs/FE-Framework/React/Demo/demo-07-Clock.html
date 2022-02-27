@@ -1,0 +1,141 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-21 21:14:12
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>React propTypes</title>
+        <style>
+            .dialstyle {
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                border-radius: 50%;
+                position: relative;
+            }
+            .secondstyle {
+                width: 40%;
+                height: 1px;
+                background-color: red;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                /* transform: rotate(0deg); */
+                transform-origin: 0% 0%;
+            }
+
+            .minutestyle {
+                width: 30%;
+                height: 3px;
+                background-color: gray;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                /* transform: rotate(-45deg); */
+                transform-origin: 0% 0%;
+            }
+
+            .hourstyle {
+                width: 30%;
+                height: 5px;
+                background-color: goldenrod;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                /* transform: rotate(-90deg); */
+                transform-origin: 0% 0%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script>
+        const root = document.getElementById('root')
+
+        // 外层状态组件，用于更新时间
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+                    currentTime: new Date()
+                }
+                this.updateTime()
+            }
+
+            updateTime() {
+                setInterval(() => {
+                    this.setState({
+                        currentTime: new Date()
+                    })
+                }, 1000)
+            }
+
+            render() {
+                return React.createElement(
+                    'div',
+                    null,
+                    React.createElement(AnalogDisplay, {
+                        time: this.state.currentTime.getTime()
+                    }),
+                    React.createElement(DigitalDisplay, {
+                        time: this.state.currentTime.toLocaleString()
+                    })
+                )
+            }
+        }
+
+        // 无状态组件，时间显示
+        const DigitalDisplay = props =>
+            React.createElement('div', null, props.time)
+
+        // 无关组件，表盘元素
+        const AnalogDisplay = props => {
+            let date = new Date(props.time)
+            let secondRotate = {
+                transform: `rotate(${(date.getSeconds() / 60) * 360 - 90}deg)`
+            }
+            let minuteRotate = {
+                transform: `rotate(${(date.getMinutes() / 60) * 360 - 90}deg)`
+            }
+            let hourRotate = {
+                transform: `rotate(${(date.getHours() / 12) * 360 - 90}deg)`
+            }
+
+            return React.createElement(
+                'div',
+                {
+                    className: 'dialstyle'
+                },
+                React.createElement('div', {
+                    className: 'secondstyle',
+                    style: secondRotate
+                }),
+                React.createElement('div', {
+                    style: minuteRotate,
+                    className: 'minutestyle'
+                }),
+                React.createElement('div', {
+                    style: hourRotate,
+                    className: 'hourstyle'
+                })
+            )
+        }
+
+        ReactDOM.render(React.createElement(Clock), root)
+    </script>
+</html>

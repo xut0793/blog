@@ -1,0 +1,74 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-20 21:40:38
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>React defaultProps</title>
+        <style>
+            .bgcolor {
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById('root')
+
+        // 组件类
+        class Hello extends React.Component {
+            render() {
+                return React.createElement(
+                    'h1',
+                    {
+                        id: 'uid',
+                        className: 'bgcolor',
+                        style: { color: 'red' },
+                        onClick: function(e) {
+                            alert('click')
+                        }
+                    },
+                    `Hello ${this.props.content}`
+                )
+            }
+        }
+        Hello.defaultProps = {
+            content: 'React'
+        }
+        let el_default = React.createElement(Hello)
+        let el_id = React.createElement(Hello, { id: 'uid' })
+        let el_world = React.createElement(Hello, { content: 'World' })
+        let el_china = React.createElement(Hello, { content: 'China' })
+        let el_null = React.createElement(Hello, null)
+        ReactDOM.render(
+            React.createElement(
+                'div',
+                null,
+                el_default,
+                el_null,
+                el_id,
+                el_world,
+                el_china
+            ),
+            root
+        )
+    </script>
+</html>

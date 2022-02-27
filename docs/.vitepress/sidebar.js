@@ -217,6 +217,10 @@ module.exports = {
       ],
     },
   ],
+  '/FE-Framework/Element-UI/': [
+    // { text: 'el-form', link: '/FE-Framework/Element-UI/el-form' },
+    // { text: 'el-upload', link: '/FE-Framework/Element-UI/el-upload' },
+  ],
   // '/FE-Framework/Vue/': [
   //   {
   //     text: 'Vue简介',
@@ -362,48 +366,110 @@ module.exports = {
   //     ],
   //   },
   // ],
-  // '/FE-Framework/React/': [
-  //   {
-  //     text: 'React 基础',
-  //     collapsable: false,
-  //     children: [
-  //       'react-01-what_is_react',
-  //       'react-02-React.createElement',
-  //       'react-03-组件类 class Name extends React.Component',
-  //       'react-04-组件属性传递props',
-  //       'react-05-组件嵌套props.children',
-  //       'react-06-组件属性默认值defaultProps',
-  //       'react-07-组件属性值类型校验propsTypes',
-  //       'react-08-组件状态state',
-  //       'react-09-有状态组件和无状态组件',
-  //       'react-10-组件的事件',
-  //       'react-11-react事件内幕SyntheticEvent',
-  //       'react-12-组件生命周期lifycycle',
-  //       'react-13-JSX体验',
-  //       'react-14-JSX语法',
-  //       'react-15-React使用表单',
-  //       'react-16-高阶组件HOC',
-  //       'react-17-创建React项目的三种方法',
-  //     ],
-  //   },
-  //   {
-  //     text: 'React 技术栈',
-  //     collapsable: false,
-  //     children: [
-  //       'react-cli',
-  //       'react-router-01-路由react-router原理',
-  //       'react-router-02-React-Router-v4',
-  //       'react-router-03-路由react-router的API',
-  //       'react-redux-01-what_is_Redux',
-  //       'react-redux-02-React-Redux',
-  //     ],
-  //   },
-  //   {
-  //     text: 'React Hooks',
-  //     collapsable: false,
-  //     children: ['react-hooks'],
-  //   },
-  // ],
+  '/FE-Framework/React/': [
+    {
+      text: 'React基础',
+      children: [
+        {
+          text: 'react-01-what_is_react',
+          link: '/FE-Framework/React/react-01-what_is_react',
+        },
+        {
+          text: 'react-02-React-createElement',
+          link: '/FE-Framework/React/react-02-React-createElement',
+        },
+        {
+          text: 'react-03-创建组件',
+          link: '/FE-Framework/React/react-03-组件类',
+        },
+        {
+          text: 'react-04-组件属性传递props',
+          link: '/FE-Framework/React/react-04-组件属性传递props',
+        },
+        {
+          text: 'react-05-组件嵌套props.children',
+          link: '/FE-Framework/React/react-05-组件嵌套props.children',
+        },
+        {
+          text: 'react-06-组件属性默认值defaultProps',
+          link: '/FE-Framework/React/react-06-组件属性默认值defaultProps',
+        },
+        {
+          text: 'react-07-组件属性值类型校验propsTypes',
+          link: '/FE-Framework/React/react-07-组件属性值类型校验propsTypes',
+        },
+        {
+          text: 'react-08-组件状态state',
+          link: '/FE-Framework/React/react-08-组件状态state',
+        },
+        {
+          text: 'react-09-有状态组件和无状态组件',
+          link: '/FE-Framework/React/react-09-有状态组件和无状态组件',
+        },
+        {
+          text: 'react-10-组件的事件',
+          link: '/FE-Framework/React/react-10-组件的事件',
+        },
+        {
+          text: 'react-11-react事件内幕SyntheticEvent',
+          link: '/FE-Framework/React/react-11-react事件内幕SyntheticEvent',
+        },
+        {
+          text: 'react-12-组件生命周期lifycycle',
+          link: '/FE-Framework/React/react-12-组件生命周期lifycycle',
+        },
+        {
+          text: 'react-13-JSX体验',
+          link: '/FE-Framework/React/react-13-JSX体验',
+        },
+        {
+          text: 'react-14-JSX语法',
+          link: '/FE-Framework/React/react-14-JSX语法',
+        },
+        {
+          text: 'react-15-React使用表单',
+          link: '/FE-Framework/React/react-15-React使用表单',
+        },
+        {
+          text: 'react-16-高阶组件HOC',
+          link: '/FE-Framework/React/react-16-高阶组件HOC',
+        },
+        {
+          text: 'react-17-创建React项目的三种方法',
+          link: '/FE-Framework/React/react-17-创建React项目的三种方法',
+        },
+      ],
+    },
+    {
+      text: 'React技术栈',
+      children: [
+        {
+          text: 'create-react-app',
+          link: '/FE-Framework/React/create-react-app',
+        },
+        {
+          text: 'react-router-01-路由react-router原理',
+          link: '/FE-Framework/React/react-router-01-路由react-router原理',
+        },
+        {
+          text: 'react-router-02-React-Router-v4',
+          link: '/FE-Framework/React/react-router-02-React-Router-v4',
+        },
+        {
+          text: 'react-router-03-路由react-router的API',
+          link: '/FE-Framework/React/react-router-03-路由react-router的API',
+        },
+        {
+          text: 'react-redux-01-what_is_Redux',
+          link: '/FE-Framework/React/react-redux-01-what_is_Redux',
+        },
+      ],
+    },
+    {
+      text: 'React Hooks',
+      link: '/FE-Framework/React/react-hooks',
+    },
+  ],
   // '/FE-Engineering/Webpack/': [
   //   {
   //     text: '基础入门',

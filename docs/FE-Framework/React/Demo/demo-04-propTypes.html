@@ -1,0 +1,49 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-20 22:34:17
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>React propTypes</title>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script>
+        const root = document.getElementById('root')
+        // 组件类
+        class Hello extends React.Component {
+            render() {
+                return React.createElement(
+                    'h1',
+                    null,
+                    `Hello ${this.props.content}`
+                )
+            }
+        }
+
+        Hello.defaultProps = {
+            content: 'React'
+        }
+
+        Hello.propTypes = {
+            content: PropTypes.string
+        }
+
+        ReactDOM.render(React.createElement(Hello, { content: 123 }), root)
+    </script>
+</html>

@@ -26,37 +26,37 @@ module.exports = [
           { text: 'React', link: '/FE-Framework/React/' },
         ],
       },
-      {
-        text: 'Mobile移动端',
-        items: [
-          { text: 'H5', link: '/FE-Framework/H5/' },
-          { text: 'React-Native', link: '/FE-Framework/React-Native/' },
-          { text: 'Mini-app', link: '/FE-Framework/mini-app/' },
-        ],
-      },
-      {
-        text: 'Desktop桌面端',
-        items: [
-          { text: 'PWA', link: '/FE-Framework/PWA/' },
-          { text: 'Electron', link: '/FE-Framework/Electron/' },
-        ],
-      },
-      {
-        text: 'Multi-End跨端',
-        items: [
-          { text: 'Flutter', link: '/FE-Framework/flutter/' },
-          { text: 'uni-app', link: '/FE-Framework/uni-app/' },
-          { text: 'Taro', link: '/FE-Framework/taro/' },
-        ],
-      },
-      {
-        text: '数据可视化',
-        items: [
-          { text: 'SVG', link: '/FE-Framework/SVG/' },
-          { text: 'Canvas', link: '/FE-Framework/Canvas/' },
-          { text: 'WebGl', link: '/FE-Framework/WebGL/' },
-        ],
-      },
+      // {
+      //   text: 'Mobile移动端',
+      //   items: [
+      //     { text: 'H5', link: '/FE-Framework/H5/' },
+      //     { text: 'React-Native', link: '/FE-Framework/React-Native/' },
+      //     { text: 'Mini-app', link: '/FE-Framework/mini-app/' },
+      //   ],
+      // },
+      // {
+      //   text: 'Desktop桌面端',
+      //   items: [
+      //     { text: 'PWA', link: '/FE-Framework/PWA/' },
+      //     { text: 'Electron', link: '/FE-Framework/Electron/' },
+      //   ],
+      // },
+      // {
+      //   text: 'Multi-End跨端',
+      //   items: [
+      //     { text: 'Flutter', link: '/FE-Framework/flutter/' },
+      //     { text: 'uni-app', link: '/FE-Framework/uni-app/' },
+      //     { text: 'Taro', link: '/FE-Framework/taro/' },
+      //   ],
+      // },
+      // {
+      //   text: '数据可视化',
+      //   items: [
+      //     { text: 'SVG', link: '/FE-Framework/SVG/' },
+      //     { text: 'Canvas', link: '/FE-Framework/Canvas/' },
+      //     { text: 'WebGl', link: '/FE-Framework/WebGL/' },
+      //   ],
+      // },
     ],
   },
   {

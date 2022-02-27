@@ -1,0 +1,71 @@
+<!--
+ * @Author: Tom xu
+ * @LastEditors: Tom xu
+ * @createTime: 2019-09-18 20:47:27
+ * @LastEditTime: 2019-09-22 18:02:33
+ * @Description:  React Demo 01 Hello React
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Heloo React</title>
+        <style>
+            .bgcolor {
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 onclick="console.log(this)">native click event in html</h1>
+        <h1 id="js-event">native click event in js</h1>
+        <div id="root"></div>
+    </body>
+    <script
+        crossorigin
+        src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+        crossorigin
+        src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.js"></script> -->
+    <script>
+        const root = document.getElementById('root')
+
+        // 原生事件监听绑定
+        const h1 = document.getElementById('js-event')
+        h1.addEventListener('click', function(e) {
+            console.log(this)
+            alert('native click envent in js')
+        })
+        // document.addEventListener('click', function(e) {
+        //     // e.stopImmediatePropagation()
+        //     alert('document event active')
+        // })
+
+        // 组件类
+        class HelloReact extends React.Component {
+            render() {
+                return React.createElement(
+                    'h1',
+                    {
+                        id: 'uid',
+                        className: 'bgcolor',
+                        style: { color: 'red' },
+                        onClick: e => {
+                            e.persist()
+                            console.log(e.isPersistent())
+                            console.log(e)
+                        }
+                    },
+                    'React Event'
+                )
+            }
+        }
+        let el = React.createElement(HelloReact, null)
+        ReactDOM.render(el, root)
+    </script>
+</html>
