@@ -54,114 +54,135 @@ module.exports = {
       ],
     },
   ],
-  // '/FE-Language/ES/': [
-  //   {
-  //     title: '前言',
-  //     collapsable: false,
-  //     children: ['intro-1-software', 'intro-2-es-history'],
-  //   },
-  //   {
-  //     title: '基本语法',
-  //     collapsable: false,
-  //     children: [
-  //       'base-0-index',
-  //       'base-1-expression-operators',
-  //       'base-2-variant',
-  //       'base-3-statement',
-  //       'base-4-strict',
-  //     ],
-  //   },
-  //   {
-  //     title: '数据类型',
-  //     collapsable: false,
-  //     children: [
-  //       'type-0-index',
-  //       'type-7-checking',
-  //       'type-8-primitive-wrapper',
-  //       'type-9-conversion',
-  //       'type-1-null-undefined-boolean',
-  //       'type-2-number',
-  //       'type-3-string',
-  //       'type-6-object',
-  //       'type-4-symbol',
-  //       'type-5-bigInt',
-  //     ],
-  //   },
-  //   {
-  //     title: '面向对象',
-  //     collapsable: false,
-  //     children: [
-  //       'oop-0-index',
-  //       'oop-0-object-history',
-  //       'oop-1-object-create',
-  //       'oop-2-object-property',
-  //       'oop-3-prototype',
-  //       'oop-4-constructor',
-  //       'oop-5-class',
-  //       'oop-6-inherit',
-  //     ],
-  //   },
-  //   {
-  //     title: '函数 Function',
-  //     collapsable: false,
-  //     children: [
-  //       'fn-0-index',
-  //       'fn-1-intro',
-  //       'fn-2-base',
-  //       'fn-3-runtime',
-  //       'fn-4-senior',
-  //     ],
-  //   },
-  //   {
-  //     title: '内置对象',
-  //     collapsable: false,
-  //     children: [
-  //       'built-in-index',
-  //       'built-in-GlobalThis',
-  //       'built-in-Boolean',
-  //       'built-in-Number',
-  //       'built-in-String',
-  //       'built-in-Array',
-  //       'built-in-Map',
-  //       'built-in-Set',
-  //       'built-in-WeakMap-WeakSet',
-  //       'built-in-Date',
-  //       'built-in-RegExp',
-  //       'built-in-Error',
-  //     ],
-  //   },
-  //   {
-  //     title: '异步编程',
-  //     collapsable: false,
-  //     children: [
-  //       'async-0-history',
-  //       'async-1-promise',
-  //       'async-2-generator-iterator',
-  //       'async-3-async-await',
-  //     ],
-  //   },
-  //   {
-  //     title: '模块化编程',
-  //     collapsable: false,
-  //     children: [
-  //       'module-0-history',
-  //       'module-1-commonjs-node',
-  //       'module-2-commonjs-browserify',
-  //       'module-3-amd-requirejs',
-  //       'module-4-cmd-seajs',
-  //       'module-5-umd',
-  //       'module-6-es-module',
-  //     ],
-  //   },
-  //   {
-  //     title: 'ES Next',
-  //     collapsable: false,
-  //     children: ['es-next-index'],
-  //   },
-  // ],
+  '/FE-Language/ES/': [
+    {
+      text: '前言',
+      children: [
+        { text: '软件基本概念', link: '/FE-Language/ES/intro-1-software' },
+        { text: 'EcmaScript历史', link: '/FE-Language/ES/intro-2-es-history' },
+      ],
+    },
+    {
+      text: '基本语法',
+      children: [
+        { text: '概括', link: '/FE-Language/ES/base-0-index' },
+        {
+          text: '表达式与操作符',
+          link: '/FE-Language/ES/base-1-expression-operators',
+        },
+        { text: '变量', link: '/FE-Language/ES/base-2-variant' },
+        { text: '语句', link: '/FE-Language/ES/base-3-statement' },
+        { text: '严格模式(use strict)', link: '/FE-Language/ES/base-4-strict' },
+      ],
+    },
+    {
+      text: '数据类型',
+      children: [
+        { text: '值和类型', link: '/FE-Language/ES/type-0-index' },
+        { text: '类型检测', link: '/FE-Language/ES/type-7-checking' },
+        {
+          text: '原始值和包装对象',
+          link: '/FE-Language/ES/type-8-primitive-wrapper',
+        },
+        { text: '类型转换', link: '/FE-Language/ES/type-9-conversion' },
+        {
+          text: 'Null / Undefined / Boolean 类型',
+          link: '/FE-Language/ES/type-1-null-undefined-boolean',
+        },
+        { text: 'Number 类型', link: '/FE-Language/ES/type-2-number' },
+        { text: 'String 类型', link: '/FE-Language/ES/type-3-string' },
+        { text: 'Object 类型', link: '/FE-Language/ES/type-6-object' },
+        { text: 'Symbol 类型', link: '/FE-Language/ES/type-4-symbol' },
+        { text: 'Bigint 类型', link: '/FE-Language/ES/type-5-bigInt' },
+      ],
+    },
+    {
+      text: '面向对象',
+      children: [
+        { text: '概括', link: '/FE-Language/ES/oop-0-index' },
+        {
+          text: '对象和面向对象',
+          link: '/FE-Language/ES/oop-0-object-history',
+        },
+        { text: '创建对象', link: '/FE-Language/ES/oop-1-object-create' },
+        {
+          text: '对象属性和操作',
+          link: '/FE-Language/ES/oop-2-object-property',
+        },
+        { text: '原型和原型链', link: '/FE-Language/ES/oop-3-prototype' },
+        {
+          text: '构造函数实现面向对象',
+          link: '/FE-Language/ES/oop-4-constructor',
+        },
+        { text: 'class实现面向对象', link: '/FE-Language/ES/oop-5-class' },
+        { text: '继承', link: '/FE-Language/ES/oop-6-inherit' },
+      ],
+    },
+    {
+      text: '函数 Function',
+      children: [
+        { text: '概括', link: '/FE-Language/ES/fn-0-index' },
+        { text: '函数是特殊的对象', link: '/FE-Language/ES/fn-1-intro' },
+        { text: '函数基础概念', link: '/FE-Language/ES/fn-2-base' },
+        { text: '函数运行的概念', link: '/FE-Language/ES/fn-3-runtime' },
+        { text: '函数高阶应用', link: '/FE-Language/ES/fn-4-senior' },
+        { text: '', link: '/FE-Language/ES/' },
+      ],
+    },
+    {
+      text: '内置对象',
+      children: [
+        { text: '对象分类', link: '/FE-Language/ES/built-in-index' },
+        { text: 'GlobalThis', link: '/FE-Language/ES/built-in-GlobalThis' },
+        { text: 'Boolean', link: '/FE-Language/ES/built-in-Boolean' },
+        { text: 'Number', link: '/FE-Language/ES/built-in-Number' },
+        { text: 'String', link: '/FE-Language/ES/built-in-String' },
+        { text: 'Array', link: '/FE-Language/ES/built-in-Array' },
+        { text: 'Map', link: '/FE-Language/ES/built-in-Map' },
+        { text: 'Set', link: '/FE-Language/ES/built-in-Set' },
+        { text: 'Map', link: '/FE-Language/ES/built-in-Map' },
+        {
+          text: 'WeakMap-WeakSet',
+          link: '/FE-Language/ES/built-in-WeakMap-WeakSet',
+        },
+        { text: 'Date', link: '/FE-Language/ES/built-in-Date' },
+        { text: 'RegExp', link: '/FE-Language/ES/built-in-RegExp' },
+        { text: 'Error', link: '/FE-Language/ES/Error' },
+      ],
+    },
+    {
+      text: '异步编程',
+      children: [
+        { text: '异步编程的演进', link: '/FE-Language/ES/async-0-history' },
+        { text: 'promise', link: '/FE-Language/ES/async-0-promise' },
+        {
+          text: 'generator / iterator',
+          link: '/FE-Language/ES/async-0-generator-iterator',
+        },
+        { text: 'async / await', link: '/FE-Language/ES/async-0-async-await' },
+      ],
+    },
+    {
+      text: '模块化编程',
+      children: [
+        { text: '前端模块化演进', link: '/FE-Language/ES/module-0-history' },
+        { text: 'CommonJS', link: '/FE-Language/ES/module-1-commonjs' },
+        {
+          text: 'AMD-requirejs',
+          link: '/FE-Language/ES/module-2-amd-requirejs',
+        },
+        { text: 'UMD', link: '/FE-Language/ES/module-3-umd' },
+        { text: 'ES Module', link: '/FE-Language/ES/module-4-es-module' },
+      ],
+    },
+    {
+      text: 'ES Next',
+      children: [{ text: 'UMD', link: '/FE-Language/ES/es-next-index' }],
+    },
+  ],
   // '/FE-Language/TS/': [
   //   {
-  //     title: '基础',
+  //     text: '基础',
   //     collapsable: false,
   //     children: [
   //       '0-introTS',
@@ -178,14 +199,14 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: '实践',
+  //     text: '实践',
   //     collapsable: false,
   //     children: ['EnumPractice', 'TsNodeEnvConf', 'TsVueEnvConf'],
   //   },
   // ],
   // '/Browser/DOM/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: [
   //       'Node',
@@ -199,7 +220,7 @@ module.exports = {
   // ],
   // '/Browser/Render/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: [
   //       'intro',
@@ -214,19 +235,19 @@ module.exports = {
   // ],
   // '/Browser/MISC/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: ['Blob-File-ArrayBuffer-URL'],
   //   },
   // ],
   // '/FE-Framework/Vue/': [
   //   {
-  //     title: 'Vue简介',
+  //     text: 'Vue简介',
   //     collapsable: false,
   //     children: ['vue-1-whyusevue-vue-jquery'],
   //   },
   //   {
-  //     title: 'Vue基础之HTML',
+  //     text: 'Vue基础之HTML',
   //     collapsable: false,
   //     children: [
   //       'vue-2-template-directive',
@@ -240,12 +261,12 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'Vue基础之CSS',
+  //     text: 'Vue基础之CSS',
   //     collapsable: false,
   //     children: ['vue-7-template-v-bind-with-class-and-style'],
   //   },
   //   {
-  //     title: 'Vue基础之JS',
+  //     text: 'Vue基础之JS',
   //     collapsable: false,
   //     children: [
   //       'vue-14-js-vue-options',
@@ -264,7 +285,7 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'Vue组件',
+  //     text: 'Vue组件',
   //     collapsable: false,
   //     children: [
   //       'vue-24-component',
@@ -282,7 +303,7 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'Vue源码解析',
+  //     text: 'Vue源码解析',
   //     collapsable: false,
   //     children: [
   //       'vue-source-code-1-reactivity-1-detection-chnage',
@@ -311,7 +332,7 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'Vue技术栈之VueRouter',
+  //     text: 'Vue技术栈之VueRouter',
   //     collapsable: false,
   //     children: [
   //       'vue-router-1-index',
@@ -326,7 +347,7 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'Vue技术栈之Vuex',
+  //     text: 'Vue技术栈之Vuex',
   //     collapsable: false,
   //     children: [
   //       'vuex-1-index',
@@ -339,22 +360,22 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'Vue技术栈之Axios',
+  //     text: 'Vue技术栈之Axios',
   //     collapsable: false,
   //     children: ['axios-index'],
   //   },
   //   {
-  //     title: 'Vue技术栈之VueCli',
+  //     text: 'Vue技术栈之VueCli',
   //     collapsable: false,
   //     children: ['vue-cli-1-index'],
   //   },
   //   {
-  //     title: 'Vue工程实践',
+  //     text: 'Vue工程实践',
   //     collapsable: false,
   //     children: ['vue-practice-1-setenv', 'vue-practice-2-jsx'],
   //   },
   //   {
-  //     title: '其它杂项',
+  //     text: '其它杂项',
   //     collapsable: false,
   //     children: [
   //       'compare-vue2-vue3',
@@ -366,7 +387,7 @@ module.exports = {
   // ],
   // '/FE-Framework/React/': [
   //   {
-  //     title: 'React 基础',
+  //     text: 'React 基础',
   //     collapsable: false,
   //     children: [
   //       'react-01-what_is_react',
@@ -389,7 +410,7 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'React 技术栈',
+  //     text: 'React 技术栈',
   //     collapsable: false,
   //     children: [
   //       'react-cli',
@@ -401,36 +422,36 @@ module.exports = {
   //     ],
   //   },
   //   {
-  //     title: 'React Hooks',
+  //     text: 'React Hooks',
   //     collapsable: false,
   //     children: ['react-hooks'],
   //   },
   // ],
   // '/FE-Engineering/Webpack/': [
   //   {
-  //     title: '基础入门',
+  //     text: '基础入门',
   //     collapsable: false,
   //     children: ['Intro', 'Module', 'InstallAndUsage'],
   //   },
   //   {
-  //     title: '配置项',
+  //     text: '配置项',
   //     collapsable: false,
   //     children: ['Entry', 'Output'],
   //   },
   //   {
-  //     title: '项目构建实践',
+  //     text: '项目构建实践',
   //     collapsable: false,
   //     children: ['Html'],
   //   },
   //   {
-  //     title: '进阶深入源码',
+  //     text: '进阶深入源码',
   //     collapsable: false,
   //     children: ['ResourceCode'],
   //   },
   // ],
   // '/FE-Engineering/Lint/': [
   //   {
-  //     title: '编码规范',
+  //     text: '编码规范',
   //     collapsable: false,
   //     children: [
   //       'EditorConfig',
@@ -444,35 +465,35 @@ module.exports = {
   // ],
   // '/FE-Engineering/Git/': [
   //   {
-  //     title: '源代码管理',
+  //     text: '源代码管理',
   //     collapsable: false,
   //     children: ['GitInstall', 'GitUse', 'GitFlow', 'GitCommit'],
   //   },
   // ],
   // '/FE-Engineering/Doc/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: ['Vuepress'],
   //   },
   // ],
   // "/FE-Engineering/Api/": [
   //   {
-  //     title: "",
+  //     text: "",
   //     collapsable: false,
   //     children: ["Restful"],
   //   },
   // ],
   // '/Network/Ajax/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: ['XMLHttpRequest', 'Fetch', 'WebSocket', 'EventSource'],
   //   },
   // ],
   // '/Network/Axios/': [
   //   {
-  //     title: '源码解析',
+  //     text: '源码解析',
   //     collapsable: false,
   //     children: [
   //       'source-code-1-instance',
@@ -486,7 +507,7 @@ module.exports = {
   // ],
   // '/Network/HTTP/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: [
   //       'introduce',
@@ -501,49 +522,49 @@ module.exports = {
   // ],
   // '/Backend/Node/': [
   // {
-  //   title: '认识Node',
+  //   text: '认识Node',
   //   collapsable: false,
   //   children: ['introduce', 'nvm', 'npm-yarn', 'npx'],
   // },
   // {
-  //   title: '核心概念',
+  //   text: '核心概念',
   //   collapsable: false,
   //   children: ['eventloop', 'global', 'module', 'concept'],
   // },
   // {
-  //   title: '文件和数据操作',
+  //   text: '文件和数据操作',
   //   collapsable: false,
   //   children: ['buffer', 'stream', 'path', 'fs', 'bit-byte-stream-buffer'],
   // },
   // {
-  //   title: '网络管理',
+  //   text: '网络管理',
   //   collapsable: false,
   //   children: ['http', 'url', 'querystring'],
   // },
   // {
-  // 	title: '进程管理',
+  // 	text: '进程管理',
   // 	collapsable: false,
   // 	children: ['process', 'child-process', 'cluster', 'worker_threads']
   // },
   // {
-  // 	title: '工具模块',
+  // 	text: '工具模块',
   // 	collapsable: false,
   // 	children: ['util', 'timer', 'crypto', 'zlib']
   // },
   // {
-  // 	title: '调试',
+  // 	text: '调试',
   // 	collapsable: false,
   // 	children: ['erros', 'console', 'debugger', 'repl']
   // },
   // {
-  // 	title: '系统',
+  // 	text: '系统',
   // 	collapsable: false,
   // 	children: ['os', 'v8', 'vm']
   // },
   // ],
   // '/Misc/': [
   //   {
-  //     title: '',
+  //     text: '',
   //     collapsable: false,
   //     children: ['InitDevEnv', 'tree-node-cli'],
   //   },
