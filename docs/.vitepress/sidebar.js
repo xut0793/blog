@@ -13,28 +13,47 @@ module.exports = {
       children: [{ text: 'Figma', link: '/Design/figmat' }],
     },
   ],
-  // '/FE-Language/HTML/': [
-  //   {
-  //     title: '',
-  //     collapsable: false,
-  //     children: [
-  //       '1-intro-grammar',
-  //       '2-element-content-model',
-  //       '3-doc-structure',
-  //       '4-doctype',
-  //       '5-html',
-  //       '6-head',
-  //       '7-body',
-  //       '8-layout-structural-semantics',
-  //       '9-text-structural-semantics',
-  //       '10-text-content-semantics',
-  //       '11-a',
-  //       '12-img',
-  //       '13-table',
-  //       '14-form',
-  //     ],
-  //   },
-  // ],
+  '/FE-Language/HTML/': [
+    {
+      text: 'HTML基础',
+      children: [
+        { text: 'HTML是什么', link: '/FE-Language/HTML/0-introduce' },
+        { text: 'HTML语法', link: '/FE-Language/HTML/1-grammar' },
+      ],
+    },
+    {
+      text: 'HTML文档结构',
+      children: [
+        { text: '文档内容模型', link: '/FE-Language/HTML/2-content-model' },
+        { text: '文档结构', link: '/FE-Language/HTML/3-doc-structure' },
+        { text: '文档声明 doctype', link: '/FE-Language/HTML/4-doctype' },
+        { text: '文档根元素 html', link: '/FE-Language/HTML/5-html' },
+        { text: '文档头部 head', link: '/FE-Language/HTML/6-head' },
+        { text: '文档主体 body', link: '/FE-Language/HTML/7-body' },
+      ],
+    },
+    {
+      text: 'HTML主要元素',
+      children: [
+        {
+          text: '面布局语义化元素',
+          link: '/FE-Language/HTML/8-layout-structural-semantics',
+        },
+        {
+          text: '文本结构语义化元素',
+          link: '/FE-Language/HTML/9-text-structural-semantics',
+        },
+        {
+          text: '文本内容语义化元素',
+          link: '/FE-Language/HTML/10-text-content-semantics',
+        },
+        { text: '链接 a', link: '/FE-Language/HTML/11-a' },
+        { text: '图像 img', link: '/FE-Language/HTML/12-img' },
+        { text: '表格 table', link: '/FE-Language/HTML/13-table' },
+        { text: '表单 form', link: '/FE-Language/HTML/14-form' },
+      ],
+    },
+  ],
   // '/FE-Language/ES/': [
   //   {
   //     title: '前言',
