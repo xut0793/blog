@@ -177,33 +177,46 @@ module.exports = {
     },
     {
       text: 'ES Next',
-      children: [{ text: 'UMD', link: '/FE-Language/ES/es-next-index' }],
+      children: [
+        { text: 'ES next 新特性', link: '/FE-Language/ES/es-next-index' },
+      ],
     },
   ],
-  // '/FE-Language/TS/': [
-  //   {
-  //     text: '基础',
-  //     collapsable: false,
-  //     children: [
-  //       '0-introTS',
-  //       '1-type-declaration-1.1-basic-type',
-  //       '1-type-declaration-1.2-function',
-  //       '1-type-declaration-1.3-class',
-  //       '2-type-inference',
-  //       '3-type-checking',
-  //       '4-type-programming',
-  //       'Module',
-  //       'Declaration',
-  //       'InstallTS',
-  //       'Tsconfig',
-  //     ],
-  //   },
-  //   {
-  //     text: '实践',
-  //     collapsable: false,
-  //     children: ['EnumPractice', 'TsNodeEnvConf', 'TsVueEnvConf'],
-  //   },
-  // ],
+  '/FE-Language/TS/': [
+    {
+      text: '基础',
+      children: [
+        { text: 'Typescript简介', link: '/FE-Language/TS/0-introTS' },
+        { text: '安装', link: '/FE-Language/TS/install' },
+        { text: '配置文件', link: '/FE-Language/TS/tsconfig' },
+        {
+          text: '基础类型声明',
+          link: '/FE-Language/TS/1-type-declaration-1.1-basic-type',
+        },
+        {
+          text: '函数声明',
+          link: '/FE-Language/TS/1-type-declaration-1.2-function',
+        },
+        {
+          text: '类声明',
+          link: '/FE-Language/TS/1-type-declaration-1.3-class',
+        },
+        { text: '类型推导', link: '/FE-Language/TS/2-type-inference' },
+        { text: '类型检查', link: '/FE-Language/TS/3-type-checking' },
+        { text: '类型编程', link: '/FE-Language/TS/4-type-programming' },
+        { text: '模块', link: '/FE-Language/TS/module' },
+        { text: '声明文件', link: '/FE-Language/TS/declaration' },
+      ],
+    },
+    {
+      text: '实践',
+      children: [
+        { text: '前端状态枚举的思考', link: '/FE-Language/TS/practice-enum' },
+        { text: '初始化node+ts环境', link: '/FE-Language/TS/practice-ts-node' },
+        { text: '初始化vue+ts环境', link: '/FE-Language/TS/practice-ts-vue' },
+      ],
+    },
+  ],
   // '/Browser/DOM/': [
   //   {
   //     text: '',
