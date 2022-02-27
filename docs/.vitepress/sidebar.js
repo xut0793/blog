@@ -490,98 +490,118 @@ module.exports = {
   //     children: ['Vuepress'],
   //   },
   // ],
-  // "/FE-Engineering/Api/": [
-  //   {
-  //     text: "",
-  //     collapsable: false,
-  //     children: ["Restful"],
-  //   },
-  // ],
-  // '/Network/Ajax/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: ['XMLHttpRequest', 'Fetch', 'WebSocket', 'EventSource'],
-  //   },
-  // ],
-  // '/Network/Axios/': [
-  //   {
-  //     text: '源码解析',
-  //     collapsable: false,
-  //     children: [
-  //       'source-code-1-instance',
-  //       'source-code-2-request-promise',
-  //       'source-code-3-adapter',
-  //       'source-code-4-interceptor',
-  //       'source-code-5-cancel-token',
-  //       'source-code-6-transform-data',
-  //     ],
-  //   },
-  // ],
-  // '/Network/HTTP/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: [
-  //       'introduce',
-  //       'URI_MIME',
-  //       'session_connect_message',
-  //       'httpCache',
-  //       'httpCookie',
-  //       'httpCORS',
-  //       'httpAuth',
-  //     ],
-  //   },
-  // ],
-  // '/Backend/Node/': [
-  // {
-  //   text: '认识Node',
-  //   collapsable: false,
-  //   children: ['introduce', 'nvm', 'npm-yarn', 'npx'],
-  // },
-  // {
-  //   text: '核心概念',
-  //   collapsable: false,
-  //   children: ['eventloop', 'global', 'module', 'concept'],
-  // },
-  // {
-  //   text: '文件和数据操作',
-  //   collapsable: false,
-  //   children: ['buffer', 'stream', 'path', 'fs', 'bit-byte-stream-buffer'],
-  // },
-  // {
-  //   text: '网络管理',
-  //   collapsable: false,
-  //   children: ['http', 'url', 'querystring'],
-  // },
-  // {
-  // 	text: '进程管理',
-  // 	collapsable: false,
-  // 	children: ['process', 'child-process', 'cluster', 'worker_threads']
-  // },
-  // {
-  // 	text: '工具模块',
-  // 	collapsable: false,
-  // 	children: ['util', 'timer', 'crypto', 'zlib']
-  // },
-  // {
-  // 	text: '调试',
-  // 	collapsable: false,
-  // 	children: ['erros', 'console', 'debugger', 'repl']
-  // },
-  // {
-  // 	text: '系统',
-  // 	collapsable: false,
-  // 	children: ['os', 'v8', 'vm']
-  // },
-  // ],
-  // '/Misc/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: ['InitDevEnv', 'tree-node-cli'],
-  //   },
-  // ],
+
+  '/Network/protocol/': [
+    { text: 'TCP/UDP', link: '/Network/protocol/tcp-udp' },
+    {
+      text: 'HTTP',
+      children: [
+        { text: '概述', link: '/Network/protocol/introduce' },
+        { text: 'uri和mime', link: '/Network/protocol/uri-mime' },
+        {
+          text: '传话-连接-消息',
+          link: '/Network/protocol/session-connect-message',
+        },
+        { text: '缓存cache-control', link: '/Network/protocol/http-cache' },
+        { text: '会话cookie', link: '/Network/protocol/http-cookie' },
+        { text: '跨域cors', link: '/Network/protocol/http-cors' },
+        {
+          text: '授权authorization',
+          link: '/Network/protocol/http-authorization',
+        },
+        {
+          text: '认证authentication',
+          link: '/Network/protocol/http-authentication',
+        },
+      ],
+    },
+  ],
+  '/Network/ajax/': [
+    { text: 'XMLHttpRequest', link: '/Network/ajax/XMLHttpRequest' },
+  ],
+  '/Network/axios/': [
+    {
+      text: '源码解析',
+      children: [
+        { text: '1-实例化axios', link: '/Network/axios/1-instance' },
+        { text: '2-请求实现promise', link: '/Network/axios/2-request-promise' },
+        { text: '3-适配器adapter', link: '/Network/axios/3-adapter' },
+        { text: '4-拦截器interceptor', link: '/Network/axios/4-interceptor' },
+        {
+          text: '5-数据转换器transformData',
+          link: '/Network/axios/5-transform-data',
+        },
+        {
+          text: '6-取消请求CancelToken',
+          link: '/Network/axios/6-cancel-token',
+        },
+      ],
+    },
+  ],
+  '/Network/duplex-service/': [
+    { text: 'EventSource', link: '/Network/duplex-service/EventSource' },
+    { text: 'WebSocket', link: '/Network/duplex-service/WebSocket' },
+  ],
+  '/Server/node/': [
+    { text: '认识node', link: '/Server/node/introduce' },
+    {
+      text: '包管理器',
+      children: [
+        { text: 'npm', link: '/Server/node/npm' },
+        { text: 'npx', link: '/Server/node/npx' },
+        { text: 'nvm', link: '/Server/node/nvm' },
+        { text: 'nrm', link: '/Server/node/nrm' },
+        { text: 'yarn', link: '/Server/node/yarn' },
+        { text: 'pnpm', link: '/Server/node/pnpm' },
+      ],
+    },
+    {
+      text: '核心概念',
+      children: [
+        { text: '事件循环机制', link: '/Server/node/eventloop' },
+        { text: '全局变量', link: '/Server/node/global' },
+        { text: '模块', link: '/Server/node/module' },
+        { text: '其它概念', link: '/Server/node/concept' },
+      ],
+    },
+    {
+      text: '文件和数据操作',
+      children: [
+        { text: '缓冲器buffer', link: '/Server/node/buffer' },
+        { text: '流stream', link: '/Server/node/stream' },
+        { text: '文件操作fs', link: '/Server/node/fs' },
+        { text: '路径path', link: '/Server/node/path' },
+        {
+          text: '计算机数据的理解',
+          link: '/Server/node/bit-byte-stream-buffer',
+        },
+      ],
+    },
+    {
+      text: '网络',
+      children: [
+        { text: 'http', link: '/Server/node/http' },
+        { text: '网址解析url', link: '/Server/node/url' },
+        { text: '查询字符串解析querystring', link: '/Server/node/querystring' },
+      ],
+    },
+    // {
+    // 	text: '进程管理',
+    // 	children: ['process', 'child-process', 'cluster', 'worker_threads']
+    // },
+    // {
+    // 	text: '工具模块',
+    // 	children: ['util', 'timer', 'crypto', 'zlib']
+    // },
+    // {
+    // 	text: '调试',
+    // 	children: ['erros', 'console', 'debugger', 'repl']
+    // },
+    // {
+    // 	text: '系统',
+    // 	children: ['os', 'v8', 'vm']
+    // },
+  ],
   '/Tools/vim/': [
     {
       text: 'vim',
