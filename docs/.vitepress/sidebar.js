@@ -217,42 +217,6 @@ module.exports = {
       ],
     },
   ],
-  // '/Browser/DOM/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: [
-  //       'Node',
-  //       'Document',
-  //       'Element',
-  //       'Text',
-  //       'Dom_Style',
-  //       'Dom_Event',
-  //     ],
-  //   },
-  // ],
-  // '/Browser/Render/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: [
-  //       'intro',
-  //       'structure',
-  //       'render',
-  //       'v8',
-  //       'js_execute',
-  //       'stack_heap_GC',
-  //       'cache',
-  //     ],
-  //   },
-  // ],
-  // '/Browser/MISC/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: ['Blob-File-ArrayBuffer-URL'],
-  //   },
-  // ],
   // '/FE-Framework/Vue/': [
   //   {
   //     text: 'Vue简介',
@@ -490,7 +454,35 @@ module.exports = {
   //     children: ['Vuepress'],
   //   },
   // ],
-
+  '/Browser/2-DOM/': [
+    {
+      text: '',
+      children: [
+        { text: 'Node节点基类', link: '/Browser/2-DOM/Node' },
+        { text: 'Document文档对象', link: '/Browser/2-DOM/Document' },
+        { text: 'Element元素节点', link: '/Browser/2-DOM/Element' },
+        { text: 'Text文本节点', link: '/Browser/2-DOM/Text' },
+        { text: 'DOM Event 事件', link: '/Browser/2-DOM/Dom_Event' },
+      ],
+    },
+  ],
+  '/Browser/4-render/': [
+    {
+      text: '',
+      children: [
+        { text: '浏览器历史', link: '/Browser/4-render/history' },
+        { text: '浏览器架构演化', link: '/Browser/4-render/architecture' },
+        { text: '浏览器渲染机制', link: '/Browser/4-render/render' },
+        { text: '浏览器事件循环', link: '/Browser/4-render/event-loop' },
+        { text: 'v8执行机制', link: '/Browser/4-render/v8/' },
+        { text: 'v8内存管理', link: '/Browser/4-render/stack-eap-GC' },
+        { text: 'js执行上下文', link: '/Browser/4-render/js-execute' },
+      ],
+    },
+  ],
+  '/Browser/8-new-api/': [
+    { text: '概念理解', link: '/Browser/8-new-api/Blob-File-ArrayBuffer-URL' },
+  ],
   '/Network/protocol/': [
     { text: 'TCP/UDP', link: '/Network/protocol/tcp-udp' },
     {

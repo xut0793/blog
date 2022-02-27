@@ -82,14 +82,14 @@ module.exports = [
   {
     text: '浏览器',
     items: [
-      { text: 'BOM', link: '/Browser/BOM/' },
-      { text: 'DOM', link: '/Browser/DOM/' },
-      { text: 'CSSOM', link: '/Browser/CSSOM/' },
-      { text: '渲染', link: '/Browser/web-render/' },
-      { text: '缓存', link: '/Browser/web-cache/' },
-      { text: '本地存储', link: '/Browser/web-storage/' },
-      { text: '网络安全', link: '/Browser/web-security/' },
-      { text: '新api', link: '/Browser/web-new-api/' },
+      { text: 'BOM', link: '/Browser/1-BOM/' },
+      { text: 'DOM', link: '/Browser/2-DOM/' },
+      { text: 'CSSOM', link: '/Browser/3-CSSOM/' },
+      { text: '渲染', link: '/Browser/4-render/' },
+      { text: '缓存', link: '/Browser/5-cache/' },
+      { text: '本地存储', link: '/Browser/6-storage/' },
+      { text: '网络安全', link: '/Browser/7-security/' },
+      { text: '新api', link: '/Browser/8-new-api/' },
     ],
   },
   {
