@@ -529,6 +529,16 @@ module.exports = {
   //     children: ['InitDevEnv', 'tree-node-cli'],
   //   },
   // ],
+  '/Tools/vim/': [
+    {
+      text: 'vim',
+      children: [
+        { text: '安装', link: '/Tools/vim/install' },
+        { text: '概念', link: '/Tools/vim/concept' },
+        { text: '快捷键', link: '/Tools/vim/shortcuts' },
+      ],
+    },
+  ],
   '/Books/': [
     {
       text: 'JavaScript',
@@ -553,11 +563,4 @@ module.exports = {
       children: [],
     },
   ],
-  // '/Tools/Vim/': [
-  //   {
-  //     title: '',
-  //     collapsable: false,
-  //     children: ['install', 'concept', 'shortcuts'],
-  //   },
-  // ],
 }
