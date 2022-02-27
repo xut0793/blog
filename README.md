@@ -20,8 +20,8 @@
   - 安全
 - Network 网络相关知识
   - 网络协议
-  - ajax：XMLHttpRequest、Fetch
-  - api：RESTful、GraphQL
+  - ajax：XMLHttpRequest / axios / Fetch
+  - api：RESTful / GraphQL
 - Server 服务端相关知识：Node / Express / Koa / Nest / Bash / Nginx / Docker
 - Database 数据库相关知识：MySQL / MongoDB / Redis / ORM(sequelize,mongoose,typeorm)
 - Software 软件基础知识：数据结构 / 算法 / 设计模式 / 架构模式 / 编程范式 / 编译原理
