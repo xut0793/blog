@@ -1,0 +1,21 @@
+{
+  "name": "xut0793blog",
+  "version": "0.1.0",
+  "description": "个人博客",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "keywords": [
+    "Frontend",
+    "前端",
+    "博客"
+  ],
+  "author": "xut",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^0.22.3"
+  }
+}
