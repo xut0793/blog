@@ -529,21 +529,30 @@ module.exports = {
   //     children: ['InitDevEnv', 'tree-node-cli'],
   //   },
   // ],
-  // '/Books/': [
-  //   {
-  //     title: 'JavaScript',
-  //     collapsable: false,
-  //     children: [
-  //       'js_qishilv',
-  //       'js_yuyanjingcui',
-  //       'js_bianchengjingcui',
-  //       'js_zhuangjiabiancheng',
-  //       'js_object_oriented',
-  //       'js_ninja_secret',
-  //       'js_xuexizhinan',
-  //     ],
-  //   },
-  // ],
+  '/Books/': [
+    {
+      text: 'JavaScript',
+      children: [
+        { text: '《JavaScript 学习指南》', link: '/Books/js_xuexizhinan' },
+        { text: '《JavaScript 启示录》', link: '/Books/js_qishilv' },
+        { text: '《JavaScript 语言精粹》', link: '/Books/js_yuyanjingcui' },
+        { text: '《JavaScript 编程精粹》', link: '/Books/js_bianchengjingcui' },
+        {
+          text: '《JavaScript 专家编程》',
+          link: '/Books/js_zhuangjiabiancheng',
+        },
+        {
+          text: '《JavaScript 面向对象编程指南》',
+          link: '/Books/js_object_oriented',
+        },
+        { text: '《JavaScript 忍者秘籍》', link: '/Books/js_ninja_secret' },
+      ],
+    },
+    {
+      text: 'CSS',
+      children: [],
+    },
+  ],
   // '/Tools/Vim/': [
   //   {
   //     title: '',
