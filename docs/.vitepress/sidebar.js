@@ -221,151 +221,402 @@ module.exports = {
     // { text: 'el-form', link: '/FE-Framework/Element-UI/el-form' },
     // { text: 'el-upload', link: '/FE-Framework/Element-UI/el-upload' },
   ],
-  // '/FE-Framework/Vue/': [
-  //   {
-  //     text: 'Vue简介',
-  //     collapsable: false,
-  //     children: ['vue-1-whyusevue-vue-jquery'],
-  //   },
-  //   {
-  //     text: 'Vue基础之HTML',
-  //     collapsable: false,
-  //     children: [
-  //       'vue-2-template-directive',
-  //       'vue-3-template-插值-v-html',
-  //       'vue-4-template-v-if-and-v-show',
-  //       'vue-5-template-v-for',
-  //       'vue-6-template-v-bind',
-  //       'vue-8-template-v-on-and-modifier',
-  //       'vue-9-template-v-model',
-  //       'vue-13-template-render-JSX',
-  //     ],
-  //   },
-  //   {
-  //     text: 'Vue基础之CSS',
-  //     collapsable: false,
-  //     children: ['vue-7-template-v-bind-with-class-and-style'],
-  //   },
-  //   {
-  //     text: 'Vue基础之JS',
-  //     collapsable: false,
-  //     children: [
-  //       'vue-14-js-vue-options',
-  //       'vue-15-js-data',
-  //       'vue-16-js-computed',
-  //       'vue-17-js-methods',
-  //       'vue-18-js-watch',
-  //       'vue-19-js-filters',
-  //       'vue-20-js-data-computed-watch-methods-filters',
-  //       'vue-21-js-mixins',
-  //       'vue-22-js-directive',
-  //       'vue-23-js-lifeCycle_hooks',
-  //       'vue-10-template-ref',
-  //       'vue-11-vue-scope',
-  //       'vue-12-js-nextTick',
-  //     ],
-  //   },
-  //   {
-  //     text: 'Vue组件',
-  //     collapsable: false,
-  //     children: [
-  //       'vue-24-component',
-  //       'vue-25-component-introduce',
-  //       'vue-26-component-prop',
-  //       'vue-27-component-event',
-  //       'vue-28-component-.native-.sync-model',
-  //       'vue-29-component-slot',
-  //       'vue-30-component-组件实例的引用',
-  //       'vue-31-component-组件间通信6种方法',
-  //       'vue-32-component-异步组件-工厂函数',
-  //       'vue-33-component-内置组件transition',
-  //       'vue-34-component-内置组件keep-alive',
-  //       'vue-35-component-动态组件component',
-  //     ],
-  //   },
-  //   {
-  //     text: 'Vue源码解析',
-  //     collapsable: false,
-  //     children: [
-  //       'vue-source-code-1-reactivity-1-detection-chnage',
-  //       'vue-source-code-1-reactivity-2-collect-dependency',
-  //       'vue-source-code-1-reactivity-3-dispatch-update',
-  //       'vue-source-code-1-reactivity-4-summary',
-  //       'vue-source-code-2-compile-0.md',
-  //       'vue-source-code-2-compile-1-parse.md',
-  //       'vue-source-code-2-compile-2-optimize.md',
-  //       'vue-source-code-2-compile-3-generate.md',
-  //       'vue-source-code-3-virtual-dom-1-create-vnode',
-  //       'vue-source-code-3-virtual-dom-2-patch',
-  //       'vue-source-code-4-component-1-extend',
-  //       'vue-source-code-4-component-2-patch',
-  //       'vue-source-code-4-component-3-slot',
-  //       'vue-source-code-4-component-4-async',
-  //       'vue-source-code-4-component-5-keep-alive',
-  //       'vue-source-code-5-initialize-1-constructor',
-  //       'vue-source-code-5-initialize-2-mergeOptions',
-  //       'vue-source-code-5-initialize-3-instance',
-  //       'vue-source-code-6-extension-1-lifecycle',
-  //       'vue-source-code-6-extension-2-event',
-  //       'vue-source-code-6-extension-3-nextTick',
-  //       'vue-source-code-6-extension-4-directive',
-  //       'vue-source-code-6-extension-5-filter',
-  //     ],
-  //   },
-  //   {
-  //     text: 'Vue技术栈之VueRouter',
-  //     collapsable: false,
-  //     children: [
-  //       'vue-router-1-index',
-  //       'vue-router-2-evolution',
-  //       'vue-router-3-usage',
-  //       'vue-router-4-source-code-install',
-  //       'vue-router-5-source-code-init',
-  //       'vue-router-6-source-code-matcher',
-  //       'vue-router-7-source-code-history',
-  //       'vue-router-8-source-code-router-link',
-  //       'vue-router-9-source-code-router-view',
-  //     ],
-  //   },
-  //   {
-  //     text: 'Vue技术栈之Vuex',
-  //     collapsable: false,
-  //     children: [
-  //       'vuex-1-index',
-  //       'vuex-2-usage',
-  //       'vuex-3-source-code-install',
-  //       'vuex-4-source-code-instance',
-  //       'vuex-5-source-code-api',
-  //       'vuex-6-source-code-register',
-  //       'vuex-7-source-code-plugin',
-  //     ],
-  //   },
-  //   {
-  //     text: 'Vue技术栈之Axios',
-  //     collapsable: false,
-  //     children: ['axios-index'],
-  //   },
-  //   {
-  //     text: 'Vue技术栈之VueCli',
-  //     collapsable: false,
-  //     children: ['vue-cli-1-index'],
-  //   },
-  //   {
-  //     text: 'Vue工程实践',
-  //     collapsable: false,
-  //     children: ['vue-practice-1-setenv', 'vue-practice-2-jsx'],
-  //   },
-  //   {
-  //     text: '其它杂项',
-  //     collapsable: false,
-  //     children: [
-  //       'compare-vue2-vue3',
-  //       'HTML5_template',
-  //       'outerHTML-innerTHML-outerText-innerText-textContent',
-  //       'JS-callback-Promise-Generator-Async',
-  //     ],
-  //   },
-  // ],
+  '/FE-Framework/Vue/': [
+    {
+      text: 'vue简介',
+      children: [
+        {
+          text: 'vue',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-1-why-use-vue',
+        },
+      ],
+    },
+    {
+      text: 'vue基础之HTML',
+      children: [
+        {
+          text: '2指令directive',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-2-template-directive',
+        },
+        {
+          text: '3插值和v-html',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-3-template-插值-v-html',
+        },
+        {
+          text: '4元素可见性v-if和v-show',
+          link: '/FE-Framework/Vue/vue-tutorial/ue-4-template-v-if-and-v-show',
+        },
+        {
+          text: '5列表渲染v-for',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-5-template-v-for',
+        },
+        {
+          text: '6绑定属性v-bind',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-6-template-v-bind',
+        },
+        {
+          text: '7绑定事件v-on',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-7-template-v-on-and-modifier',
+        },
+        {
+          text: '8表单元素双向绑定v-model',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-8-template-v-model',
+        },
+        {
+          text: '9模板内容的多种写法',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-9-template-render-jsx',
+        },
+        { text: '', link: '/FE-Framework/Vue/vue-tutorial/' },
+      ],
+    },
+    {
+      text: 'vue基础之CSS',
+      collapsable: false,
+      children: [
+        {
+          text: '10绑定样式',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-10-template-v-bind-with-class-and-style',
+        },
+      ],
+    },
+    {
+      text: 'vue基础之JS',
+      children: [
+        {
+          text: '11配置项options',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-11-js-vue-options',
+        },
+        {
+          text: '12数据data',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-12-js-data',
+        },
+        {
+          text: '13计算属性computed',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-13-js-computed',
+        },
+        {
+          text: '14方法methods',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-14-js-methods',
+        },
+        {
+          text: '15监听watch',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-15-js-watch',
+        },
+        {
+          text: '16过滤器filter',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-16-js-filters',
+        },
+        {
+          text: '17混入mixins',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-17-js-mixins',
+        },
+        {
+          text: '18自定义指令directive',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-18-js-directive',
+        },
+        {
+          text: '19生命周期lifecycle',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-19-js-lifecycle',
+        },
+        {
+          text: '20获取DOM元素',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-20-js-ref',
+        },
+        {
+          text: '21配置项对比',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-21-js-data-computed-watch-methods-filters',
+        },
+        {
+          text: '22vue作用域',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-22-vue-scope',
+        },
+        {
+          text: '23异步nextTick',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-23-js-nextTick',
+        },
+      ],
+    },
+    {
+      text: 'vue组件',
+      children: [
+        {
+          text: '24组件内容目录',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-24-component',
+        },
+        {
+          text: '25组件概念',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-25-component-introduce',
+        },
+        {
+          text: '26组件api之prop',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-26-component-prop',
+        },
+        {
+          text: '27组件api之event',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-27-component-event',
+        },
+        {
+          text: '28组件api之slot',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-28-component-slot',
+        },
+        {
+          text: '29组件实例引用ref',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-29-component-ref',
+        },
+        {
+          text: '30组件通信6种方法',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-30-component-组件间通信6种方法',
+        },
+        {
+          text: '31异步组件',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-31-component-异步组件-工厂函数',
+        },
+        {
+          text: '32内置组件transition',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-32-component-transition',
+        },
+        {
+          text: '33内置组件keep-alive',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-33-component-keep-alive',
+        },
+        {
+          text: '34动态组件component',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-35-component-is',
+        },
+      ],
+    },
+    {
+      text: 'vue技术栈之vue-router',
+      children: [
+        {
+          text: '内容目录',
+          link: '/FE-Framework/Vue/vue-router/vue-router-1-index',
+        },
+        {
+          text: '前端路由的发展',
+          link: '/FE-Framework/Vue/vue-router/vue-router-2-evolution',
+        },
+        {
+          text: 'vue-router使用',
+          link: '/FE-Framework/Vue/vue-router/vue-router-3-usage',
+        },
+      ],
+    },
+    {
+      text: 'vue技术栈之vuex',
+      children: [
+        { text: '内容目录', link: '/FE-Framework/Vue/vue-router/vuex-1-index' },
+        { text: 'vuex使用', link: '/FE-Framework/Vue/vue-router/vuex-2-usage' },
+      ],
+    },
+    {
+      text: 'vue技术栈之ssr',
+      children: [
+        { text: '内容目录', link: '/FE-Framework/Vue/vue-ssr/vue-ssr-index' },
+        { text: 'ssr简介', link: '/FE-Framework/Vue/vue-ssr/vue-ssr-intro' },
+        { text: 'ssr实现', link: '/FE-Framework/Vue/vue-ssr/vue-ssr-demo' },
+      ],
+    },
+    { text: 'vue技术栈之axios', link: 'https://www.axios-http.cn/' },
+    { text: 'vue技术栈之vue-cli', link: 'https://cli.vuejs.org/zh/' },
+    { text: 'vue技术栈之vue-loader', link: 'https://vue-loader.vuejs.org/zh/' },
+    { text: 'vue技术栈之vite', link: '/FE-Framework/Vue/vite/' },
+    {
+      text: 'Vue实践总结',
+      children: [
+        {
+          text: '环境变量',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-practice-1-setenv',
+        },
+        {
+          text: 'jsx总结',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-practice-2-jsx',
+        },
+        {
+          text: 'vue异步队伍',
+          link: '/FE-Framework/Vue/vue-tutorial/vue-practice-3-watch-selector',
+        },
+      ],
+    },
+  ],
+  '/FE-Framework/vue-technology-source-code': [
+    {
+      text: '源码vue',
+      children: [
+        {
+          text: '内容目录',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-0-index',
+        },
+        {
+          text: '响应式原理1：侦测数据变化',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-1-reactivity-1-detection-chnage',
+        },
+        {
+          text: '响应式原理2：收集依赖',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-1-reactivity-2-collect-dependency',
+        },
+        {
+          text: '响应式原理3：源发更新',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-1-reactivity-3-dispatch-update',
+        },
+        {
+          text: '响应式原理4：总结',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-1-reactivity-4-summary',
+        },
+        {
+          text: '模板编译1：模板内容的几种形式',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-2-compile-0.md',
+        },
+        {
+          text: '模板编译2：解析器parse',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-2-compile-1-parse.md',
+        },
+        {
+          text: '模板编译3：优化器optimize',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-2-compile-2-optimize.md',
+        },
+        {
+          text: '模板编译4：生成器generate',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-2-compile-3-generate.md',
+        },
+        {
+          text: '视图渲染1：virtual dom 和 vnode',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-3-virtual-dom-1-create-vnode',
+        },
+        {
+          text: '视图渲染2：diff算法',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-3-virtual-dom-2-diff',
+        },
+        {
+          text: '组件1：继承extend',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-4-component-1-extend',
+        },
+        {
+          text: '组件2：实例化',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-4-component-2-createComponent',
+        },
+        {
+          text: '组件3：插槽slot',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-4-component-3-slot',
+        },
+        {
+          text: '组件4：异步组件',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-4-component-4-async',
+        },
+        {
+          text: '组件5：内部组件keep-alive',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-4-component-5-keep-alive',
+        },
+        {
+          text: 'Vue构造函数及实例化',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-5-initialize-1-constructor',
+        },
+        {
+          text: '选项合并mergeOptions',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-5-initialize-2-mergeOptions',
+        },
+        {
+          text: '选项处理options',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-5-initialize-3-options',
+        },
+        {
+          text: '生命周期lifecycle',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-6-extension-1-lifecycle',
+        },
+        {
+          text: '事件中心event',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-6-extension-2-event',
+        },
+        {
+          text: '异步任务nextTick',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-6-extension-3-nextTick',
+        },
+        {
+          text: '指令directive',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-6-extension-4-directive',
+        },
+        {
+          text: '过滤器filter',
+          link: '/FE-Framework/vue-technology-source-code/vue-source-code-6-extension-5-filter',
+        },
+      ],
+    },
+    {
+      text: '源码vue-router',
+      children: [
+        {
+          text: '1安装install',
+          link: '/FE-Framework/vue-technology-source-code/vue-router-source-code-1-install',
+        },
+        {
+          text: '2初始化init',
+          link: '/FE-Framework/vue-technology-source-code/vue-router-source-code-2-init',
+        },
+        {
+          text: '3匹配路由matcher',
+          link: '/FE-Framework/vue-technology-source-code/vue-router-source-code-3-matcher',
+        },
+        {
+          text: '路由对象',
+          link: '/FE-Framework/vue-technology-source-code/vue-router-source-code-4-history',
+        },
+        {
+          text: '导航router-link',
+          link: '/FE-Framework/vue-technology-source-code/vue-router-source-code-5-router-link',
+        },
+        {
+          text: '视图router-view',
+          link: '/FE-Framework/vue-technology-source-code/vue-router-source-code-6-router-view',
+        },
+      ],
+    },
+    {
+      text: '源码vuex',
+      children: [
+        {
+          text: '1注册',
+          link: '/FE-Framework/vue-technology-source-code/vuex-source-code-1-install',
+        },
+        {
+          text: '2实例化instance',
+          link: '/FE-Framework/vue-technology-source-code/vuex-source-code-2-instance',
+        },
+        {
+          text: '3接口api',
+          link: '/FE-Framework/vue-technology-source-code/vuex-source-code-3-api',
+        },
+        {
+          text: '4路由注册register',
+          link: '/FE-Framework/vue-technology-source-code/vuex-source-code-4-register',
+        },
+        {
+          text: '5插件实现plugin',
+          link: '/FE-Framework/vue-technology-source-code/vuex-source-code-5-plugin',
+        },
+      ],
+    },
+    // {
+    //   text: '源码vue-cli',
+    //   children: [
+    //     { text: '', link: '/FE-Framework/vue-technology-source-code/' },
+    //   ]
+    // },
+    // {
+    //   text: '源码vue-loader',
+    //   children: [
+    //     { text: '', link: '/FE-Framework/vue-technology-source-code/' },
+    //   ]
+    // },
+    {
+      text: '源码vue-server-render',
+      children: [
+        {
+          text: 'vue-ssr',
+          link: '/FE-Framework/vue-technology-source-code/vue-ssr-source-code',
+        },
+      ],
+    },
+  ],
   '/FE-Framework/React/': [
     {
       text: 'React基础',
@@ -470,56 +721,64 @@ module.exports = {
       link: '/FE-Framework/React/react-hooks',
     },
   ],
-  // '/FE-Engineering/Webpack/': [
-  //   {
-  //     text: '基础入门',
-  //     collapsable: false,
-  //     children: ['Intro', 'Module', 'InstallAndUsage'],
-  //   },
-  //   {
-  //     text: '配置项',
-  //     collapsable: false,
-  //     children: ['Entry', 'Output'],
-  //   },
-  //   {
-  //     text: '项目构建实践',
-  //     collapsable: false,
-  //     children: ['Html'],
-  //   },
-  //   {
-  //     text: '进阶深入源码',
-  //     collapsable: false,
-  //     children: ['ResourceCode'],
-  //   },
-  // ],
-  // '/FE-Engineering/Lint/': [
-  //   {
-  //     text: '编码规范',
-  //     collapsable: false,
-  //     children: [
-  //       'EditorConfig',
-  //       'Eslint',
-  //       'Prettier',
-  //       'Stylelint',
-  //       'Husky',
-  //       'lint-staged',
-  //     ],
-  //   },
-  // ],
-  // '/FE-Engineering/Git/': [
-  //   {
-  //     text: '源代码管理',
-  //     collapsable: false,
-  //     children: ['GitInstall', 'GitUse', 'GitFlow', 'GitCommit'],
-  //   },
-  // ],
-  // '/FE-Engineering/Doc/': [
-  //   {
-  //     text: '',
-  //     collapsable: false,
-  //     children: ['Vuepress'],
-  //   },
-  // ],
+  '/FE-Engineering/dev-linter/': [
+    { text: '概述', link: '/FE-Engineering/dev-linter/index' },
+    { text: 'Eslint', link: '/FE-Engineering/dev-linter/Eslint' },
+    { text: 'Stylelint', link: '/FE-Engineering/dev-linter/Stylelint' },
+    { text: 'Prettier', link: '/FE-Engineering/dev-linter/Prettier' },
+    { text: 'Husky', link: '/FE-Engineering/dev-linter/Husky' },
+    { text: 'lint-staged', link: '/FE-Engineering/dev-linter/lint-staged' },
+    { text: 'EditorConfig', link: '/FE-Engineering/dev-linter/EditorConfig' },
+    { text: 'git-commit', link: '/FE-Engineering/dev-linter/git-commit' },
+    { text: '整合实践', link: '/FE-Engineering/dev-linter/practice' },
+  ],
+  '/FE-Engineering/dev-test/': [
+    { text: '概述', link: '/FE-Engineering/dev-test/index' },
+    { text: 'Jest', link: '/FE-Engineering/dev-test/1-jest' },
+    { text: 'vue项目集成jest', link: '/FE-Engineering/dev-test/2-jest-config' },
+    { text: '测试vue组件', link: '/FE-Engineering/dev-test/3-vue-test' },
+    {
+      text: '测试vue-router',
+      link: '/FE-Engineering/dev-test/4-vue-router-test',
+    },
+    { text: '测试vuex', link: '/FE-Engineering/dev-test/5-vuex-test' },
+    { text: '测试vue-ssr', link: '/FE-Engineering/dev-test/6-vue-ssr-test' },
+    { text: '快照测试', link: '/FE-Engineering/dev-test/7-snapshot-test' },
+  ],
+  '/FE-Engineering/ci-webpack/': [
+    { text: '介绍', link: '/FE-Engineering/ci-webpack/intro' },
+    { text: '配置', link: '/FE-Engineering/ci-webpack/config' },
+    { text: '入口', link: '/FE-Engineering/ci-webpack/entry' },
+    { text: 'HTML', link: '/FE-Engineering/ci-webpack/html' },
+    { text: 'Assets', link: '/FE-Engineering/ci-webpack/asset' },
+    { text: 'CSS', link: '/FE-Engineering/ci-webpack/css' },
+    { text: 'js', link: '/FE-Engineering/ci-webpack/js' },
+    { text: '开发', link: '/FE-Engineering/ci-webpack/dev' },
+    { text: '生产', link: '/FE-Engineering/ci-webpack/prod' },
+    { text: '优化', link: '/FE-Engineering/ci-webpack/perf' },
+    { text: '环境变量', link: '/FE-Engineering/ci-webpack/env' },
+    { text: 'webpack chain', link: '/FE-Engineering/ci-webpack/webpack-chain' },
+    { text: '热更新源理', link: '/FE-Engineering/ci-webpack/hmr' },
+  ],
+  '/FE-Engineering/ci-gulp/': [
+    { text: '前端工作流', link: '/FE-Engineering/ci-gulp/workflow' },
+    { text: 'gulp 任务', link: '/FE-Engineering/ci-gulp/gulp_task' },
+    { text: 'gulp 流', link: '/FE-Engineering/ci-gulp/gulp_stream' },
+    { text: 'gulp 虚拟文件vinyl', link: '/FE-Engineering/ci-gulp/gulp_vinyl' },
+  ],
+  '/FE-Engineering/ci-vite/': [
+    { text: '使用', link: '/FE-Engineering/ci-vite/usage' },
+    { text: 'CLI', link: '/FE-Engineering/ci-vite/cli' },
+    { text: '开发服务', link: '/FE-Engineering/ci-vite/server' },
+    { text: '静态资源处理', link: '/FE-Engineering/ci-vite/assets' },
+    { text: '预构建', link: '/FE-Engineering/ci-vite/optimize' },
+    { text: '插件', link: '/FE-Engineering/ci-vite/plugin' },
+    { text: 'Connect.js', link: '/FE-Engineering/ci-vite/connect' },
+  ],
+  '/FE-Engineering/cd-deploy/': [
+    { text: 'FTP文件上传', link: '/FE-Engineering/cd-deploy/ftp' },
+    { text: 'Github Actons', link: '/FE-Engineering/cd-deploy/github-actions' },
+  ],
   '/Browser/2-DOM/': [
     {
       text: '',
@@ -667,6 +926,16 @@ module.exports = {
         { text: '安装', link: '/Tools/vim/install' },
         { text: '概念', link: '/Tools/vim/concept' },
         { text: '快捷键', link: '/Tools/vim/shortcuts' },
+      ],
+    },
+  ],
+  '/Tools/git/': [
+    {
+      text: 'git',
+      children: [
+        { text: '安装', link: '/Tools/git/install' },
+        { text: '使用', link: '/Tools/git/usage' },
+        { text: '工作流', link: '/Tools/git/git-flow' },
       ],
     },
   ],

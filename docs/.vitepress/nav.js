@@ -22,16 +22,19 @@ module.exports = [
       {
         text: 'Web端',
         items: [
-          { text: 'Vue', link: '/FE-Framework/Vue/' },
-          { text: 'React', link: '/FE-Framework/React/' },
+          { text: 'Vue技术栈', link: '/FE-Framework/Vue/' },
+          {
+            text: 'Vue技术栈源码',
+            link: '/FE-Framework/vue-technology-source-code',
+          },
+          { text: 'React技术栈', link: '/FE-Framework/React/' },
         ],
       },
       // {
       //   text: 'Mobile移动端',
       //   items: [
       //     { text: 'H5', link: '/FE-Framework/H5/' },
-      //     { text: 'React-Native', link: '/FE-Framework/React-Native/' },
-      //     { text: 'Mini-app', link: '/FE-Framework/mini-app/' },
+      //     { text: '小程序', link: '/FE-Framework/mini-app/' },
       //   ],
       // },
       // {
@@ -42,41 +45,112 @@ module.exports = [
       //   ],
       // },
       // {
-      //   text: 'Multi-End跨端',
-      //   items: [
-      //     { text: 'Flutter', link: '/FE-Framework/flutter/' },
-      //     { text: 'uni-app', link: '/FE-Framework/uni-app/' },
-      //     { text: 'Taro', link: '/FE-Framework/taro/' },
-      //   ],
-      // },
-      // {
-      //   text: '数据可视化',
-      //   items: [
-      //     { text: 'SVG', link: '/FE-Framework/SVG/' },
-      //     { text: 'Canvas', link: '/FE-Framework/Canvas/' },
-      //     { text: 'WebGl', link: '/FE-Framework/WebGL/' },
-      //   ],
+      //   text: 'Multi跨端',
+      //   items: [{ text: 'Flutter', link: '/FE-Framework/flutter/' }],
       // },
     ],
   },
   {
     text: '前端工程化',
     items: [
-      { text: '初始化', link: '/FE-Engineering/1-initialization' },
-      { text: '开发', link: '/FE-Engineering/2-development' },
-      { text: '构建', link: '/FE-Engineering/3-build' },
-      { text: '部署', link: '/FE-Engineering/4-deployment' },
-      { text: '运维', link: '/FE-Engineering/5-operations' },
+      { text: '概念理解', link: '/FE-Engineering/intro-fe-engineering' },
+      {
+        text: '初始化',
+        items: [
+          {
+            text: '配置环境',
+            link: '/FE-Engineering/initial/dev-env',
+          },
+          { text: '脚手架CLI', link: '/FE-Engineering/initial/cli' },
+          {
+            text: '工程目录',
+            link: '/FE-Engineering/initial/project-directory',
+          },
+          {
+            text: 'package.json',
+            link: '/FE-Engineering/initial/package-json',
+          },
+          {
+            text: 'browserslist',
+            link: '/FE-Engineering/initial/browserslist',
+          },
+        ],
+      },
+      {
+        text: '开发DEV',
+        items: [
+          { text: '本地服务', link: '/FE-Engineering/dev-server' },
+          { text: '开发规范', link: '/FE-Engineering/dev-linter/' },
+          { text: 'mock环境', link: '/FE-Engineering/dev-mock/' },
+          { text: '测试', link: '/FE-Engineering/dev-test/' },
+          { text: '调试', link: '/FE-Engineering/dev-debug' },
+        ],
+      },
+      {
+        text: '构建CI',
+        items: [
+          { text: 'Babel', link: '/FE-Engineering/ci-babel/' },
+          { text: 'Postcss', link: '/FE-Engineering/ci-postcss/' },
+          { text: 'Webapck', link: '/FE-Engineering/ci-webpack/' },
+          { text: 'rollup', link: '/FE-Engineering/ci-rollup' },
+          { text: 'vite', link: '/FE-Engineering/ci-vite/' },
+          { text: 'gulp', link: '/FE-Engineering/ci-gulp/' },
+          { text: 'run-script', link: '/FE-Engineering/ci-run-script/' },
+        ],
+      },
+      {
+        text: '部署CD',
+        items: [
+          { text: '自动化部署', link: '/FE-Engineering/cd-deploy/' },
+          { text: '发布策略', link: '/FE-Engineering/cd-release/' },
+        ],
+      },
+      {
+        text: '运维OP',
+        items: [
+          { text: '数据监控', link: '/FE-Engineering/op-monitor/' },
+          { text: '性能优化', link: '/FE-Engineering/op-performance/' },
+        ],
+      },
     ],
   },
   {
     text: '前端技术方向',
     items: [
       { text: '响应式网页设计', link: '/FE-Technology/responsive-web-design' },
-      { text: '服务端渲染', link: '/FE-Technology/server-side-render' },
-      { text: '微前端', link: '/FE-Technology/micro-frontend' },
       { text: 'BFF', link: '/FE-Technology/backend-for-frontend' },
       { text: 'Serverless', link: '/FE-Technology/serverless' },
+      {
+        text: '服务端渲染',
+        items: [
+          { text: '概念理解', link: '/FE-Technology/server-side-render/index' },
+          { text: '实现', link: '/FE-Technology/server-side-render/ssr-demo' },
+          { text: 'nuxtjs', link: '/FE-Technology/server-side-render/nuxtjs' },
+        ],
+      },
+      {
+        text: '微前端',
+        items: [
+          {
+            text: '微前端概念',
+            link: '/FE-Technology/micro-frontend/intro-micro-fe',
+          },
+          { text: 'qiankun', link: '/FE-Technology/micro-frontend/qiankun' },
+          {
+            text: 'monorepo工程',
+            link: '/FE-Technology/micro-frontend/monorepo',
+          },
+          { text: 'lerna', link: '/FE-Technology/micro-frontend/lerna' },
+        ],
+      },
+      {
+        text: '可视化',
+        items: [
+          { text: 'SVG', link: '/FE-Technology/visualize/svg/' },
+          { text: 'Canvas', link: '/FE-Technology/visualize/canvas/' },
+          { text: 'WebGl', link: '/FE-Technology/visualize/webgl/' },
+        ],
+      },
     ],
   },
   {
@@ -88,20 +162,38 @@ module.exports = [
       { text: '渲染', link: '/Browser/4-render/' },
       { text: '缓存', link: '/Browser/5-cache/' },
       { text: '本地存储', link: '/Browser/6-storage/' },
-      { text: '网络安全', link: '/Browser/7-security/' },
-      { text: '新api', link: '/Browser/8-new-api/' },
+      { text: '安全', link: '/Browser/7-security/' },
+      { text: '新API', link: '/Browser/8-new-api/' },
     ],
   },
   {
     text: '网络',
     items: [
-      { text: '网络协议', link: '/Network/protocol/' },
-      { text: 'Ajax', link: '/Network/ajax/' },
-      { text: 'Axios', link: '/Network/axios/' },
-      { text: 'Fetch', link: '/Network/fetch/' },
-      { text: '双向通信', link: '/Network/duplex-service/' },
-      { text: 'RESTful', link: '/FE-Engineering/Api/restful/' },
-      { text: 'GraphQL', link: '/FE-Engineering/Api/graphql/' },
+      {
+        text: '网络协议',
+        items: [
+          { text: 'HTTP', link: '/Network/protocol/index' },
+          { text: 'TCP/UDP', link: '/Network/protocol/tcp-udp' },
+          { text: 'DNS', link: '/Network/protocol/dns' },
+        ],
+      },
+      {
+        text: '网络通信',
+        items: [
+          { text: 'XMLHttpRequest', link: '/Network/XMLHttpRequest' },
+          { text: 'Axios', link: '/Network/axios/' },
+          { text: 'Fetch', link: '/Network/fetch/' },
+          { text: 'EventSource', link: '/Network/EventSource' },
+          { text: 'WebSocket', link: '/Network/websocket' },
+        ],
+      },
+      {
+        text: '接口规范',
+        items: [
+          { text: 'RESTful', link: '/Network/restful/' },
+          { text: 'GraphQL', link: '/Network/graphql/' },
+        ],
+      },
     ],
   },
   {
@@ -134,9 +226,27 @@ module.exports = [
     ],
   },
   {
+    text: '面试',
+    items: [
+      { text: 'HTML', link: '/Interview/html/' },
+      { text: 'CSS', link: '/Interview/css/' },
+      { text: 'JS', link: '/Interview/js' },
+      { text: '浏览器', link: '/Interview/browser/' },
+      { text: '网络', link: '/Interview/network/' },
+      { text: 'vue全家桶', link: '/Interview/vue/' }, // vue vue-router vuex vue-ssr vue-cli vue-loader vite
+      { text: 'webpack', link: '/Interview/webpack/' }, // webpack webpack-dev-server hmr
+      { text: 'babel', link: '/Interview/babel/' },
+      { text: '项目经验', link: '/Interview/project/' },
+      { text: '手写代码', link: '/Interview/show-code/' },
+      { text: '常用算法', link: '/Interview/algorithm/' },
+      { text: '设计模式', link: '/Interview/design-pattern/' },
+    ],
+  },
+  {
     text: '工具',
     items: [
-      // { text: 'Vscode', link: '/Tools/vscode/' },
+      { text: 'Git', link: '/Tools/git/' },
+      { text: 'Vscode', link: '/Tools/vscode/' },
       { text: 'Vim', link: '/Tools/vim/' },
       { text: 'Window Terminal', link: '/Tools/window-terminal' },
       { text: 'Powershell', link: '/Tools/powershell' },
