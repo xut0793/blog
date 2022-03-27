@@ -58,7 +58,7 @@ HTML 解析器总是从前往后解析，每当遇到开始标签，使用 start
 - 如果是，再进一步以各种类型的正则来匹配片段特征，进行相应的处理。因为以此开头类型太多了，比如开始标签、结束标签、注释等。
 - 如果不是以 `<` 开始，那一定是文本片段
 
-![vue-source-code-compile-parse.png](../image/vue-source-complie-parse.png)
+![vue-source-code-compile-parse.png](../Vue/image/vue-source-complie-parse.png)
 
 ## 源码解析
 

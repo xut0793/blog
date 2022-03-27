@@ -74,7 +74,7 @@ Vue 中实现 JSX 语法的 Babel 插件也是一直在更新，所以安装不�
 
 此插件支持 vue 2.x 版本语法，并且要求 Babel 6.x 。安装该插件的同时要附加安装一些其它语法支持的插件，并且配合 Babel 的默认预设插件 babel-preset-env
 
-```sh
+```
 npm install --save-dev  babel-plugin-syntax-jsx  babel-plugin-transform-vue-jsx  babel-helper-vue-jsx-merge-props
 npm i -D babel-preset-env
 ```
@@ -90,7 +90,7 @@ npm i -D babel-preset-env
 ### 插件2： babel-preset-jsx
 
 这个是 Babel 的一个预设配置，它集成了更多的 JSX 语法转换相关的插件，实现了更多 vue JSX 便利的写法，并且要求 Babel 7.x 以上。
-```sh
+```
 npm install --save-dev @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props
 ```
 因为它是 Babel 的一个预设包，所以 babelrc.js 配置如下：
@@ -124,7 +124,7 @@ module.exports = {
 
 这是最新 JSX 插件，要求 Vue 3.x 和 Babel 7.x 以上。它支持 vue 3.0 语法，并且支持 vue 指令参数 args 的写法。
 
-```sh
+```
 npm install @vue/babel-plugin-jsx -D
 ```
 Babel 配置，要配置 Babel 默认的预设 babel-preset-env

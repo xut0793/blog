@@ -112,7 +112,7 @@ console.log(id.description)           // our custom value
 console.log(typeof id === 'symbol')  // true
 ```
 id的类型仍属于基本类型，之所以能打点调用`id.description`属性，其实同 `'abc'.toUpperCase()`一样，也是ES内部创建了Symbol类型的包装对象来借调`Symbol.prototype`原型对象上的属性。
-> 关于原始值与包装对象的内容可以查看[原始值与包装对象](/ES/type-8-primitive-wrapper)
+> 关于原始值与包装对象的内容可以查看[原始值与包装对象](./type-8-primitive-wrapper)
 
 描述信息可能仅在代码调试时有用，Symbol()创建的值是唯一的，即使拥有相同的描述信息。描述只是一种备注信息，不影响任何东西。
 ```js
@@ -278,9 +278,9 @@ Symbol 类还具有一些其它的静态属性，被称为**系统 Symbol**。
 它们是在某些内置对象中找到的某些特定方法属性的 symbol。 暴露出这些 symbol 使得开发都可以直接访问这些行为；这样的访问可能是有用的，例如在定义自定义类的时候。
 
 前面章节已经讲解过的有：
-1. [Symbol.hasInstance](/ES/type-7-checking.html#instanceof)
-1. [Symbol.toStringTag](/ES/type-7-checking.html#object-prototype-tostring-调用原理)
-1. [Symbol.toPrimitive](/ES/type-9-conversion.html#对象转原始值的隐式转换)
+1. [Symbol.hasInstance](./type-7-checking.html#instanceof)
+1. [Symbol.toStringTag](./type-7-checking.html#object-prototype-tostring-调用原理)
+1. [Symbol.toPrimitive](./type-9-conversion.html#对象转原始值的隐式转换)
 
 更多系统Symbol可以查看[MDN Symbol](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 

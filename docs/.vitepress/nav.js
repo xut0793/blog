@@ -119,15 +119,7 @@ module.exports = [
     items: [
       { text: '响应式网页设计', link: '/FE-Technology/responsive-web-design' },
       { text: 'BFF', link: '/FE-Technology/backend-for-frontend' },
-      { text: 'Serverless', link: '/FE-Technology/serverless' },
-      {
-        text: '服务端渲染',
-        items: [
-          { text: '概念理解', link: '/FE-Technology/server-side-render/index' },
-          { text: '实现', link: '/FE-Technology/server-side-render/ssr-demo' },
-          { text: 'nuxtjs', link: '/FE-Technology/server-side-render/nuxtjs' },
-        ],
-      },
+      // { text: 'Serverless', link: '/FE-Technology/serverless' },
       {
         text: '微前端',
         items: [
@@ -200,6 +192,7 @@ module.exports = [
     text: '服务端',
     items: [
       { text: 'Node', link: '/Server/node/' },
+      { text: 'Connect', link: '/Server/connect/' },
       { text: 'Express', link: '/Server/express/' },
       { text: 'Koa', link: '/Server/koa/' },
       { text: 'Nest', link: '/Server/nest/' },
@@ -221,27 +214,27 @@ module.exports = [
       { text: '数据结构', link: '/Software/data-structure/' },
       { text: '算法', link: '/Software/algorithm/' },
       { text: '设计模式', link: '/Software/design-pattern/' },
-      { text: '架构模式', link: '/Software/architectural-pattern/' },
-      { text: '编程范式', link: '/Software/programming-paradigm/' },
+      // { text: '架构模式', link: '/Software/architectural-pattern/' },
+      // { text: '编程范式', link: '/Software/programming-paradigm/' },
     ],
   },
-  {
-    text: '面试',
-    items: [
-      { text: 'HTML', link: '/Interview/html/' },
-      { text: 'CSS', link: '/Interview/css/' },
-      { text: 'JS', link: '/Interview/js' },
-      { text: '浏览器', link: '/Interview/browser/' },
-      { text: '网络', link: '/Interview/network/' },
-      { text: 'vue全家桶', link: '/Interview/vue/' }, // vue vue-router vuex vue-ssr vue-cli vue-loader vite
-      { text: 'webpack', link: '/Interview/webpack/' }, // webpack webpack-dev-server hmr
-      { text: 'babel', link: '/Interview/babel/' },
-      { text: '项目经验', link: '/Interview/project/' },
-      { text: '手写代码', link: '/Interview/show-code/' },
-      { text: '常用算法', link: '/Interview/algorithm/' },
-      { text: '设计模式', link: '/Interview/design-pattern/' },
-    ],
-  },
+  // {
+  //   text: '面试',
+  //   items: [
+  //     { text: 'HTML', link: '/Interview/html/' },
+  //     { text: 'CSS', link: '/Interview/css/' },
+  //     { text: 'JS', link: '/Interview/js' },
+  //     { text: '浏览器', link: '/Interview/browser/' },
+  //     { text: '网络', link: '/Interview/network/' },
+  //     { text: 'vue全家桶', link: '/Interview/vue/' }, // vue vue-router vuex vue-ssr vue-cli vue-loader vite
+  //     { text: 'webpack', link: '/Interview/webpack/' }, // webpack webpack-dev-server hmr
+  //     { text: 'babel', link: '/Interview/babel/' },
+  //     { text: '项目经验', link: '/Interview/project/' },
+  //     { text: '手写代码', link: '/Interview/show-code/' },
+  //     { text: '常用算法', link: '/Interview/algorithm/' },
+  //     { text: '设计模式', link: '/Interview/design-pattern/' },
+  //   ],
+  // },
   {
     text: '工具',
     items: [

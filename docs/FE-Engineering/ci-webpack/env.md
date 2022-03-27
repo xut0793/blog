@@ -51,7 +51,7 @@ console.log(process.env.FOO)
 // b.js
 console.log(process.env.FOO)
 ```
-```sh
+```
 node a.js # 输出 bar
 node b.js # 输出 undefined
 ```
@@ -93,7 +93,7 @@ console.log(process.env.TEST);
 ## process.argv
 
 除了在 js 文件中直接设置 `process.env` 对象属性，常见的操作是通过命令行传入参数，或者在 run-script 中传入参数，比如：
-```sh
+```
 # cmd powershell git-bash
 node test.js a=1 b=2 c
 ```
@@ -113,7 +113,7 @@ process.argv.forEach((val, index) => {
   console.log(`${index}: ${val}`);
 });
 ```
-```sh
+```
 node test.js a=1 b=2 c d
 ```
 ```js
@@ -133,7 +133,7 @@ node test.js a=1 b=2 c d
 `process.argv` 要特别区分`process.execArgv`：
 `process.execArgv` 属性返回当 Node.js 进程被启动时，Node.js 特定的命令行选项。 这些特定的选项不会在 `process.argv` 返回的数组中出现。
 同样的，`process.execArgv` 也不会包含 Node.js 的可执行脚本名称后面出现的非特定选项。
-```sh
+```
 node --harmony script.js --version
 ```
 ```js
@@ -158,7 +158,7 @@ consoe.log(process.argv) // 输出 ['D:\nodejs\node.exe', 'E:\develop\test\argst
 在 linux 系统下操作环境变量
 > git bash 中操作同 linux 系统。
 
-```sh
+```
 # 查看所有的环境变量
 env
 
@@ -178,7 +178,7 @@ unset NODE_ENV
 在 window 系统的 CMD 中操作环境变量。
 
 同样的，命令行中设置和修改的环境变量只会在当前窗口下有效，设置和修改只是临时缓存，一旦关闭命令窗口，环境变量就会失效。如果要设置真实的持久性的环境变量，可以去我的电脑->属性->更改设置->高级->环境变量，添加和设置环境变量，然后注销/重启。
-```sh
+```
 # 查看所有环境变量     
 set
 
@@ -196,7 +196,7 @@ set NODE_ENV=
 ```
 
 在 window 10 以上系统中使用 powershell 终端上操作环境变量。
-```sh
+```
 # 查看所有环境变量  
 ls env:
 
@@ -355,7 +355,7 @@ function getEnvVars(envSetters) {
 ```
 
 关于 vue-cli-service 加载 .env 文件的优先级顺序，可以查看[vue-cli 环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
-```sh
+```
 .env                # 在所有的环境中被载入
 .env.local          # 在所有的环境中被载入，但会被 git 忽略
 .env.[mode]         # 只在指定的模式中被载入

@@ -59,12 +59,12 @@ Postcss 同其它 js 工具一样，遵循了大部分 js 工具库类似的结�
 ### postcss-cli 命令行工具
 
 安装：
-```sh
+```
 npm i -D postcss postcss-cli
 ```
 
 例子：
-```sh
+```
 postcss input.css -o output.css                       # 基本使用
 postcss src/**/*.css --base src --dir build           # Glob Pattern 匹配文件，并指定输出目录
 postcss input.css -u autoprefixer -o output.css       # 使用插件 Piping 
@@ -176,7 +176,7 @@ ctx = {
 ```
 
 假如命令行使用如下：
-```sh
+```
 NODE_ENV=production postcss input.sss -p sugarss -o output.css -m 
 ```
 则配置文件导出函数的入参 ctx 为：

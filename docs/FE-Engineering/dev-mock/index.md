@@ -73,18 +73,18 @@ Mock.js因为两个重要的特性使其流行:
 - 拦截 Ajax 请求：不需要修改既有代码，就可以拦截 Ajax 请求，返回模拟的响应数据。安全又便捷。
 
 ### 安装
-```sh
+```
 npm i -D mockjs
 ```
 ### API
 最主要的 API：`Mock.mock(url?, type?, template | function(options))`
 
-| 参数名      | 参数需求 | 参数描述     |  例子 |
-| :---:        |    :----:   |          ---: | :--- |
-url	   |  可选: URL 字符串或 URL 正则	| 拦截请求的地址 |	/api/users |
-type   |	可选   |	拦截Ajax 请求类型	| GET、POST |
-template|	可以是对象或字符串 |	生成数据的模板或 @占位符 |	`{'data|1-10':['mock'] }`、`'@EMAIL'` |
-function(options)|	函数返回值作为响应数据 |	options 指向本次请求的 Ajax 选项集，含有 url、type 和 body 三个属性 |	`Mock.mock( url, type, function( options ){} )` |
+|      参数名       |          参数需求           |                                                            参数描述 | 例子                                            |
+| :---------------: | :-------------------------: | ------------------------------------------------------------------: | :---------------------------------------------- |
+|        url        | 可选: URL 字符串或 URL 正则 |                                                      拦截请求的地址 | /api/users                                      |
+|       type        |            可选             |                                                   拦截Ajax 请求类型 | GET、POST                                       |
+|     template      |     可以是对象或字符串      |                                            生成数据的模板或 @占位符 | `{'data|1-10':['mock'] }`、`'@EMAIL'`           |
+| function(options) |   函数返回值作为响应数据    | options 指向本次请求的 Ajax 选项集，含有 url、type 和 body 三个属性 | `Mock.mock( url, type, function( options ){} )` |
 
 ```js
 Mock.mock( template ) // 根据数据模板生成模拟数据。
@@ -231,13 +231,13 @@ export default {
 1)、新建`.env`环境文件，增加 `VUE_APP_MOCK` 环境变量
 > .env 环境文件是在 @vue/cli4 中支持，之前的脚手架项目可以通过 cross-env 在 run-script 中设置
 > mock: cross-env NODE_ENV=mock webpack server
-```sh
+```
 # .env.mock
 NODE_ENV=development
 VUE_APP_MOCK=true
 ```
 2)、 修改 main.js 文件
-```patch
+```
 // main.js
 - import './api/__api_mock__/index.js'
 + if (process.env.VUE_APP_MOCK) {
@@ -280,7 +280,7 @@ export default {
 }
 ```
 修改 mock 注册逻辑
-```patch
+```
 // api/__api_mock__/index.js
 import Mock from 'mockjs'
 import user from './user.js'
@@ -459,7 +459,7 @@ webpack-dev-server 提供了另一个重要功能就是接口代理`proxy`，它
 1. 开启 json-server 本地服务
 
 安装
-```sh
+```
 npm install -D json-server
 ```
 创建的模板数据
@@ -505,7 +505,7 @@ module.exports = () => db
 "json-server": "json-server --config=./src/api/mock_proxy/json-server.json ./src/api/mock_proxy/db.js",
 ```
 启动服务
-```sh
+```
 npm run json-server
 ```
 
@@ -783,7 +783,7 @@ module.exports = (api) => {
 
 [whistle 文档](http://wproxy.org/whistle/)
 
-```sh
+```
 # 全局安装
 npm i -g whistle
 

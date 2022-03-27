@@ -1,7 +1,7 @@
 # 原型和原型链
 
 
-在本章第一节[理解对象和面向对象](/ES/oop-0-index)，我们知道JS的创造选择了基于原型引用的方式，并且也提到了原型机制的历史。
+在本章第一节[理解对象和面向对象](./oop-0-index)，我们知道JS的创造选择了基于原型引用的方式，并且也提到了原型机制的历史。
 
 在这一节的内容，我们主要更深入理解和区别ES中原型相关的三个概念。
 
@@ -9,15 +9,15 @@
 
 ## 对象原型 `[[prototype]]`
 
-回顾本章第一节[理解对象和面向对象](/ES/oop-0-index)的内容，对于ES语言的原型系统概括起来就两点，也就是原型对象和原型链的概念：
+回顾本章第一节[理解对象和面向对象](./oop-0-index)的内容，对于ES语言的原型系统概括起来就两点，也就是原型对象和原型链的概念：
 
 - **在 JavaScript 中，对象有一个特殊的内部属性 `[[Prototype]]`, 它要么为 null，要么就是对另一个对象的引用，这个被引用的对象就被称为“原型”，或者叫“原型对象”。**
 - **读一个属性，如果对象本身没有，则会继续访问对象的原型，直到原型为null或者找到为止，这种属性访问形成的路径就是原型链。**
 
 ```js
     -----------------            -------------------            -----------------
-    |     third     |            |     second      |            |     first     |
-    |    -------    |            |     --------    |            |    -------    |
+    | third |  | second |  | first |
+    | ----- ||     --------    |            |    -------    |
     | [[prototype]] |----------->|  [[prototype]]  |----------->| [[prototype]] |
     -----------------            -------------------            -----------------
     /**
@@ -134,7 +134,7 @@ admin.getIdentityInfo()   // Error
 
 ## 函数的原型属性 `F.prototype`
 
-在第一节[理解对象和面向对象](/ES/oop-0-index.html#面向对象编程)中提到过，为了实现类似“基于类”语言的语法设施，在JS中实现了一种`new + Function`创建对象的方式。
+在第一节[理解对象和面向对象](./oop-0-index.html#面向对象编程)中提到过，为了实现类似“基于类”语言的语法设施，在JS中实现了一种`new + Function`创建对象的方式。
 
 在JS中，函数是一类特殊的对象（函数是一等公民）。
 
@@ -143,7 +143,7 @@ admin.getIdentityInfo()   // Error
 
 即默认情况下，所以函数都有一个类似<strong>`F.prototype = {constructor：F}`</strong>的关系。
 
-> 注意这里的属性的区别，`[[prototype]]`是内部属性，语言实现内部使用，外部无法调用。而函数对象的prototype属性是常规属性。<br> JavaScript 从一开始就有了原型继承。这是 JavaScript 编程语言的核心特性之一。<br>但是在过去，没有直接对其进行访问的方式,唯一可靠的方法就早通过构造函数的 "prototype" 属性来访问。<br>鉴于对象的`[[prototype]]`内部属性访问只能通过`obj.constructor.prototype`这样变扭的方式，所以各浏览器厂商自己实现了`__proto__`属性，但它不是语言规范中定义的。在ES6中才实现了`Objecdt.getPrototypeOf()`方法，同`__proto__`功能一样。点击查看[内部属性](/ES/oop-2-object-property.html#内部属性-internal-properties)
+> 注意这里的属性的区别，`[[prototype]]`是内部属性，语言实现内部使用，外部无法调用。而函数对象的prototype属性是常规属性。<br> JavaScript 从一开始就有了原型继承。这是 JavaScript 编程语言的核心特性之一。<br>但是在过去，没有直接对其进行访问的方式,唯一可靠的方法就早通过构造函数的 "prototype" 属性来访问。<br>鉴于对象的`[[prototype]]`内部属性访问只能通过`obj.constructor.prototype`这样变扭的方式，所以各浏览器厂商自己实现了`__proto__`属性，但它不是语言规范中定义的。在ES6中才实现了`Objecdt.getPrototypeOf()`方法，同`__proto__`功能一样。点击查看[内部属性](./oop-2-object-property.html#内部属性-internal-properties)
 
 ### new F() 创建对象
 
@@ -251,7 +251,7 @@ Object.defineProperty(Student.prototype, 'constructor', {
 ```js
 tom instanceof Student   // false 
 ```
-> 关于 instanceof 运算的检测原理可以查看[类型检测](/ES/type-7-checking)
+> 关于 instanceof 运算的检测原理可以查看[类型检测](./type-7-checking)
 
 
 ## 原生原型 `Object.prototype`

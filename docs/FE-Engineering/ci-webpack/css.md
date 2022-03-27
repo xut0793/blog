@@ -108,7 +108,7 @@ module.exports = {
   },
 }
 ```
-```sh
+```
 npx webpack --config=./css-demo/webpack.config.js
 ```
 此时，webpack 会报错，提示需要配置合适的 loader 处理 css 类型的文件。
@@ -119,11 +119,11 @@ You may need an appropriate loader to handle this file type, currently no loader
 ## css-loader
 
 添加 css 文件的加载器 `css-loader`
-```sh
+```
 npm i -D css-loader
 ```
 更改配置，并添加 `HtmlWebpackPlugin` 以便自动将 bundle 注入 html 中。
-```patch
+```
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 module.exports = {
@@ -167,7 +167,7 @@ module.exports = {
 
 我们可以改下代码，打印出 css-loader 被处理后的样子
 
-```patch
+```
 // index.js
 - import './index.css' // 直接导入 css 文件
 + import css from './index.js'
@@ -177,12 +177,12 @@ module.exports = {
 ```
 再次打包后，运行 `index.html` 看下控制台的打印数据
 
-![css-loader-log](./css-demo/bundle-css/css-loader-log.png)
+![css-loader-log](./images/css-loader-log.png)
 
 看到这个输出结构，如果手工处理，我们可以自己写 js 代码把 css 内容提取出来，插入到 `style` 标签中，使样式生效。
 
 继续在 index.js 中增加如下代码
-```patch
+```
 import css from './index.css'
 console.log('css', css)
 
@@ -205,11 +205,11 @@ document.body.appendChild(genElement())
 
 ## style-loader
 
-```sh
+```
 npm i -D style-loader
 ```
 更改配置
-```patch
+```
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 module.exports = {
@@ -248,11 +248,11 @@ style-loader 是实现了 css 的内嵌样式，即提取 css 写入 `<style></s
 
 这个插件有两部分功能，即有 `loader` 功能，也有 `plugin` 功能。
 
-```sh
+```
 npm i -D mini-css-extract-plugin
 ```
 基础配置
-```patch
+```
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 - const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -420,7 +420,7 @@ module.exports = {
 }
 ```
 所以，此时我们，可以用 `MiniCssExtractPlugin.loader`中的 `publicPath`来指定css文件所依赖图片的公共路径，来修复上面的问题：
-```patch
+```
 module: {
     rules: [
       {
@@ -465,7 +465,7 @@ export function greet(name, targetEle) {
 }
 ```
 修改下 index.js 代码
-```patch
+```
 // index.js
 import './index.css'
 function genElement() {
@@ -491,7 +491,7 @@ document.body.appendChild(genElement())
 
 如果想要异步模块打包出的文件名更直观，此时就可以使用 `chunkFilename`属性。
 
-```patch
+```
 module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, '../css-demo'),
@@ -533,7 +533,7 @@ module.exports = {
 };
 ```
 此时需要在对 `index.js`中异步引入的代码添加 webpack 的魔法注释：
-```patch
+```
 eleBtn.onclick = function() {
 -  import('./async-other.js').then(() => {
 +  import(/*  webpackChunkName: 'async' */ './async-other.js').then(() => {
@@ -556,7 +556,7 @@ eleBtn.onclick = function() {
 
 此时就是需要通过`optimization.splitChunks`配置中自定义 `cacheGroups` 来将多个独立 chunk 合并成一个 chunk 输出。
 
-```patch
+```
 module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, '../css-demo'),
@@ -618,7 +618,7 @@ module.exports = {
 
 我们需要用到 `css-minimizer-webpack-plugin` 插件
 
-```sh
+```
 npm install css-minimizer-webpack-plugin --save-dev
 ```
 修改配置
@@ -708,11 +708,11 @@ new CssMinimizerPlugin({
 
 `purgecss-webpack-plugin` 基于 [purgecss](https://purgecss.com/)
 
-```sh
+```
 npm i -D purgecss-webpack-plugin glob-all
 ```
 修改配置文件，为了更好看清理后的 css 文件，我们暂时去掉压缩插件
-```patch
+```
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -843,7 +843,7 @@ module.exports = {
 
 对于使用`less / scss / stylus` 来书写 css 代码时，需要配置对应预处理器的 loader `less-loader / sass-loader / stylus-loader` 来进行前置的预处理。
 
-```sh
+```
 npm i -D less less-loader
 npm i -D node-sass sass-loader
 npm i -D stylus stylus-loader
@@ -899,7 +899,7 @@ rules: [
 
 `postcss-loader` 一般用在 `css-loader`之前，预处理器 `less-loader / sass-loader / stylus-loader` 之后。
 
-```sh
+```
 npm install --save-dev postcss-loader postcss
 ```
 ```js
@@ -976,4 +976,4 @@ module.exports = {
   ],
 };
 ```
-关于 `postcss` 学习总结请移步查阅[postcss 章节]()
+关于 `postcss` 学习总结请移步查阅postcss 章节

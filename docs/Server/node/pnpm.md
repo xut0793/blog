@@ -145,7 +145,7 @@ pnpm 相对于传统的 npm / yarn 突出优势是：更快、更节省磁盘空
 > 这里有点 javascript 中对象的地址引用。 let objA = {a: '12'}, let objB = objA，栈中存在的 objA 和 objB 都指向堆内存中的同一个对象地址，对象实际数据也只在堆内存占用一份。
 
 微软从 windows Vista 操作系统开始，，支持了创建硬链接的操作，在cmd中使用下面的命令可以创建硬链接。
-```sh
+```
 mklink /h newFilename targeFilename
 ```
 ```
@@ -173,7 +173,7 @@ mklink /h newFilename targeFilename
 软链接 (soft link)，也称为符号链接 (symbol link)。如果为某个文件或文件夹A创建符号连接B，则B指向A，A指定磁盘数据。
 
 微软从 windows Vista 操作系统开始，支持了创建软链接的操作，在cmd中使用下面的命令可以创建符号链接：
-```sh
+```
 # /d表示创建的是目录(文件夹)的符号链接，不写则是文件的符号链接
 mklink /d newFilename targeFilename
 ```
@@ -223,43 +223,43 @@ mklink /d newFilename targeFilename
 
 npm / yarn / pnpm 基本命令汇总
 
-操作 |  npm  |  yarn  |  pnpm 
---|--|--|--
-初始化项目  |  npm init  |  yarn init  |  pnpm init
-**管理依赖** | |
-安装项目所有依赖 |  npm install  |  yarn install  |  pnpm install
-安装依赖包       |  npm install pkg  |  yarn add pkg  |  pnpm add pkg
-更新依赖包       |  npm update/upgrade/up  |  yarn up  |  pnpm update/up
-删除依赖包       |  npm uninstall/remove/rm/r | yarn remove | pnpm remove/uninstall/rm
-引用本地依赖     |  npm link                  | yarn link   | pnpm link
-取消本她引用     |  npm unlink/un             | yarn unlink | pnpm unlink
-**查看依赖** | |
-查看项目依赖包树 |  npm list/ls --depth=number   | yarn list --depth=number | pnpm list/ls --depth=number
-查看依赖包信息   |  npm info                     | yarn info                | 
-查看依赖远程注册表信息 | npm view / npm view pkg version  / npm view pkg versions | |
-**运行脚本** | |
-run-script | npm run | yarn run | pnpm run<br />(默认不执行pre/post钩子，有需要可以在配置中开启 enable-pre-post-scripts:true)
-执行shell命令 | npm exec |  | pnpm exec
-start         | npm start / npm run start | yarn run start | pnpm start / pnpm run start
-test          | npm test / npm run test | yarn run test | pnpm test / pnpm run test
-**版本发布** | |
-升级版本号 | npm version [newversion / major / minor / patch / premajor / preminor / prepatch / prerelease] | yarn version [同 npm version] |
-发布包     | npm publish | yarn publish | pnpm publish
-取消发布   | npm unpublish pkg[@version] [--force] | |
-**其它杂项** | |
-使用 create-* 启动CLI来创建一个项目<br /> 如 create-react-app | npm init react-app my-app  | yarn create react-app my-app | pnpm create react-app my-app
- | | | | pnpm store path: 查看包存储路径
-**支持monorepo** | npm@7.x 以上支持<br /> --workspack / -s <br /> --workspaces / -ws | yarn@1.x 以上支持<br>yarn plugin import workspace-tools | pnpm@6.x 以上支持
-1 初始化项目 | npm init | yarn init | pnpm init
-2 配置       | package.json 文件<br /> `{  "private": true,  "workspaces": [  "packages/**" ] ` | package.json 文件<br /> `{  "private": true,  "workspaces": [  "packages/**" ] ` | pnpm-workspace.yaml 文件<br /> `packages: 'packages/**'`
-3 添加 package | npm init --workspack/-w pkg-name [args] |  | pnpm init -w pkg-name [arg]
-4 查看 package |  | yarn workspaces info | pnpm ls --depth=-1 -r
-5 在根目录添加包 | npm install | | pnpm add pkg --workspace-root / -W 
-6 在所有子应用中都添加指定包 | npm install pkg -ws |  | pnpm -r add pkg
-7 在指定子应用中添加包 | npm install pkg -w package-name   | yarn workapce package-name add pkg | pnpm add pkg --filter=package-name
-8 删除包 | 把上面 add 改成 remove | 把上面 add 改成 remove | 把上面 add 改成 remove
-10 运行run-script命令 | npm run script-name -w package-name <br> npm run script-name -ws | yarn workspace package-name run | pnpm -r run script-name <br> pnpm run script-name --filter package-name
-11 运行shell命令 | npm exec -c 'rm -rf node_modules' -w=package-name <br> npm exec -c 'rm -rf node_modules -ws | yarn workspace package-name exec 'rm -rf node_modules' | pnpm -r exec -- rm -rf node_modules <br> pnpm exec --filter=package-name -- rm -rf node_modules
+| 操作                                                          | npm                                                                                            | yarn                                                                             | pnpm                                                                                            |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 初始化项目                                                    | npm init                                                                                       | yarn init                                                                        | pnpm init                                                                                       |
+| **管理依赖**                                                  |                                                                                                |
+| 安装项目所有依赖                                              | npm install                                                                                    | yarn install                                                                     | pnpm install                                                                                    |
+| 安装依赖包                                                    | npm install pkg                                                                                | yarn add pkg                                                                     | pnpm add pkg                                                                                    |
+| 更新依赖包                                                    | npm update/upgrade/up                                                                          | yarn up                                                                          | pnpm update/up                                                                                  |
+| 删除依赖包                                                    | npm uninstall/remove/rm/r                                                                      | yarn remove                                                                      | pnpm remove/uninstall/rm                                                                        |
+| 引用本地依赖                                                  | npm link                                                                                       | yarn link                                                                        | pnpm link                                                                                       |
+| 取消本她引用                                                  | npm unlink/un                                                                                  | yarn unlink                                                                      | pnpm unlink                                                                                     |
+| **查看依赖**                                                  |                                                                                                |
+| 查看项目依赖包树                                              | npm list/ls --depth=number                                                                     | yarn list --depth=number                                                         | pnpm list/ls --depth=number                                                                     |
+| 查看依赖包信息                                                | npm info                                                                                       | yarn info                                                                        |
+| 查看依赖远程注册表信息                                        | npm view / npm view pkg version  / npm view pkg versions                                       |                                                                                  |
+| **运行脚本**                                                  |                                                                                                |
+| run-script                                                    | npm run                                                                                        | yarn run                                                                         | pnpm run<br />(默认不执行pre/post钩子，有需要可以在配置中开启 enable-pre-post-scripts:true)     |
+| 执行shell命令                                                 | npm exec                                                                                       |                                                                                  | pnpm exec                                                                                       |
+| start                                                         | npm start / npm run start                                                                      | yarn run start                                                                   | pnpm start / pnpm run start                                                                     |
+| test                                                          | npm test / npm run test                                                                        | yarn run test                                                                    | pnpm test / pnpm run test                                                                       |
+| **版本发布**                                                  |                                                                                                |
+| 升级版本号                                                    | npm version [newversion / major / minor / patch / premajor / preminor / prepatch / prerelease] | yarn version [同 npm version]                                                    |
+| 发布包                                                        | npm publish                                                                                    | yarn publish                                                                     | pnpm publish                                                                                    |
+| 取消发布                                                      | npm unpublish pkg[@version] [--force]                                                          |                                                                                  |
+| **其它杂项**                                                  |                                                                                                |
+| 使用 create-* 启动CLI来创建一个项目<br /> 如 create-react-app | npm init react-app my-app                                                                      | yarn create react-app my-app                                                     | pnpm create react-app my-app                                                                    |
+|                                                               |                                                                                                |                                                                                  | pnpm store path: 查看包存储路径                                                                 |
+| **支持monorepo**                                              | npm@7.x 以上支持<br /> --workspack / -s <br /> --workspaces / -ws                              | yarn@1.x 以上支持<br>yarn plugin import workspace-tools                          | pnpm@6.x 以上支持                                                                               |
+| 1 初始化项目                                                  | npm init                                                                                       | yarn init                                                                        | pnpm init                                                                                       |
+| 2 配置                                                        | package.json 文件<br /> `{  "private": true,  "workspaces": [  "packages/**" ] `               | package.json 文件<br /> `{  "private": true,  "workspaces": [  "packages/**" ] ` | pnpm-workspace.yaml 文件<br /> `packages: 'packages/**'`                                        |
+| 3 添加 package                                                | npm init --workspack/-w pkg-name [args]                                                        |                                                                                  | pnpm init -w pkg-name [arg]                                                                     |
+| 4 查看 package                                                |                                                                                                | yarn workspaces info                                                             | pnpm ls --depth=-1 -r                                                                           |
+| 5 在根目录添加包                                              | npm install                                                                                    |                                                                                  | pnpm add pkg --workspace-root / -W                                                              |
+| 6 在所有子应用中都添加指定包                                  | npm install pkg -ws                                                                            |                                                                                  | pnpm -r add pkg                                                                                 |
+| 7 在指定子应用中添加包                                        | npm install pkg -w package-name                                                                | yarn workapce package-name add pkg                                               | pnpm add pkg --filter=package-name                                                              |
+| 8 删除包                                                      | 把上面 add 改成 remove                                                                         | 把上面 add 改成 remove                                                           | 把上面 add 改成 remove                                                                          |
+| 10 运行run-script命令                                         | npm run script-name -w package-name <br> npm run script-name -ws                               | yarn workspace package-name run                                                  | pnpm -r run script-name <br> pnpm run script-name --filter package-name                         |
+| 11 运行shell命令                                              | npm exec -c 'rm -rf node_modules' -w=package-name <br> npm exec -c 'rm -rf node_modules -ws    | yarn workspace package-name exec 'rm -rf node_modules'                           | pnpm -r exec -- rm -rf node_modules <br> pnpm exec --filter=package-name -- rm -rf node_modules |
 
 > npm workspace 中每次 npm install 会在根 node_modules 中创建所有子应用的符号链接，所以各个子应用可以像引用第三方依赖一样引用对方。
 > npm workspace 只会在根目录存在 node_modules，子应用是不会创建 node_modules 目录的。不管是执行在所有子应用中添加依赖(npm install pkg -ws)还是指定子应用添加依赖(npm install pkg -w package-name)，实际上依赖包都安装在根目录的 node_modules 中，但依赖信息会依据命令的区别更新在相应的根目录或子应用的 package.json 中。

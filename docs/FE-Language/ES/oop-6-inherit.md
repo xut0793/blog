@@ -376,7 +376,7 @@ console.log(my_triangle.x) // 5 继承原型对象上
 
 在发布ES2015语言规范后，现代ES在语言规范层面提供了一种更高级的面向对象编程方式：`Class`类构造方法，使得我们实现面向对象更加方便。
 
-> 更详细的 Class 语法总结 [oop-5-class](/FE-Language/ES/oop-5-class.html)
+> 更详细的 Class 语法总结 [oop-5-class](./oop-5-class.html)
 
 ```js
 // class 基本语法

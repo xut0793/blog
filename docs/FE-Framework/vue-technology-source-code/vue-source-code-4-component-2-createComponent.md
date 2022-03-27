@@ -8,7 +8,7 @@ updateComponent = function () {
   vm._update(vm._render(), hydrating);
 };
 ```
-可以看到生成的组件 VNode 传给了 `vm._update` 函数来执行。在 [视图渲染2：patch 算法](/FE-Framework/Vue/vue-source-code-3-virtual-dom-2-patch.html)中有提到，通过这样的调用链：`vm._update => vm.__patch__ => patch =>createPatchFunction => createElm`，最终核心执行的是 `createElm`
+可以看到生成的组件 VNode 传给了 `vm._update` 函数来执行。在 [视图渲染2：patch 算法](./vue-source-code-3-virtual-dom-2-diff.html)中有提到，通过这样的调用链：`vm._update => vm.__patch__ => patch =>createPatchFunction => createElm`，最终核心执行的是 `createElm`
 
 所以来看下，`createElm` 函数对组件 VNode 的处理：
 

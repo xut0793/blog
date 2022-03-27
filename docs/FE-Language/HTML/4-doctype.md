@@ -9,7 +9,7 @@
 添加DOCTYPE声明即按标准模式处理，在早期HTML标记语言借鉴于SGML标记语言，使用DTD来定义所有HTML的标签和属性规范。所以在页面文档开头需要声明当前页面基于哪个HTML规范来解析。
 
 并且规范中定义了三种类型：严格型strict、过渡型transitional、框架frameset。严格型DTD包含所有HTML元素和属性，但不包含展示性的和弃用的元素(如font)；而过渡型或宽松型(loose)则包含展示性和启用的元素。
-```hmtl
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

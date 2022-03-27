@@ -39,7 +39,7 @@
 但Brendan Eich在创造JavaScript时，却选择了一个更为冷门的方式来描述对象，即采用“原型”方式。JavaScript 并非是第一个使用原型的语言，在它之前，self、kevo 等语言已经开始使用原型来描述对象了。
 
 事实上，Brendan 更是曾透露过，他最初的构想是一个拥有基于原型的面向对象能力的 Scheme 语言（Scheme 是一门函数式语言，但是函数式的JS另一话题）。
-> 关于 JavaScript语言创建的历史可以参考[EcamScript历史](/ES/ES_history.html#%E5%88%9B%E9%80%A0javascript)。
+> 关于 JavaScript语言创建的历史可以参考[EcamScript历史](./intro-2-es-history)。
 
 JS对象对比对象抽象的理论特征：
 - 对象具有唯一标识性： 对象具有唯一标识的内存地址。JS也是通过内存地址来体现对象的唯一性。
@@ -185,8 +185,8 @@ console.log("xiaolong can yongchun: ", 'yongchun' in xiaolong)  // xiaolong can 
 
 ```js
     -----------------            -------------------            -----------------
-    |     zidan     |            |     xiaolong    |            |     yewen     |
-    |    -------    |            |     --------    |            |    -------    |
+    | zidan |  | xiaolong |  | yewen |
+    | ----- ||     --------    |            |    -------    |
     | roushu:true   |            | jiequandao:true |            | yongchun:true |
     | [[prototype]] |----------->|  [[prototype]]  |----------->| [[prototype]] |
     -----------------            -------------------            -----------------
@@ -230,7 +230,7 @@ new 操作内部主要实现了下面功能：
 - 将 新对象作为this 和调用参数传给构造函数执行；
 - 如果构造函数返回的是对象，则返回，否则返回第一步创建的对象。
 
-至于使用`new + Function`的原型系统去模拟类的继承、封装等功能可以查看后面的[构造函数](/ES/oop-4-constructor)。
+至于使用`new + Function`的原型系统去模拟类的继承、封装等功能可以查看后面的[构造函数](./oop-4-constructor)。
 
 ### 现代js中使用Class实现基于原型的面向对象
 
@@ -272,7 +272,7 @@ let zidan = new Tudi('zidan')
 console.log(zidan.kungfu)
 ```
 
-至于`Class`实现继承比构造函数实现继承更优，以及`Class`更详细的语法，可以查看[Class](/ES/oop-5-class)
+至于`Class`实现继承比构造函数实现继承更优，以及`Class`更详细的语法，可以查看[Class](./oop-5-class)
 
 ### 面向对象编程（OOP）核心概念
 
@@ -285,6 +285,6 @@ console.log(zidan.kungfu)
 - 多态： 通过函数的重载或方法的覆写实现自定义行为
 - 聚合： 功能实现的最小化
 
-查看[构造函数](/ES/oop-4-constructor)章节，了解使用`new + Function`的构造函数来实现OOP概念。
+查看[构造函数](./oop-4-constructor)章节，了解使用`new + Function`的构造函数来实现OOP概念。
 
-查看[Class](/ES/oop-5-class)章节，了解通过现代`Class`语法实现面OOP概念。
+查看[Class](./oop-5-class)章节，了解通过现代`Class`语法实现面OOP概念。

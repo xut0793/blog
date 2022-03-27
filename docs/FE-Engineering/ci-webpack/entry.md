@@ -31,7 +31,7 @@ module.exports = {
 }
 ```
 此时运行：
-```sh
+```
 npx webpack --config=./entry-demo/webpack.config.js
 ```
 打出来的 `bundle.js`，跟我们直接引用 `index.js` 没有什么太多区别，只是在 `bundle.js` 中包了一层 IIFE 自执行函数。
@@ -62,7 +62,7 @@ exports.genRandomNumber = function(n) {
 }
 ```
 更改 index.js 代码
-```patch
+```
 +const { genRandomNumber } = require('./utils.js')
 
 function genElement() {
@@ -81,7 +81,7 @@ function genElement() {
 document.body.appendChild(genElement())
 ```
 更改配置文件，为了便于对比，改下输出文件的命名
-```patch
+```
 const path = require('path')
 module.exports = {
   mode: 'none',
@@ -186,7 +186,7 @@ globalThis.greet = function(name) {
 }
 ```
 更改下 index.js 代码
-```patch
+```
 - const { genRandomNumber } = require('./utils.js')
 
 function genElement() {
@@ -209,7 +209,7 @@ function genElement() {
 document.body.appendChild(genElement())
 ```
 更改配置文件 entry 值为数组形式
-```patch
+```
 const path = require('path')
 module.exports = {
   mode: 'none',
@@ -281,7 +281,7 @@ entry: ['jQuery', 'lodash', './index.js']
 ## 描述符对象形式：分离独立模块
 
 更改配置文件
-```patch
+```
 const path = require('path')
 module.exports = {
   mode: 'none',

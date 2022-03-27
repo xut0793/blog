@@ -51,7 +51,7 @@ Lint 工具对工程师来说到底是代码质量的保证还是一种束缚？
 
 ## ESLint 安装
 
-```sh
+```
 # npm
 npm i -D eslint
 
@@ -65,13 +65,13 @@ yarn --dev eslint
 
 基本语法：
 
-```sh
+```
 eslint [options] [file|dir|glob]*
 ```
 
 具体 options 选项可参照官网命令行链接。最常用的一个命令`--fix`，用于对可以自动修复的规则进行自动处理。
 
-```sh
+```
 eslint --fix
 ```
 
@@ -309,7 +309,7 @@ Linter 本身的规则都可以分为两部分：
 
 你可以通过在项目根目录创建一个 .eslintignore 文件告诉 ESLint 去忽略特定的文件和目录。.eslintignore 文件是一个纯文本文件，其中的每一行都是一个 glob 模式表明哪些路径应该忽略检测，忽略模式依照 .gitignore 规范。
 
-```sh
+```
 # eslintignor
 # ESLint总是忽略 /node_modules/* 和 /bower_components/* 中的文件，所以 node_modules 也可不写。
 /node_modules/
@@ -376,8 +376,6 @@ alert("foo");
 ```
 
 ## ESLint 与 Prettier 集成
-
-[Prettier](/FE-Engineering/Lint/Prettier.html#与-linter-工具集成)
 
 ESLint 的规则主要有两部分：代码质量和代码风格相关的规则，而 Prettier 规则都侧重于代码风格的统一。所以两者集成有两步：
 
@@ -458,7 +456,7 @@ module.exports = {
 }
 ```
 
-```sh
+```
 # .eslintignor
 /build/
 /public/

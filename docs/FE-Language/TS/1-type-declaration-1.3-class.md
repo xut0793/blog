@@ -184,7 +184,7 @@ user.sayHi()
 
 ### static 静态块
 
-静态块作用域是 ES2022 的新特性[class static initialization blocks]()，是一个完善 class 的功能。
+静态块作用域是 ES2022 的新特性class static initialization blocks，是一个完善 class 的功能。
 > 参考链接 [精读《class static block》](https://juejin.cn/post/7007219984145317902)
 
 ```ts

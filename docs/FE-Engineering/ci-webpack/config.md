@@ -413,7 +413,7 @@ module.exports = {
 其中 `resource` 属性的配置项`test / include / exclude`都可以直接简写到同级属性中。
 
 但如果使用了 `resource` 属性去配置，那就不能在同级上使用简写属性`test / include / exclude`，反之一样。
-```patch
+```
 module.exports = {
   module: {
     rules: [

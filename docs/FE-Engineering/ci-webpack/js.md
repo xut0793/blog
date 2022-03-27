@@ -190,7 +190,7 @@ module.exports = {
 > `import('/path/to/esm').then(res => console.log(res))`
 > `import('/path/to/commonjs).then(res => console.log(res.default))`
 
-```patch
+```
 - import genRandomNumber from './utils.js'
 const genElement = () => {
   const eleBtn = document.createElement('button')
@@ -208,7 +208,7 @@ const genElement = () => {
 document.body.appendChild(genElement())
 ```
 更改配置文件
-```patch
+```
 output: {
 -   path: path.resolve(__dirname, 'bundle-base'),
 -   filename: 'bundle.js'
@@ -224,7 +224,7 @@ output: {
 
 再来看下，如果把 `utils.js` 使用 `CommonJS` 规范导出时，`import()` 返回结果，查看控制台 `console.log` 的结果。
 
-```patch
+```
 # utils.js
 -  export default const genRandomNumber = (n = 1) => {
 +  module.exports = genRandomNumber = (n = 1) => {
@@ -248,7 +248,7 @@ output: {
 
 但是如果将 `utils.js` 不使用默认导出，使用 `exports`导出，则与 `ESM` 使用无异。
 
-```patch
+```
 - module.exports = genRandomNumber = (n = 1) => { // 需要通过 res.default.genRandomNumber 获取
 + exports.genRandomNumber = (n = 1) => { // import().then(res => res.genRandomNumber) 可以正常获取
     return Math.round(Math.random() * Math.pow(10, n))
@@ -285,7 +285,7 @@ import(/* webpackIgnore: true */ 'ignored-module.js');
 
 `webpack` 通过 `import()` 异步导入的模块，分割输出单独的文件。然后通过魔法注释添加`webpackChunkName`自定义按需加载产生的 chunk 名称。
 
-```patch
+```
 # 配置文件
 output: {
    path: path.resolve(__dirname, 'bundle-import'),
@@ -560,7 +560,7 @@ module.exports = {
 }
 ```
 为了分离两个模块文件的构建结果，我们可以改为以下配置：
-```patch
+```
 module.exports = {
   mode: 'none',
 -  entry: './index.js',
@@ -629,7 +629,7 @@ module.exports = {
 
 这种情况下，在 webpack@5 中提供了 `Entry descriptor` 配置，可以在入口处将公共模块提取到独立的 chunkd。
 
-```patch
+```
 // webapck@5
 module.exports = {
   mode: 'none',

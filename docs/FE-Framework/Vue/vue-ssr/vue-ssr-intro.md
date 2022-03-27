@@ -139,21 +139,16 @@ DOM 第一个内容 Paint 上去 一般来说FP 和 FCP 差距非常的小
 例如js css资源，js里可能会再去请求 图片和css资源，要等到这些请求返回，才算结束
 ```
 
-![img](E:\blog\docs\FE-Framework\Vue\image\page-kpi.jpg)
+![img](../image/page-kpi.jpg)
 
-![img](E:\blog\docs\FE-Framework\Vue\image\page-kpi-chrome-devtools-perf.jpg)
+![img](../image/page-kpi-chrome-devtools-perf.jpg)
 
 ##  参考链接
 
-[Vue SSR 指南](https://ssr.vuejs.org/zh/)
-
-[JS核心理论之《SPA、CSR、SSR、Prerender原理浅析》](https://zhuanlan.zhihu.com/p/138356519)
-
-[服务端渲染(SSR)](https://zhuanlan.zhihu.com/p/90746589)
-
-[SSR 它到底香不香？细数 SSR 的利与弊](https://zhuanlan.zhihu.com/p/270149478)
-
-[前端性能指标](https://zhuanlan.zhihu.com/p/142635124)
-
-[Web性能领域常见的专业术语](https://zhuanlan.zhihu.com/p/98880815)
+- [Vue SSR 指南](https://ssr.vuejs.org/zh/)
+- [JS核心理论之《SPA、CSR、SSR、Prerender原理浅析》](https://zhuanlan.zhihu.com/p/138356519)
+- [服务端渲染(SSR)](https://zhuanlan.zhihu.com/p/90746589)
+- [SSR 它到底香不香？细数 SSR 的利与弊](https://zhuanlan.zhihu.com/p/270149478)
+- [前端性能指标](https://zhuanlan.zhihu.com/p/142635124)
+- [Web性能领域常见的专业术语](https://zhuanlan.zhihu.com/p/98880815)
 

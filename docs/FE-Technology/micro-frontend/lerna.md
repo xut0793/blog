@@ -175,7 +175,7 @@ lerna success published 1 package
 
 如果不想测试时真正向 npm 中心仓库发布包，可以使用 Verdaccio 进行本地发布来模拟真实操作。
 
-```sh
+```
 # 在全局安装 Verdaccio 应用
 npm install --global verdaccio
 

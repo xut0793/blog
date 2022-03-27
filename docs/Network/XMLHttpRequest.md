@@ -50,8 +50,8 @@ XMLHttpRequest规范仍是草案状态，没有被W3C完全定义为标准。
 
 现在 Fetch被称为下一代XMLHttpRequest技术,采用Promise方式来处理数据，简洁明了的API，比XMLHttpRequest更加简单易用，各大浏览器最新版本都实现了Fetch标准。
 
-![xhr](../image/xhr.png)
-![fetch](../image/fetch.png)
+![xhr](./image/xhr.png)
+![fetch](./image/fetch.png)
 
 
 
@@ -61,24 +61,24 @@ XMLHttpRequest规范仍是草案状态，没有被W3C完全定义为标准。
 
 > 识记方法，按对象的属性、方法、事件记忆API
 
-API | 解释
---|--
-XMLHttpRequest | 构造函数，HTTP请求时需要创建一个实例对象：const xhr = new XMLHttpRequest()
-属性 |
-xhr.readyState | XMLHttpRequest对象的状态：<br>0 - UNSENT - 代理被创建，但尚未调用 open() 方法。<br>1 - OPENED - open() 方法已经被调用。<br>2 - HEADERS_RECEIVED - send() 方法已经被调用，并且头部和状态已经可获得。<br>3 - LOADING - 下载中,responseText 属性已经包含部分数据。<br>4 - DONE - 下载操作已完成。
-xhr.status | 服务器返回的状态码
-xhr.statusText | 服务器返回的状态文本
-xhr.responseText | 服务器返回的文本数据
-xhr.responseXML | 服务器返回的XML格式的数据
-xhr.responseURL | 返回请求的URL
-方法 | 
-xhr.open(method, url, async) | 初始化一个请求
-xhr.setRequestHeader(headername, value) | 设置HTTP请求头部，必须在  open() 方法和 send()   之间调用。如果多次对同一个请求头赋值，只会生成一个合并了多个值的请求头。
-xhr.send(data) | 用于发送 HTTP 请求，接受一个可选的参数，其作为请求主体；如果请求方法是 GET 或者 HEAD，则可以默认为空。
-xhr.getResponseHeader(headername) | 获取响应头部，返回字符串，如果一个头字段有多个值，返回用逗号和空格将值分隔的字符串。不区分大小写
-xhr.getAllResponseHeaders() | 返回所有的响应头，以 CRLF（\r\n） 分割的字符串，如果没有收到任何响应为null
-事件 | 
-onreadystatechange | 只要 readyState 属性发生变化，就会调用相应的处理函数
+| API                                     | 解释                                                                                                                                                                                                                                                                                           |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| XMLHttpRequest                          | 构造函数，HTTP请求时需要创建一个实例对象：const xhr = new XMLHttpRequest()                                                                                                                                                                                                                     |
+| 属性                                    |
+| xhr.readyState                          | XMLHttpRequest对象的状态：<br>0 - UNSENT - 代理被创建，但尚未调用 open() 方法。<br>1 - OPENED - open() 方法已经被调用。<br>2 - HEADERS_RECEIVED - send() 方法已经被调用，并且头部和状态已经可获得。<br>3 - LOADING - 下载中,responseText 属性已经包含部分数据。<br>4 - DONE - 下载操作已完成。 |
+| xhr.status                              | 服务器返回的状态码                                                                                                                                                                                                                                                                             |
+| xhr.statusText                          | 服务器返回的状态文本                                                                                                                                                                                                                                                                           |
+| xhr.responseText                        | 服务器返回的文本数据                                                                                                                                                                                                                                                                           |
+| xhr.responseXML                         | 服务器返回的XML格式的数据                                                                                                                                                                                                                                                                      |
+| xhr.responseURL                         | 返回请求的URL                                                                                                                                                                                                                                                                                  |
+| 方法                                    |
+| xhr.open(method, url, async)            | 初始化一个请求                                                                                                                                                                                                                                                                                 |
+| xhr.setRequestHeader(headername, value) | 设置HTTP请求头部，必须在  open() 方法和 send()   之间调用。如果多次对同一个请求头赋值，只会生成一个合并了多个值的请求头。                                                                                                                                                                      |
+| xhr.send(data)                          | 用于发送 HTTP 请求，接受一个可选的参数，其作为请求主体；如果请求方法是 GET 或者 HEAD，则可以默认为空。                                                                                                                                                                                         |
+| xhr.getResponseHeader(headername)       | 获取响应头部，返回字符串，如果一个头字段有多个值，返回用逗号和空格将值分隔的字符串。不区分大小写                                                                                                                                                                                               |
+| xhr.getAllResponseHeaders()             | 返回所有的响应头，以 CRLF（\r\n） 分割的字符串，如果没有收到任何响应为null                                                                                                                                                                                                                     |
+| 事件                                    |
+| onreadystatechange                      | 只要 readyState 属性发生变化，就会调用相应的处理函数                                                                                                                                                                                                                                           |
 
 示例：
 
@@ -127,7 +127,7 @@ xhr.send()
 
 完整的 XMLHttpRequest API列表：
 
-![xhr2](../image/xhr2.png)
+![xhr2](./image/xhr2.png)
 
 
 示例：
@@ -180,7 +180,7 @@ XHR的事件监听回调函数接受的事件参数就是一个ProgressEvent对�
 - loaded 是一个unsigned long类型值，表示底层进程已经执行的工作量。当使用HTTP上传或下载资源时，可以表示内容已传送部分，而不包括HTTP头和其他的开销。
 - total 是一个unsigned long类型值，表示底层进程正在执行的工作总量。当使用HTTP上传或下载资源时，可以表示内容数据总量，而不包括HTTP头和其他的开销。
 
-![progressEvent.png](../image/progressEvent.png)
+![progressEvent.png](./image/progressEvent.png)
 
 正常工作中，基本项目开发都涉及上百个接口调用，如果使用原生XMLHttpRequest对象请求，每次都得调用xhr对象的各属性和方法完成一次请求基本是不可能的，所以正常都会使用封装的第三方库，比如jQuery的$.ajax()方法，或者基于promise的axios，或者直接使用最新的Fetch。
 

@@ -56,7 +56,7 @@ DOM建模是将HTML或XML描绘的页面绘制成一个由多层节点构成的�
 ```
 使用[Live DOM Viewer](https://software.hixie.ch/utilities/js/live-dom-viewer/)展示的DOM树结构如下：
 
-![node.png](../images/node.png)
+![node.png](../image/node.png)
 
 > HTML文档中换行符与空白符也是文本字符，也会生成节点树节点。
 
@@ -131,52 +131,52 @@ DOCUMENT_NODE  = 9  // 文档节点
 
 **属性**
 
-Node | Document | HTMLDocument | Element | HTMLElement |
---|--|--|--|--
-nodeType | contentType | defaultView | tagName | style
-nodeName | characterSet | cookie | id | dataset
-nodeValue | documentURI | domain | attributes |title
-textContent | all |       location | classList |tabIndex
-ownerDocument | doctype | URL |       className |hidden
-parentNode | documentElement | title | innerHTML |offsetWidth
-childNodes | scripts |         readyState | outerHTML |offsetHeight
-firstChild | styleSheetSets | lastModified |  previousElementSibling |offsetLeft
-lastChild | head |                          | nextElementSibling |offsetTop
-previousSibling | body |                    | clientWidth |offsetParent
-nextSibling | forms |                       | clientHeight |
-| | table |                       | clientLeft |
-| | images |                      | clientTop |
-| | anchors |                     | scrollWidth |
-| | links |                       | scrollHeight |
-| |     |                       | scrollLeft |
-| |     |                       | scrollTop |
+| Node            | Document        | HTMLDocument | Element                | HTMLElement  |
+| --------------- | --------------- | ------------ | ---------------------- | ------------ |
+| nodeType        | contentType     | defaultView  | tagName                | style        |
+| nodeName        | characterSet    | cookie       | id                     | dataset      |
+| nodeValue       | documentURI     | domain       | attributes             | title        |
+| textContent     | all             | location     | classList              | tabIndex     |
+| ownerDocument   | doctype         | URL          | className              | hidden       |
+| parentNode      | documentElement | title        | innerHTML              | offsetWidth  |
+| childNodes      | scripts         | readyState   | outerHTML              | offsetHeight |
+| firstChild      | styleSheetSets  | lastModified | previousElementSibling | offsetLeft   |
+| lastChild       | head            |              | nextElementSibling     | offsetTop    |
+| previousSibling | body            |              | clientWidth            | offsetParent |
+| nextSibling     | forms           |              | clientHeight           |
+|                 | table           |              | clientLeft             |
+|                 | images          |              | clientTop              |
+|                 | anchors         |              | scrollWidth            |
+|                 | links           |              | scrollHeight           |
+|                 |                 |              | scrollLeft             |
+|                 |                 |              | scrollTop              |
 
 **方法**
 
-Node | Document | HTMLDocument | Element | HTMLElement |
---|--|--|--|--
-getRootNode() | createElement() |open() |hasAttribute() | HTMLElement.blur()
-hasChildNodes() | createTextNode() |write() |hasAttributes() | HTMLElement.click() 
-isEqualNode() | createAttribute() |writeln() |getAttributeNames() |HTMLElement.focus()
-contains() | createComment() |close() |getAttribute() | 
-compareDocumentPosition() | getElementsByClassName() | execCommand() |setAttribute() | 
-cloneNode() | getElementsByTagName() |queryCommandEnabled() | toggleAttribute() | 
-appendChild() | getElementById() |queryCommandState() |removeAttribute() | 
-insertBefore() | querySelectorAll() |queryCommandSupported() | getElementsByClassName() | 
-replaceChild() | querySelector() |hasFocus() | getElementsByName() |  
-removeChild() | |  |getElementsByTagName() |
-normalize()  | |  |querySelectorAll() |
-|              | |            |querySelector() | 
-|              | |             |matches() | 
-|              | |             |insertAdjacentElement() | 
-|              | |             |insertAdjacentHTML()  | 
-|              | |             |insertAdjacentText() | 
-|              | |             |getBoundingClientRect() | 
-|              | |             |scroll() | 
-|              | |             |scrollBy() | 
-|              | |             |scrollTo() |
-|              | |             |addEventListener() |
-|              | |             |removeEventListener() | 
+| Node                      | Document                 | HTMLDocument            | Element                  | HTMLElement         |
+| ------------------------- | ------------------------ | ----------------------- | ------------------------ | ------------------- |
+| getRootNode()             | createElement()          | open()                  | hasAttribute()           | HTMLElement.blur()  |
+| hasChildNodes()           | createTextNode()         | write()                 | hasAttributes()          | HTMLElement.click() |
+| isEqualNode()             | createAttribute()        | writeln()               | getAttributeNames()      | HTMLElement.focus() |
+| contains()                | createComment()          | close()                 | getAttribute()           |
+| compareDocumentPosition() | getElementsByClassName() | execCommand()           | setAttribute()           |
+| cloneNode()               | getElementsByTagName()   | queryCommandEnabled()   | toggleAttribute()        |
+| appendChild()             | getElementById()         | queryCommandState()     | removeAttribute()        |
+| insertBefore()            | querySelectorAll()       | queryCommandSupported() | getElementsByClassName() |
+| replaceChild()            | querySelector()          | hasFocus()              | getElementsByName()      |
+| removeChild()             |                          |                         | getElementsByTagName()   |
+| normalize()               |                          |                         | querySelectorAll()       |
+|                           |                          |                         | querySelector()          |
+|                           |                          |                         | matches()                |
+|                           |                          |                         | insertAdjacentElement()  |
+|                           |                          |                         | insertAdjacentHTML()     |
+|                           |                          |                         | insertAdjacentText()     |
+|                           |                          |                         | getBoundingClientRect()  |
+|                           |                          |                         | scroll()                 |
+|                           |                          |                         | scrollBy()               |
+|                           |                          |                         | scrollTo()               |
+|                           |                          |                         | addEventListener()       |
+|                           |                          |                         | removeEventListener()    |
 
 可以看到`Document`接口和`Element`接口都实现了选择元素的几个方法：
 

@@ -2,7 +2,7 @@
 
 [[toc]]
 
-在前面[数据类型](/ES/type-0-index)开篇中我们讲了ES最新规范定义了原始值类型和对象类型，其中原始值类型有7种，对象类型也有很多衍生对象。
+在前面[数据类型](./type-0-index)开篇中我们讲了ES最新规范定义了原始值类型和对象类型，其中原始值类型有7种，对象类型也有很多衍生对象。
 
 - 原始值类型（基本类型）
   1. Null
@@ -88,7 +88,7 @@ typeof document             // 浏览器环境下object，node环境下undefined
 
 ### typeof检测原理
 
-在前面[数据类型](/ES/type-0-index)开篇中已经讲过，在第一代Javacript引擎中值表示为32位的二进制序列，同时把最低的3位作为类型标识，此时值的类型包括对象、整数、浮点数和布尔值。
+在前面[数据类型](./type-0-index)开篇中已经讲过，在第一代Javacript引擎中值表示为32位的二进制序列，同时把最低的3位作为类型标识，此时值的类型包括对象、整数、浮点数和布尔值。
 > 上述引自《深入理解Javascript》P94 
 
 > 最新的类型bigInt/Symbol是否仍遵循此规则，暂未查阅到相关资料
@@ -179,7 +179,7 @@ console.log(document instanceof Object)             // true
 
 > instanceof 运算符用于检测右侧构造函数的 prototype 属性是否出现在左侧实例对象的原型链上。
 
-这里涉及到ES面向对象的核心概念：实例对象、构造函数、原型、原型链，具体可查看[面向对象章节]()内容。
+这里涉及到ES面向对象的核心概念：实例对象、构造函数、原型、原型链，具体可查看面向对象章节内容。
 
 因为`Object.prototype`是所有对象的最终原型对象，出现在所有对象的原型链上。所以只要左侧检测值是一个对象类型，那表达式`leftValue instanceof Object`就始终返回`true`。
 
@@ -255,7 +255,7 @@ function myInstanceof(L, R) {
 
 另外，最新ES规范通过`Symbol.hasInstance`属性，可以自定义实现`[[HasInstance]]`方法，也就是说可以自定义实现`instanceof`操作符的行为。
 
-> 对 Symbol 类型的具体讲解可以查看[Symbol类型](/ES/type-4-symbol)
+> 对 Symbol 类型的具体讲解可以查看[Symbol类型](./type-4-symbol)
 
 ```js
 console.log('abc' instanceof String)  // false
@@ -382,7 +382,7 @@ function getType(target, type) {
 }
 ```
 
-关于对象类型`toString()`方法的具体讲解，可以查看[数据类型转换](/ES/type-9-conversion.html#tostring)章节
+关于对象类型`toString()`方法的具体讲解，可以查看[数据类型转换](./type-9-conversion.html#tostring)章节
 
 
 ### Object.prototype.toString()调用原理

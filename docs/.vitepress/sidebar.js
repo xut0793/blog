@@ -51,6 +51,11 @@ module.exports = {
         { text: '图像 img', link: '/FE-Language/HTML/12-img' },
         { text: '表格 table', link: '/FE-Language/HTML/13-table' },
         { text: '表单 form', link: '/FE-Language/HTML/14-form' },
+        { text: '模板 template', link: '/FE-Language/HTML/15-template' },
+        {
+          text: '获取内容API',
+          link: '/FE-Language/HTML/outerHTML-innerTHML-outerText-innerText-textContent',
+        },
       ],
     },
   ],
@@ -186,7 +191,7 @@ module.exports = {
     {
       text: '基础',
       children: [
-        { text: 'Typescript简介', link: '/FE-Language/TS/0-introTS' },
+        { text: '简介', link: '/FE-Language/TS/0-introTS' },
         { text: '安装', link: '/FE-Language/TS/install' },
         { text: '配置文件', link: '/FE-Language/TS/tsconfig' },
         {
@@ -424,10 +429,10 @@ module.exports = {
     {
       text: 'Vue实践总结',
       children: [
-        {
-          text: '环境变量',
-          link: '/FE-Framework/Vue/vue-tutorial/vue-practice-1-setenv',
-        },
+        // {
+        //   text: '环境变量',
+        //   link: '/FE-Framework/Vue/vue-tutorial/vue-practice-1-setenv',
+        // },
         {
           text: 'jsx总结',
           link: '/FE-Framework/Vue/vue-tutorial/vue-practice-2-jsx',

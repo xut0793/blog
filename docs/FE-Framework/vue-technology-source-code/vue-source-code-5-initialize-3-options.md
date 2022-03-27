@@ -89,7 +89,7 @@ function initMixin (Vue) {
   };
 }
 ```
-_init 函数的第一步合并配置在上一节已经拆解过了，主要区分是 Vue 实例化还是组件实例化。[合并配置](/FE-Framework/Vue/vue-source-code-5-initialize-2-mergeOptions.html)
+_init 函数的第一步合并配置在上一节已经拆解过了，主要区分是 Vue 实例化还是组件实例化。[合并配置](./vue-source-code-5-initialize-2-mergeOptions.html)
 
 ## 1. mergeOptons 处理 extends / mixins
 这合并配置这一步，会将 export default 导出的对象选项合并到 vm.$options 中。并在 meergeOptions 中处理了选项中的 extends 和 mixins 字段。
@@ -322,7 +322,7 @@ function initMethods (vm, methods) {
 1. 校验 data 结果必须是普通的对象结构
 1. 校验 data 的 key 不能与 props / methods / 保留字 重名
 1. proxy 代理 data，即 vm[key] = vm._data[key]
-1. 将 data 转为响应式的 getter / setter，即 observe(data)，关于 Vue 响应式过程请查看 [响应式原理](/FE-Framework/Vue/vue-source-code-1-reactivity-1-detection-chnage.html)
+1. 将 data 转为响应式的 getter / setter，即 observe(data)，关于 Vue 响应式过程请查看 [响应式原理](./vue-source-code-1-reactivity-1-detection-chnage.html)
 
 ```js
 function initData (vm) {
@@ -539,8 +539,8 @@ Vue.prototype.$watch = function (
   }
 };
 ```
-最后关于 Wtcher 类的定义，请查看前面关于响应式的理解 [Vue 响应式原理](/FE-Framework/Vue/vue-source-code-1-reactivity-2-collect-dependency.html)
+最后关于 Wtcher 类的定义，请查看前面关于响应式的理解 [Vue 响应式原理](./vue-source-code-1-reactivity-2-collect-dependency.html)
 
 ## 9. callHook 调用 lifycycle hooks
 
-关于 Vue 生命周期的调用时机，请查看前 [生命周期调用](/FE-Framework/Vue/vue-source-code-6-extension-1-lifecycle.html)
+关于 Vue 生命周期的调用时机，请查看前 [生命周期调用](./vue-source-code-6-extension-1-lifecycle.html)

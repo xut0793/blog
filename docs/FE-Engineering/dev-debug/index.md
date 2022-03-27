@@ -142,7 +142,7 @@ vscode 调试程序分两种模式：
 
 Node 有一个核心模块 `debugger`，实现了 node 调试器的功能。要对某个应用程序开启内置调试器，简单地在程序启动添加 `inspect` 参数即可。
 
-```sh
+```
 node inspect app.js             # 通过 --inspect 标志生成一个新的子进程，然后在当前主进程运行 node 内置的 CLI 调试器。
 node inspect --port=xxx app.js  # 自定义调试端口号，默认 9229
 ```
@@ -192,7 +192,7 @@ version:          显示 V8 的版本
 
 上面这种原始的命令行调试模式，除了要知道各种调试命令，视觉上也非常不直观，基本很少直接使用，所以出现了一个第三方模块 `node-inspector` 实现了 node 调试的可视化，它帮助我们在 `Chrome DevTools` 上能可视化地调试 Node.js 程序。
 
-```sh
+```
 # 安装依赖
 npm install -g node-inspector
 
@@ -212,7 +212,7 @@ node --debug=5858 index.js
 
 使用 `v6.3+` 的 Node.js 中调试程序时，执行添加了 `--inspect` 或 `--inspect-brk` 参数的命令。
 
-```sh
+```
 node --inspect index.js                     # 启用 debuger 模块开启监听器，默认 127.0.0.1:9229。对直接运行完成就结束的 node 程序，需要提前使用 debugger 语句设置程序断点，才能让调试器捕获到调试信号
 node --inspect=[host:port] index.js         # 自定义监听的主机和端口
 node --inspect-brk index.js                 # 与 --inspect 基本功能一样，但是它会自动在程序运行的第一行代码中断，所以解决了手动添加 debugger 语句设置断点的问题
@@ -228,7 +228,7 @@ node --inspec-brkt=[host:port] index.js     # 自定义监听的主机和端口
 
 如果 Node.js 程序在启动的时候没有带 `--inspect / --inspect-brk` 参数，默认情况下 Node.js 的 Debugger 模块是不会启动的，这种情况下并非就不能调试了，我们可以手动来启动调试模块：
 
-```sh
+```
 ps -aux | grep 'yourscript.js' # linux 下找到对应的 Node.js 进程的 PID
 netstat -ano | findstr 8080 # window 下只能通过当前端口号查找 node 进程的 PID
 

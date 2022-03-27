@@ -10,7 +10,7 @@ ES语言规范中定义了两个表示“无”的值：undefined 和 null，这
 > 引自《深入理解JavaScript》P72-75
 
 在Brendan Eich创建JS语言时，受限于当时网景和SUN公司的合作及网景公司领导层要求这门新语言要尽量类似于JAVA语言。所以JS中采用了JAVA语言中将变量分为原始值和对象的处理方式，同时也使用了JAVA中表示非对象的null值。但在实现时遵循了C语言的先例，直接采用了机器语言的NULL指针，该null值所表示的二进制序列都是0。所以导致了两个结果：
-- typeof null === 'object'，参见[类型检测](/ES/type-7-checking)
+- typeof null === 'object'，参见[类型检测](./type-7-checking)
 - Nubmer(null) === 0，即null值在强制转为数字时会变成0。
 
 在JS第一个版本中是没有异常处理机制的，所以在遇到未初始化的变量，或者缺失参数导致的异常时都需要一个值来表示。本来是可以直接用已实现的null值来表示。但Brendan Eich却觉得这种情况下用null值来表示并不合适，主要有两点原因：

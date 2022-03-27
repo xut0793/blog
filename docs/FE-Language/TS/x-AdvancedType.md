@@ -324,7 +324,7 @@ null 与 undefined 是所有其它类型的一个有效值，这也意味着，�
 
 **1）. 添加 strictNullChecks 标记**
 
-```base
+```
 // 在使用tsc命令行时添加参数 --strictNullChecks
 tsc --strictNullChecks file
 ```
@@ -567,7 +567,7 @@ type Shape = ISquare | IRectangle | ICircle | ITriangle
 
 一种是启用 `strictNullChecks`（在命令行添加参数或项目 tsconfig.json 开启），并指定 area 的返回值类型 number。因为 area 中 switch 没有包涵所有情况，所以 TypeScript 认为这个函数有可能会返回 undefined。 如果你明确地指定了返回值类型为 number，那么编译时就看到一个错误，因为实际上返回值的类型为 number | undefined。
 
-```basj
+```
 tsc --strictNullChecks test-ts.ts
 ```
 

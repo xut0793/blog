@@ -89,7 +89,7 @@
 2. 名称有效性校验方法
 
 在应用程序中可以使用 `validate-npm-package-name` 包来校验名称的规范性。
-```sh
+```
 # 下载
 npm i -D validate-npm-package-name
 ```
@@ -121,7 +121,7 @@ validateResult = {
 
 通过 `validate-npm-package-name` 可以检查名称是否有效，如果包名有效，下一步还要检查这个有效名称是否在 npm 上已经被注册，可以使用 npm 命令校验 `npm view packageName`，或者在 [npm 官网](https://www.npmjs.com/)上直接搜索，如果有搜索结构就说明该名称已被使用。
 
-```sh
+```
 # 如果有返回名称的基本信息，即该名称已被注册；如果返回报错信息，则名称可用。
 npm view packageName
 ```
@@ -188,9 +188,6 @@ npm view packageName
 }
 ```
 如果应用作为 NPM 包发布的话，完善这些信息，能够更好地在 npm 搜索结果中展示。
-
-![packagejsonInfo2.png](../../image/packagejsonInfo2.png)
-![packagejsonInfo1.png](../../image/packagejsonInfo1.png)
 
 ## 项目发布限制类属性
 
@@ -593,7 +590,7 @@ npm warn element-ui@2.13.0 requires a peer of vue@^2.5.17 but none is installed.
 
 ### 依赖包相关 npm 命令
 
-```sh
+```
 # 安装依赖
 npm install --save / -S package_name        # 安装生产依赖
 npm install --save-dev / -D package_name    # 安装开发依赖
@@ -735,7 +732,7 @@ node_modules
 4. package-lock.json 功能更新历史
 
 - npm 5.0.x 版本，不管 package.json 怎么变，npm i 时都会根据 lock 文件下载。但是 [issue #16866](package-lock.json file not updated after package.json file is changed · Issue #16866 · npm/npm) 控诉了这个问题，明明手动改了package.json，为啥不给我升级包。
-- 5.1.0 版本后， npm install 会无视lock文件 去下载最新的npm。但是 [issue #17979](https%3A//github.com/npm/npm/issues/17979) 又控诉了这个问题。
+- 5.1.0 版本后， npm install 会无视lock文件 去下载最新的npm。但是 [issue #17979](https://github.com/npm/npm/issues/17979) 又控诉了这个问题。
 - 5.4.2版本后
   - 如果改了package.json，且package.json 和 lock 文件中依赖包版本不同，那么执行`npm i`时npm 会根据 package.json 中的版本号以及语义含义去下载最新的包，并更新至lock。
   - 如果两者是兼容状态，那么执行`npm i `都会根据 lock 下载，不会理会 package.json 实际包的版本是否有新。
@@ -777,7 +774,7 @@ node_modules
 
 在 Linux 或 Mac 默认目录是`${user.home}/.npm`，在 Windows 默认是`${user.home}/AppData/Roaming/npm-cache`，具体在 npm cofig 中也可以更改缓存存入目录。
 
-```sh
+```
 # 查看缓存目录
 npm config get cache # D:\nvm\node_cache 这是自定义的缓存路径
 ```
@@ -801,7 +798,7 @@ npm 在执行安装时，可以根据 package-lock.json 中存储的 integrity�
 
 npm 缓存相关命令：
 
-```sh
+```
 npm config get cache # 查看缓存目录
 
 # 自定义缓存目录
@@ -859,7 +856,7 @@ npm cache clean --force # 清除 npm 缓存，清空的只是其中一个目录 
 
 npm 中有一些默认命令，在调用时可以不用加 `run`
 
-```sh
+```
 npm start # npm run start
 npm stop  # npm run stop
 npm test  # npm run test
@@ -872,12 +869,12 @@ npm 脚本命令都有 `pre` 和 `post` 两个钩子，不管是默认的命令 
 
 比如用户执行 `npm run build` 时，会自动按照下面顺序执行
 
-```sh
+```
 npm run prebuild && npm run build && npm run postbuild
 ```
 一般会在 pre 钩子中完成一些清理工作。比如项目构建前清理 dist 目录
 
-```josn
+```json
 "sccript": {
   "clean": "rimraf ./dist && mkdir dist",
   "prebuild": "npm run clean",
@@ -917,7 +914,7 @@ if(TARGET === 'test'){
 但 `process.env` 对象中还包含系统平台下本身的一些环境变量，以及软件安装时设置的环境变量。比如系统环境变量`%HOME`，我们安装 Node.js 时设置的环境变量 `%NODE_PATH` 等。
 
 系统环境变量在不同的系统平台下，表示方式是不同的。
-```sh
+```
 # linux 系统平台
 env # 查看所有环境变量
 echo $HOME                          # 查看具体某个环境变量值
@@ -974,7 +971,7 @@ del evn:NODE_ENV                    # 删除环境变量
 ### npm run 命令传参
 
 `npm run command` 执行某个命令时，要向命令行传入参数，可以直接在命令后设置，以空格分隔，然后在脚本中可以使用 `process.argv` 属性中访问。
-```sh
+```
 node test.js a=1 b=2 c d
 ```
 ```js
@@ -1002,7 +999,7 @@ process.argv.forEach((val, index) => {
 - 赋值用等号 `--arg=value` 或空格分隔 `--arg value`，如果没有赋值，则该参数解析为布尔值，有传入则为 true
 - 所有未使用双横线或单横线的参数会被存入 `_: []` 数组中。
 
-```sh
+```
 node test.js -x 3 -y 4 -n5 -abc --beep=boop foo bar baz
 ```
 ```js

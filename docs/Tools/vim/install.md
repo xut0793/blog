@@ -83,7 +83,7 @@ vim 的插件分为三种，比较常用的就是第二种
 4. 在 _vimrc 配置文件的插件配置项中增加状态栏插件：Plugin 'vim-airline/vim-airline' Plugin 'vim-airline/vim-airline-themes'
 5. 按 airline 官方仓库指导添加如下必要配置
 
-```vimrc
+```
 " vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -93,7 +93,7 @@ set guifont=Ubuntu_Mono_derivative_Powerlin:h12:cANSI:qDRAFT
 
 ## 本机配置 _vimrc
 
-```vimrc
+```
 " 由于 vimrc 里面会有很多的配置项，为了避免混乱，进行分组，参考链接：https://zhuanlan.zhihu.com/p/21328642
 " Startup - 编辑器启动时需要添加的一些配置
 " General - 通用配置

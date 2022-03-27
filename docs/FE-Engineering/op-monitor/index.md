@@ -82,7 +82,7 @@
 ## 埋点实践
 
 - 如何收集运营数据，并上报 [如何实现用户行为的动态采集与分析](https://www.zoo.team/article/user-data-analysis)
-- 如何收集性能指标数据，并上报 [window.performance]() --- 转前端性能分析
+- 如何收集性能指标数据，并上报 window.performance
 - 如何收集应用异步数据，并上报 [前端异常埋点系统初探](https://juejin.cn/post/6965022635470110733)
 
 ## 参考链接

@@ -16,7 +16,6 @@
 
 ## Node安装
 
-[nvm具体安装详情](/Node/nvm)
 
 1. 下载nvm
 下载链接：[nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
@@ -32,7 +31,7 @@
     ```
 1. 使用`nvm`安装`node`
     ```bash
-    nvm install 版本号[可以多个空格分隔]
+    nvm install 版本号 #可以多个空格分隔
     ```
 1. 解决全局安装包的共用问题
 
@@ -74,11 +73,7 @@
 1. 官网下载链接： [Vscode](https://code.visualstudio.com/)
 1. 点击安装
     安装选择时勾选，配置右键菜单项，方便文件或项目打开
-
-    ![vscode](./imgs/vscode.png)
 1. 配置插件
-
-    [具体插件清单]()
 
 ## Powershell美化
 1. 下载[Fluent Terminal](https://github.com/felixse/FluentTerminal/releases)这是一个基于UWP和Web技术的终端模拟器。

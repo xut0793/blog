@@ -4,7 +4,6 @@
 实现上面子组件向父组件通信，我们可以在父组件中将`v-on`绑定在子组件标签上开启一个事件监听，然后在子组件内部使用`$emit`触发该事件。
 
 ## v-on / @
-[点击查看：v-on事件及事件修饰符，以及DOM/JQUERY事件对比]()
 ```html
 <div id="app">
     <p>this is event example for v-on/@<p>
@@ -229,7 +228,6 @@ const vm = new Vue({
 
 对于`v-bind='object`形式传入一个对象时，实现对象某个属性值的双向绑定，可以简写改成这样：`v-bind.sync='object'`
 
->对prop各种类型传递写法还不清楚的可以点击查看[vue-26-component-prop]()
 ```html
   <div id="app">
     <p>this is event example for .sync object.lnag<p>

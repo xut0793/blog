@@ -13,7 +13,7 @@
   - 闭包
 
 详细内容点击查看：
-[浏览器-执行上下文](/Browser/Render/js_execute.html)
+[浏览器-执行上下文](../../Browser/4-render/js-execute)
 
 参考链接：
 [(ES5版)深入理解 JavaScript 执行上下文和执行栈](https://mp.weixin.qq.com/s/IfLjuSVZorM_JT4u8Kffxg)<br>

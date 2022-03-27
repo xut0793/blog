@@ -5,7 +5,7 @@
 3. 也可以将 FTP 手动上传代码操作集成到命令行操作，比如使用 `gulp + gulp-sftp-up4` 或者 `webpack + sftp-webpack-plugin`
 
 ## 使用 `gulp + gulp-sftp-up4`
-```sh
+```
 # 安装 gulp 和 gulp-sftp-upu4
 npm i -D gulp gulp-sftp-up4
 ```

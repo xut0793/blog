@@ -36,7 +36,7 @@ person.describe = function() {
 
 ## Object() / new Object()
 
-在前面[对象类型转换原始值类型](/ES/type-9-conversion)时，我们已经提到过，ES语言提供了`Objecct()`构造函数。
+在前面[对象类型转换原始值类型](./type-9-conversion)时，我们已经提到过，ES语言提供了`Objecct()`构造函数。
 
 它可以将原始值类型转为包装对象。但同时，我们也可以直接调用它生成一个空对象。像上面采用字面量形式创建的对象都是`Ojbect()`构造器的直接实例对象。
 
@@ -89,7 +89,7 @@ let jerry = new Student('jerry',2)
 - 执行构造函数内的代码；
 - 如果构造函数返回的是对象，则返回，否则返回第一步创建的对象。
 
-> 关于构造函数和原型的知识可以查看[构造函数](/ES/oop-4-constructor)和[原型](/ES/oop-3-prototype)章节
+> 关于构造函数和原型的知识可以查看[构造函数](./oop-4-constructor)和[原型](./oop-3-prototype)章节
 
 可以看到，工厂模式中生成一个新对象和返回对象的功能都通过new运算符在语言内部实现了，使得开发者实现起来很简单。
 
@@ -174,7 +174,7 @@ tom = Object.create(Object.prototype, {
 });
 ```
 
-关于对象的数据属性和访问器属性可以查看下一章节内容[对象属性](/ES/oop-2-object-property)
+关于对象的数据属性和访问器属性可以查看下一章节内容[对象属性](./oop-2-object-property)
 
 
 

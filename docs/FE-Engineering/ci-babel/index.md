@@ -28,7 +28,7 @@ Babel 严然已经成为 JS 工具链中重要的一环，它遵循了大部分 
 
 下面的示例使用 babel-cli 演示。
 
-```sh
+```
 # 安装核心工具包
 npm install --save-dev @babel/cli @babel/core
 ```
@@ -90,7 +90,7 @@ preset 预设是一组 Babel 插件的集合，用大白话说就是插件包，
 
 另外，预设也可以是插件和其它预设的集合。Babel 官方已经对常用的环境做了一些 preset 包，比如 @babel/preset-env。
 
-```sh
+```
 npm install --save-dev @babel/preset-env
 ```
 
@@ -207,7 +207,7 @@ browserslist 配置可以直接写在 package.json 文件的 `browserslist` 属�
 
 也可以在项目根目录上单独建立配置文件 `.browserslistrc`
 
-```rc
+```
 # Browsers that we support
 > 0.5%
 last 2 versions
@@ -246,7 +246,7 @@ console.log(john.sayname())
 
 然后使用 babel-cli 执行：
 
-```sh
+```
 npx babel es-class.js -o es.js
 ```
 
@@ -310,7 +310,7 @@ console.log(john.sayname())
 
 `@babel/runtime` 就是这样 npm 包，`@babel/runtime` 把所有语法转换会用到的辅助函数都集成在了一起。
 
-```sh
+```
 # 作为开发依赖安装
 npm install --save @babel/runtime
 ```
@@ -325,7 +325,7 @@ var _createClass = require('@babel/runtime/helpers/createClass')
 
 但我们不可能在每个使用高阶语法的文件中，手动导入对应语法转换的辅助函数，这人为操作是基本不现实的，我们需要一个工具自动帮我们引入这些辅助函数。这就是 `@babel/plugin-transform-runtime` 插件的功能，自动替换辅助函数。
 
-```sh
+```
 npm install -D @babel/plugin-transform-runtime
 ```
 

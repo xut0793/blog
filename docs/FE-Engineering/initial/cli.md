@@ -43,12 +43,12 @@ console.log("This is %cMy stylish message", "color: red; font-style: italic; bac
 ```
 
 ### 命令行终端
-在 Node 环境下的命令行终端下输出颜色不支持使用 `%c`，而是通过使用[ANSI转义代码(一组标识颜色的字符)]()来为文本着色。
+在 Node 环境下的命令行终端下输出颜色不支持使用 `%c`，而是通过使用ANSI转义代码(一组标识颜色的字符)来为文本着色。
 > [<计算机知识>：ANSI转义序列以及输出颜色字符详解](https://www.cnblogs.com/xiaoqiangink/p/12718524.html),ANSI转义代码是标准的，在不同平台下都可以使用。
 ```js
 console.log('\x1b[33m%s\x1b[0m', '你好') // 输出黄色的字体，这个在浏览器端也生效。
 ```
-```sh
+```
 # ANSI 颜色转义字符
 Reset = "\x1b[0m"
 Bright = "\x1b[1m"
@@ -335,7 +335,7 @@ choices: [ "Choice A", new inquirer.Separator(), "choice B" ]
 
 在 Node 中使用命令行命令时，可以传入任意数量的参数，参数可以是独立的，也可以具有键和值。
 
-```sh
+```
 node app.js a b=value c
 ```
 那在应用程序内如何获取命令行提供的参数呢？
@@ -348,7 +348,7 @@ process.argv.forEach((val, index) => {
   console.log(`${index}: ${val}`);
 });
 ```
-```sh
+```
 node test.js a=1 b=2 c d
 ```
 ```js
@@ -368,7 +368,7 @@ node test.js a=1 b=2 c d
 `process.argv` 要特别区分`process.execArgv`：
 `process.execArgv` 属性返回当 Node.js 进程被启动时，Node.js 特定的命令行选项。 这些特定的选项不会在 `process.argv` 返回的数组中出现。
 同样的，`process.execArgv` 也不会包含 Node.js 的可执行脚本名称后面出现的非特定选项。
-```sh
+```
 node --harmony script.js --version
 ```
 ```js
@@ -397,7 +397,7 @@ const args = require('minimist')(process.argv.slice(2))
 args['name'] //joe
 ```
 此类库都是一个约定成俗的规则，每个参数名称之前使用双破折号：
-```sh
+```
 node app.js --name=joe
 ```
 
@@ -408,7 +408,7 @@ node app.js --name=joe
 
 > [Commander.js 中文](https://github.com/tj/commander.js/blob/master/Readme_zh-CN.md)
 
-```sh
+```
 # 安装
 npm install --save commander
 ```
@@ -455,11 +455,11 @@ if (program.small) console.log('pizza size: ', program.small);
 if (program.pizzaType) console.log(`pizza type: ${program.pizzaType}`); // 短横线连接的多个单词参数，key 使用小驼峰获取。
 ```
 此时在 node 终端上执行
-```sh
+```
 node cmd-demo.js -s -p=cheese
 ```
 如果想像独立命令那样调用，可以在项目根目录建立 package.json 文件，添加 bin 字段：`bin: './cmd-demo.js'`，然后在项目根目录下执行 `npm link`之后，可以像下面这样执行：
-```sh
+```
 cmd-demo -s -p=cheese
 ```
 

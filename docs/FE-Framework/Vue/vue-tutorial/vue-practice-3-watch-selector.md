@@ -150,7 +150,7 @@ watch: {
 
 在尝试找到上面使用 watch 解决需求的过程中，改变 `params` 监听代码的顺序，则会导致不同的结果，会和使用 `onSelectChange` 一样对外触发多次 `emit`。
 
-```patch
+```
 watch: {
 + params: {
 +   deep: true,
@@ -871,7 +871,7 @@ function initWatch (vm, watch) {
 }
 ```
 所以看我们产生问题的代码：
-```patch
+```
 watch: {
 + params: {
 +   deep: true,

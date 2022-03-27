@@ -270,5 +270,3 @@ link.onclick = function (event) {
 [DEMO：事件修饰符](https://jsrun.net/JxXKp/edit)
 
 ### vue组件事件
-
-[组件事件event]()

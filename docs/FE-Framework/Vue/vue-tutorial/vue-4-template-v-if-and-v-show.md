@@ -2,7 +2,7 @@
 
 [[toc]]
 
-## `v-if`指令
+## v-if指令
 
 `v-if="value"`当value为真值时，绑定的元素显示；为假值时，绑定的元素不会被写入页面。
 
@@ -27,7 +27,7 @@
     )}
 </script>
 ```
-### `v-else`
+### v-else
 
 同`if/else`一样，`v-if`也可以与`v-else`配合使用。非此即彼
 ```html
@@ -36,7 +36,7 @@
 ```
 >`v-else`不能单独使用，必须与`v-if`配合使用。但`v-if`可以独立使用。
 
-### `v-else-if`
+### v-else-if
 
 多重判断，可以使用`v-else-if`
 ```html
@@ -47,7 +47,7 @@
     <p v-else>now is wrong</p>
 </div>
 ```
-```js
+```html
 <script>
     new Vue({
         el: "#app",
@@ -58,9 +58,9 @@
 </script>
 ```
 
-## `<template>`
+## template
 
-分组元素作为整块渲染，可以使用`<template>`作为虚拟的包裹元素，条件渲染分组，最终的渲染结果将不包含 `<template>` 元素
+分组元素作为整块渲染，可以使用`<template></template>`作为虚拟的包裹元素，条件渲染分组，最终的渲染结果将不包含 `<template></template>` 元素
 ```html
 <template v-if="true">
     <p>1</p>
@@ -77,7 +77,7 @@
     2
     3
 
-当然实际上，你也可以对分组元素包裹一个真正块状标签，如`<div>`标签，只是这样做会让页面多出一些无谓元素。
+当然实际上，你也可以对分组元素包裹一个真正块状标签，如`<div></div>`标签，只是这样做会让页面多出一些无谓元素。
 ```html
 <div v-if="true">
     <p>1</p>
@@ -157,7 +157,7 @@ new Vue({
 })
 ```
 
-## `v-show`指令
+## v-show指令
 
 `v-show`的写法与`v-if`完全一样，看下在这段代码，在页面最终显示结果完全一样，但审查元素elements中的元素结构是不一样。
 
@@ -172,7 +172,7 @@ new Vue({
 ```
 ![显示结果](../image/show.png)
 
-## `v-if`和`v-show`的区别
+## v-if和v-show的区别
 
     v-if指令为假值时，绑定的元素不会显示，Vue也不会生成对应的DOM元素，等到为真假时才创建并添加到DOM树中。
     v-if指令每次显示都会创建元素并插入DOM树中，每次隐藏都会从DOM树中删除，绑定元素的显示和隐藏都需要更新DOM树。并且在v-if真假值的切换过程中，条件块内的事件监听器和子组件也会适当地被销毁和重建。所以v-if指令有很大的性能开销。
@@ -184,7 +184,7 @@ new Vue({
 
 另外`v-show`也可能用于图片加载的优化。如果元素中包含图片，那么使用`v-show`绑定图片的父节点，一旦为真值时，图片会马上显示出来，因为在`v-show`为假值时图片已经被加载。如果是`v-if`指令，图片会等到`v-if`变为真值时才开始加载。
 
-### `v-if=expression`和`v-show=expression` 值可以是表达式返回的`truthy` / `falsy`值
+### v-if=expression和v-show=expression 值可以是表达式返回的`truthy` / `falsy`值
 
 同`{{}}`插值中可以进行简单的表达式运算一样，`v-if`和`v-show`的值也可以是表达式，只要表达的结果是 `truthy`真值 或 `falsy`虚值 的值即可。
 > 在 JavaScript 中，Truthy (真值)指的是在 布尔值 上下文中转换后的值为真的值。所有值都是真值

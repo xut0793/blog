@@ -55,7 +55,7 @@ insert_final_newline        设为true表示使文件以一个空白行结尾
 
 ## 官网示例
 
-```sh
+```
 # top-most EditorConfig file 表示是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
 root = true
 
@@ -98,7 +98,7 @@ indent_size = 2
 
 尽量让 .editorconfig 配置的代码格式与 Prettier 或 ESLint 这些代码格式化工具配置相同的值，不然容易造成冲突无效。
 
-```sh
+```
 # editorconfig.org
 root = true
 

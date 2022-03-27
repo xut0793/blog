@@ -70,7 +70,7 @@ monorepo：单一代码库可以借助工具解决上述问题。
   - 存在BREAKING CHANGE提交： 需要更新 major 大版本
 > BREAKING CHANGE 提交是在脚注 footer 中包含 BREAKING CHANGE: 或 `<type>(scope)` 后面有一个 ! 的提交`<type>(scope)!`，表示引入了破坏性变更（它和语义化版本中的 MAJOR 相对应）。 破坏性变更可以是任意 类型 提交的一部分。
 
-```sh
+```
 # 包含了描述并且脚注中有破坏性变更的提交说明
 feat: allow provided config object to extend other configs
 
@@ -121,7 +121,7 @@ monorepo 只是项目代码组织的一种架构方式，具体如何落地这�
 - 在项目构建方面：
   - [Lerna](https://www.lernajs.cn/)：一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。
   - [Rush](https://rushjs.io/)：微软用于 JavaScript 的可扩展的单一代码库管理器，能够从一个代码库构建和部署多个包。
-  - [Buck](): Facebook 开源的快速构建系统，支持在多种语言和平台上进行不同的构建。
+  - [Buck](https://buck.io): Facebook 开源的快速构建系统，支持在多种语言和平台上进行不同的构建。
   - [Nx](https://nx.dev/): 是一个智能且可扩展的构建框架，提供对 Monorepos 的最佳支持。
 - 在源代码管理方面：
   - Git CODEOWNERS：项目代码权限控制，允许定义哪个团队拥有代码库中的子目录。当有人提交 pull request 或 push 代码到受保护的分支时，代码所有者会自动被要求进行审查。GitHub 和 GitLab 都支持这一特性。
@@ -153,4 +153,4 @@ monorepo 项目的最佳实践：
 - [基于lerna和yarn workspace的monorepo工作流](https://zhuanlan.zhihu.com/p/71385053) --- 以工作流角度对比了multirepo和monorepo的差异
 - [开源项目都在用 monorepo，但是你知道居然有那么多坑么？](https://juejin.cn/post/6950082433647640612) --- 从 multirepo 痛点引出monorepo优势及带来的新问题
 - [All in one：项目级 monorepo 策略最佳实践](https://zhuanlan.zhihu.com/p/348898271) --- 了解到两个工具Volta(锁定环境)、Verdaccio(本地发布)
-- [如何评价 rushjs?](zhihu.com/question/333587242)
+- [如何评价 rushjs?](https://zhihu.com/question/333587242)

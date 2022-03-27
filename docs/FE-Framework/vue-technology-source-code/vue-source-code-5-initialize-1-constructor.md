@@ -50,7 +50,7 @@ initGlobalAPI (Vue) // 全局api挂载 Vue.config/Vue.option / Vue.set / Vue.del
 
 此时，我们可以打印 `Vue.prototype` 对象：
 
-![source-code-vue-prototype.png](../image/vue-source-vue-prototype.png)
+![source-code-vue-prototype.png](../Vue/image/vue-source-vue-prototype.png)
 
 ## `const vm = new Vue()` 做了什么
 
@@ -110,7 +110,7 @@ function initMixin (Vue) {
 ```
 
 此时，打印 vm 实例对象：
-![source-code-vm.png](../image/vue-source-vm.png)  
+![source-code-vm.png](../Vue/image/vue-source-vm.png)  
 
 ## vm.$mount("#app") 做了什么
 

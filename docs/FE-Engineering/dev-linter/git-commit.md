@@ -120,13 +120,13 @@ revert: feat(pencil): add 'graphiteWidth' option
 
 ### 1. install 安装
 
-```sh
+```
 npm i -D @commitlint/cli
 ```
 
 ### 2. Cli 命令行
 
-```sh
+```
 # 安装完成后，可以使用命令行查看可用的命令行参数
 npx commitlint --help
 ```
@@ -137,7 +137,7 @@ npx commitlint --help
 
 常用的提供一个配置文件，设置 commitlint 如何校验。
 
-```sh
+```
 # 需求先安装相关依赖
 npm i -D @commitlint/config-conventional @commitlint/format conventional-changelog-atom
 ```
@@ -236,7 +236,7 @@ module.exports = {
 
 ## 与 Husky 集成自动校验
 
-```sh
+```
 npm install --save-dev husky
 ```
 
@@ -259,7 +259,7 @@ npm install --save-dev husky
 
 即使上面的插件和步骤都做完了，但实际在编写 git commit 时还是需要自己手动按约定式规则书写：
 
-```sh
+```
 git commit -m 'fix(*): fixed some bug'
 ```
 
@@ -279,7 +279,7 @@ git commit -m 'fix(*): fixed some bug'
 
 全局模式下, 需要 ~/.czrc 配置文件, 为 commitizen 指定 Adapter.
 
-```sh
+```
 npm install -g commitizen cz-conventional-changelog
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
@@ -288,7 +288,7 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 推荐进行项目本地安装
 
-```sh
+```
 npm i -D commitizen cz-conventional-changelog
 ```
 
@@ -324,7 +324,7 @@ package.json 中配置:
 
 `conventional-changelog-cli` 插件就是生成 Change log 的工具，运行下面的命令即可。
 
-```sh
+```
 # 安装
 npm install -g conventional-changelog-cli
 
@@ -337,7 +337,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s
 
 如果这是你第一次用这个工具生成 CHANGELOG ，并且覆盖之前的，可以使用：
 
-```sh
+```
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
@@ -390,7 +390,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 ## 总结
 
-```sh
+```
 # 第一部分： commit message 格式校验
 # 1. 安装 commitlint 及扩展
 npm i -D @commitlint/cli @commitlint/config-conventional
@@ -468,7 +468,7 @@ npm i -D conventional-changelog-cli
 
 所以 `commitizen` 的适配器选择了可自定义配置的 `cz-customizable`
 
-```sh
+```
 # 第一部分： commit message 格式校验
 # 1. 安装 commitlint 及扩展
 npm i -D @commitlint/cli @commitlint/config-conventional husky

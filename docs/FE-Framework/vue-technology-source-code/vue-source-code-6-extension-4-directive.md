@@ -23,8 +23,8 @@ Vue 框架已定义的指令有：
 1. 渲染函数 render 调用生成 vnode (new VNode)
 1. patch 生成真实 DOM 并挂载显示视图
 
-![vue-source-constructor-instance](../image/vue-source-constructor-instance.png)
-![vue-source-compiler-render-patch](../image/vue-source-compiler-render-patch.png)
+![vue-source-constructor-instance](../Vue/image/vue-source-constructor-instance.png)
+![vue-source-compiler-render-patch](../Vue/image/vue-source-compiler-render-patch.png)
 
 [[toc]]
 

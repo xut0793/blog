@@ -21,7 +21,7 @@
 首先借助`webpack`搭建项目
 
 - 初始化项目并导入依赖
-```shell
+```ell
 mkdir webpack-hmr && cd webpack-hmr
 npm i -y
 npm i -S webpack webpack-cli webpack-dev-server html-webpack-plugin
@@ -103,7 +103,7 @@ module.exports = ret
 - 区分commonjs和esmodule
 
 dist目录结构
-```shell
+```ell
 ├── index.html
 └── main.js
 ```
@@ -167,7 +167,7 @@ dist目录结构
   return __webpack_require__(__webpack_require__.s = "./src/index.js");
 })
 ```
-> 如果对上面`commonjs`规范感兴趣可以搜索[手摸手带你实现commonjs规范]()
+> 如果对上面`commonjs`规范感兴趣可以搜索手摸手带你实现commonjs规范
 
 给出上面代码主要是先对webpack的产出文件混个眼熟，不要惧怕。其实任何一个不管多复杂的事物都是由更小更简单的东西组成，剖开它认识它爱上它。
 
@@ -374,7 +374,7 @@ let fs = new MemoryFileSystem()
 
 感兴趣的可以根据上面[debug服务端源码](#debug服务端源码)所带的源码位置，并在浏览器的调试模式下设置断点查看每个阶段的值。
 
-```shell
+```ell
 node dev-server.js
 ```
 使用我们自己编译的`dev-server.js`启动服务，可看到页面可以正常展示，但还没有实现热更新。

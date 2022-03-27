@@ -12,7 +12,7 @@ Vite 插件扩展于设计出色的 Rollup 插件体系，并添加了一些 Vit
 
 使用 vite 插件两步：
 1. 下载安装插件
-```sh
+```
 npm i -D @vitejs/plugin-legacy
 ```
 2. 注册插件，添加到 `vite.config.js` 配置项 `plugins` 中

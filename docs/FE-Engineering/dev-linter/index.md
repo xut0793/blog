@@ -46,12 +46,12 @@ JS 语言的编码规范没有官方标准，但是大公司中一般都有其�
 
 工具链：
 
-1. [EditorConfig](./EditorConfig/)
-1. [ESLint](./ESLint/)
-1. [Prettier](./Prettier/)
-1. [Stylelint](./Stylelint/)
-1. [Husky](./Husky/)
-1. [lint-staged](./lint-staged/)
+1. [EditorConfig](./EditorConfig)
+1. [ESLint](./Eslint)
+1. [Prettier](./Prettier)
+1. [Stylelint](./Stylelint)
+1. [Husky](./Husky)
+1. [lint-staged](./lint-staged)
 
 关于各个工具的具体介绍和总结，可以点击查看详情。
 

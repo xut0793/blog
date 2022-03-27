@@ -5,7 +5,7 @@
 所以需要使用 `html-webpack-plugin` 插件自动帮我们完成以上工作。
 
 ## 基本使用
-```sh
+```
 # 下载安装插件
 npm install --save-dev html-webpack-plugin
 ```
@@ -140,27 +140,27 @@ plugins:[
 ```
 配置对象 `options` 具体有哪些可自定义配置的参数
 
-|  参数 |  类型 |  默认值 | 描述 |
-| :---: | :---: | :----: | -----|
-| filename | `{String|Function}` | `index.html` | 将生成的HTML写入到该文件中。默认写入到index.html中。你也可以在这儿指定子目录 (eg: assets/admin.html) |
-| publicPath | `{String|'auto'}` | `auto` | 指定注入资源的公共路径 |
-| title | `{String}` | `Webpack App` | 用于生成的HTML文档标题 |
-| favicon | `{String}` | `''` | 添加指定的 favicon 文件路径输出到 html文件 |
-| meta | `{Object}` | `{}` | 自定义 meta 标签内容输出到 html 文件 |
-| base | `{Object|String|false}` | `false` | 自定义 base 标签内容输出到 html 文件 |
-| inject | `{Boolean|String}` | `true` | 指定js资源注入html的位置，可用的值：`true || 'head' || 'body' || false`<br>。'body'所有javascript资源都将放置在body元素的底部。<br>'head'会将脚本放置在head元素中。<br>通过true将根据`scriptLoading`选项将其添加到head或者body。<br>通过false将禁用自动注射 |
-| scriptLoading | `{'blocking'|'defer'}` | `defer` | 指定 js 资源加载的方式，配合 `inject:true`使用。<br> defer 会使用非阻塞的方式加载js，提高首次渲染性能。 |
-| hash | `{Boolean}` | `false` | 为所有注入到 html 文件的资源 chunk 添加本次构建产生的 hash 值，但一般设为 false，js 在 output.filename 使用变量占位符自定义，css 在提取插件中命名 |
-| template | `{String}` | `` | 自定义html 模板，支持 ejs 格式，如果需要使用其它格式，如 pug，需要配合 pug-loader。插件提供了一个默认模板 default_index.ejs |
-| templateContent | `{string|Function|false}` | `false` | 使用内联方式直接将模块定义在配置对象中，与 template 属性二选一，不能同时使用 |
-| templateParameters | `{Boolean|Object|Function}` | `false` | 自定义模板可以使用的参数。插件默认提供了 `htmlWebpackPlgin / webpackConfig / compilation` 参数，也可以通过此对象传入自定义变量 |
-| cache | `{Boolean}` | `true` | 缓存生成的 html 文件，只有当依赖资源变化时才重新生成  |
-| chunks | `{Array.<string>}` | `''` | 允许指定哪些 chunk 注入到 html 文件中 |
-| excludeChunks | `{Array.<string>}` | `''` | 允许排除一些注入的资源 |
-| chunksSortMode | `{String|Function}` | `auto` | 可用值：`'none' | 'auto' | 'manual' | {Function}`，用于将注入 html 的 chunk 进行排序  |
-| showErrors | `{Boolean}` | `true` | 将插件运行过程中的错误信息直接写入 html 页面中 |
-| minify | `{Boolean|Object}` | `mode:production`时`true`,否则为`false` | 内部使用 `html-minifier`压缩输出的html文件,所以也可以传入它的配置对象 |
-| xhtml | `{Boolean}` | `false` | 如果true 将link标签呈现为自动关闭状态（符合XHTML规范） |
+|        参数        |            类型             |                 默认值                  | 描述                                                                                                                                                                                                                                                        |
+| :----------------: | :-------------------------: | :-------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      filename      |     `{String|Function}`     |              `index.html`               | 将生成的HTML写入到该文件中。默认写入到index.html中。你也可以在这儿指定子目录 (eg: assets/admin.html)                                                                                                                                                        |
+|     publicPath     |      `{String|'auto'}`      |                 `auto`                  | 指定注入资源的公共路径                                                                                                                                                                                                                                      |
+|       title        |         `{String}`          |              `Webpack App`              | 用于生成的HTML文档标题                                                                                                                                                                                                                                      |
+|      favicon       |         `{String}`          |                  `''`                   | 添加指定的 favicon 文件路径输出到 html文件                                                                                                                                                                                                                  |
+|        meta        |         `{Object}`          |                  `{}`                   | 自定义 meta 标签内容输出到 html 文件                                                                                                                                                                                                                        |
+|        base        |   `{Object|String|false}`   |                 `false`                 | 自定义 base 标签内容输出到 html 文件                                                                                                                                                                                                                        |
+|       inject       |     `{Boolean|String}`      |                 `true`                  | 指定js资源注入html的位置，可用的值：`true || 'head' || 'body' || false`<br>。'body'所有javascript资源都将放置在body元素的底部。<br>'head'会将脚本放置在head元素中。<br>通过true将根据`scriptLoading`选项将其添加到head或者body。<br>通过false将禁用自动注射 |
+|   scriptLoading    |   `{'blocking'|'defer'}`    |                 `defer`                 | 指定 js 资源加载的方式，配合 `inject:true`使用。<br> defer 会使用非阻塞的方式加载js，提高首次渲染性能。                                                                                                                                                     |
+|        hash        |         `{Boolean}`         |                 `false`                 | 为所有注入到 html 文件的资源 chunk 添加本次构建产生的 hash 值，但一般设为 false，js 在 output.filename 使用变量占位符自定义，css 在提取插件中命名                                                                                                           |
+|      template      |         `{String}`          |                   ``                    | 自定义html 模板，支持 ejs 格式，如果需要使用其它格式，如 pug，需要配合 pug-loader。插件提供了一个默认模板 default_index.ejs                                                                                                                                 |
+|  templateContent   |  `{string|Function|false}`  |                 `false`                 | 使用内联方式直接将模块定义在配置对象中，与 template 属性二选一，不能同时使用                                                                                                                                                                                |
+| templateParameters | `{Boolean|Object|Function}` |                 `false`                 | 自定义模板可以使用的参数。插件默认提供了 `htmlWebpackPlgin / webpackConfig / compilation` 参数，也可以通过此对象传入自定义变量                                                                                                                              |
+|       cache        |         `{Boolean}`         |                 `true`                  | 缓存生成的 html 文件，只有当依赖资源变化时才重新生成                                                                                                                                                                                                        |
+|       chunks       |     `{Array.<string>}`      |                  `''`                   | 允许指定哪些 chunk 注入到 html 文件中                                                                                                                                                                                                                       |
+|   excludeChunks    |     `{Array.<string>}`      |                  `''`                   | 允许排除一些注入的资源                                                                                                                                                                                                                                      |
+|   chunksSortMode   |     `{String|Function}`     |                 `auto`                  | 可用值：`'none' | 'auto' | 'manual' | {Function}`，用于将注入 html 的 chunk 进行排序                                                                                                                                                                        |
+|     showErrors     |         `{Boolean}`         |                 `true`                  | 将插件运行过程中的错误信息直接写入 html 页面中                                                                                                                                                                                                              |
+|       minify       |     `{Boolean|Object}`      | `mode:production`时`true`,否则为`false` | 内部使用 `html-minifier`压缩输出的html文件,所以也可以传入它的配置对象                                                                                                                                                                                       |
+|       xhtml        |         `{Boolean}`         |                 `false`                 | 如果true 将link标签呈现为自动关闭状态（符合XHTML规范）                                                                                                                                                                                                      |
 
 ### 基本类属性
 

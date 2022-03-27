@@ -32,7 +32,7 @@ js 是单线程运行，实现异步任务依赖于浏览器实现的事件循�
 - UI 交互事件
 - Network
 
-![eventloop.png](../image/eventloop.png)
+![eventloop.png](../Vue/image/eventloop.png)
 
 ## 源码实现
 ```js

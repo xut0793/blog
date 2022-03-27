@@ -5,7 +5,7 @@
 
 ## 组件插槽的使用形式
 
-关于组件插槽的具体使用可能参见 [组件插槽](/FE-Framework/Vue/vue-29-component-slot.html)
+关于组件插槽的具体使用可能参见 [组件插槽](../Vue/vue-tutorial/vue-28-component-slot)
 
 简单总结下组件插槽使用：
 - 组件插槽 slot 分默认插槽、具名插槽、作用域插槽
@@ -64,7 +64,7 @@ vm.$mount('#app')
 `$mount => createToFunction => baseCompiler => parse => parseHTML => parseStartTag => handleStartTag => options.start => closeElement => processElement => processSlotContent`
 
 上面这段代码在被 options.start 函数内调用 createASTElement(tag, attrs, currentParent) 生成的 ASTElement 对象结构大概如下：
-> 关于这段不清楚的可以查看 [模板编译](/FE-Framework/Vue/vue-source-code-2-compile-1-parse.html)
+> 关于这段不清楚的可以查看 [模板编译](./vue-source-code-2-compile-1-parse.html)
 ```js
 ASTElement = {
   tag: 'template',

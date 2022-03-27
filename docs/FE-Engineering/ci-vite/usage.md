@@ -8,7 +8,7 @@
 
 常用的模板：`vue vue-te react react-ts`
 - 安装vite，并创建项目
-```sh
+```
 # npm 6.x
 npm init vite@latest my-vue-app --template vue
 
@@ -104,7 +104,7 @@ pubilc 目录：
 2. 自定义环境变量，Vite 使用 dotenv 从你的 环境目录 中的下列文件加载额外的环境变量。
 只有以 VITE_ 为前缀的变量才会暴露给经过 vite 处理的代码。如 `VITE_SOME_KEY=123` 暴露为 `import.meta.env.VITE_SOME_KEY` 提供给客户端源码
 如果需要自定义一个模式的环境文件，首选需要明确该模式是类开发环境还是类生产环境，然后在其中明确 NODE_ENV 环境变量的值，让 vite 实现生产或开发相关优化。
-```sh
+```
 # CLI 运行命令：vite build --mode qa，加载的环境文件： .env.qa
 NODE_ENV=production
 VITE_QA_URL=xxxx

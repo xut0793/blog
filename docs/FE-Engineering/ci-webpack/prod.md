@@ -116,7 +116,7 @@ module.exports = {
 }
 ```
 现在添加 `terser-webpack-plugin` 配置
-```patch
+```
 module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, '../js-demo'),
@@ -317,7 +317,7 @@ function cube(x) {
 ```
 
 开启 `optimization.usedExports` 的构建：
-```patch
+```
  module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, '../js-demo'),
@@ -550,7 +550,7 @@ module.exports = {
 
 如果要指明这两个文件具有副作用，使得 tree shaking 对其不生效。可以在修改 package.json 中 sideEffects 属性。
 
-```patch
+```
 - "sideEffects": false,
 +"sideEffects": [
 +  "*.css",
@@ -558,7 +558,7 @@ module.exports = {
 +]
 ```
 或者对其中样式文件的副作用声明改为如下方式：
-```patch
+```
 // webapck.config.js
 module: {
   rules: [
@@ -659,7 +659,7 @@ optimization: {
 ```
 
 修改配置文件代码
-```patch
+```
 module.exports = {
   mode: 'none',
   context: path.resolve(__dirname, '../js-demo'),
@@ -922,7 +922,7 @@ main~37e9587a.css
 如果改变 index.css 内容，只想其对应的输出改变名称，可以更改如下配置:
 - 将css的命名使用 `[contenthash]`
 - 为了便于对比css改变后，其它输出文件命名不变，需要把js构建输出命名改为 `[chunkhash]`
-```patch
+```
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -1037,7 +1037,7 @@ export default function greet(name) {
 }
 ```
 修改 utils.js 文件内容
-```patch
+```
 // utils.js
 +import greet from './greet.js'
 +greet('Tom')
@@ -1119,7 +1119,7 @@ optimization: {
 ```
 
 我们先修改 utils.js 的内容，不引入 greet.js，然后修改配置文件
-```patch
+```
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

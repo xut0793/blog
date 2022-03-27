@@ -54,7 +54,7 @@ textContent >>>
             
         
 ```
-![img](./image/get.png)
+![img](./imgs/get.png)
 - `outerHTML`会获取包括其自身，以及后代元素的所有HTML内容。意义上的包含outer外部即自身,会对内容中的标签符号进行转义。
 - `innerHTML`获取除自身外的，内部HTML内容。意义上的inner内部，会对内容中标签符号进行转义。
 - `outerText`微软IE浏览器最先提出的属性，暂未被写入W3C标准，但被大部分其它厂商浏览器支持，获取其包含的所有元素节点文本内容，但不包括隐藏的元素节点。
@@ -77,7 +77,7 @@ console.log("innerHTML >>>",d_outer.innerText)
 console.log("textContent >>>",d_outer.textContent)
 ```
 `d_outer.outerHTML`赋值表现与取值一样，会包括自身元素一起，都被替换，不会在页面中显示，但原有DOM片段仍在内存中，所以再次获取值仍然与赋值前一样。
-![outerHTML](./image/outerHTML.png)
+![outerHTML](./imgs/outerHTML.png)
 [传送门：MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/outerHTML)
 
 ### innerHTML赋值
@@ -91,7 +91,7 @@ console.log("innerHTML >>>",d_outer.innerText)
 console.log("textContent >>>",d_outer.textContent)
 ```
 `d_outer.innerHTML`赋值表现与取值一致，仅对内部内容进行替换，并且重新获取值是最新内容。
-![innerHTML](./image/innerHTML.png)
+![innerHTML](./imgs/innerHTML.png)
 
 ### outerText赋值
 ```js
@@ -108,7 +108,7 @@ console.log("textContent >>>",d_outer.textContent)
 - 不会对内容中的标签符号进行转换，默认全为字符文本。
 - 重新取值仍然为内存中原来的值。
 除了第二点外，基本表现与`outerHTML`一致。
-![outerText](./image/outerText.png)
+![outerText](./imgs/outerText.png)
 
 ### innerText赋值
 ```js
@@ -121,7 +121,7 @@ console.log("innerHTML >>>",d_outer.innerText)
 console.log("textContent >>>",d_outer.textContent)
 ```
 `d_outer.innerText`赋值新内容，仅对后代节点内容进行替换。同样不会对赋值内容中的标签符号进行转义，默认全为字符文本。
-![innerText](./image/innerText.png)
+![innerText](./imgs/innerText.png)
 
 ### textContent赋值
 ```js
@@ -134,7 +134,7 @@ console.log("innerHTML >>>",d_outer.innerText)
 console.log("textContent >>>",d_outer.textContent)
 ```
 `d_outer.outerText`赋值新内容，仅对后代节点内容进行替换。同样不会对赋值内容中的标签符号进行转义，默认全为字符文本。同`innerText`赋值完全一致。
-![textContent](./image/textContent.png)
+![textContent](./imgs/textContent.png)
 
 ## 总结
-![textContent](./image/get1.png)
+![textContent](./imgs/get1.png)

@@ -27,7 +27,7 @@
 function example() {}
 example()
 ```
-关于函数更详细的内容，查看[函数章节](/ES/Function/)
+关于函数更详细的内容，查看[函数章节](./fn-0-index)
 
 ### class
 
@@ -36,7 +36,7 @@ example()
 ```js
 class Person {}
 ```
-关于类的具体内容查看[类章节](/ES/Class/)
+关于类的具体内容查看[类章节](./oop-5-class)
 
 ### import
 
@@ -61,7 +61,7 @@ export default example
 import example, {example1, example2} from './someModule.js'
 ```
 
-详细内容见[模块章节](/ES/ESModule/)
+详细内容见[模块章节](./module-4-es-module)
 
 
 默认情况下，JS的语句执行流程是从上到下顺序执行。但通过使用特殊的语句可以改变语句默认的执行顺序。这些语句称为流程控制语句
@@ -98,7 +98,7 @@ import example, {example1, example2} from './someModule.js'
 ```js
 throw value; // value通过使用Error()构造函数生成错误实例抛出
 ```
-详细内容见[错误处理Error](/ES/Error/)章节
+详细内容见[错误处理Error](./built-in-Error)章节
 
 ### debugger
 
@@ -113,8 +113,8 @@ debugger;
 ## 错误捕获语句 
 ### try-catch
 
-详细内容见[错误处理Error](/ES/Error/)章节
+详细内容见[错误处理Error](./built-in-Error)章节
 
 ## 模块导出导入语句
 
-基于模块规范不同，导入导出语句关键字也不同。详细内容见[模块章节](/ES/ESModule/)
+基于模块规范不同，导入导出语句关键字也不同。详细内容见[模块章节](./module-4-es-module)

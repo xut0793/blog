@@ -53,7 +53,7 @@ const genElement = () => {
 document.body.appendChild(genElement())
 ```
 webpack.config.js 配置
-```sh
+```
 npm i -D file-loader
 ```
 ```js
@@ -112,7 +112,7 @@ module.exports = {
 }
 ```
 如果需要将图片的名称不使用 hash 值，也可以自定义：
-```patch
+```
 {
   test: /\.svg$/i,
 -  user: ['file-loader'],
@@ -134,11 +134,11 @@ module.exports = {
 
 `url-loader` 默认将文件尺寸小于 **8kb** 的文件以 `base64` 格式编码内嵌，等于或大于 8kb 时，默认采用 `file-loader`处理输出文件到指定目录中。
 
-```sh
+```
 npm i -D url-loader
 ```
 更改配置文件
-```patch
+```
 output: {
 -  path: path.resolve(__dirname, 'bundle-file'),
 +  path: path.resolve(__dirname, 'bundle-url'),
@@ -228,7 +228,7 @@ webpack 5 将静态资源类型分为4种：
 - `asset/inline`：标记为此类型的资源将导出一个 data URI，内嵌到 bundle 中。替换 `url-loader` 功能
 - `asset`：标记为此类型的资源将依据配置自动实现是导出一个 data URI 还是导出一个单独的文件。
 
-```patch
+```
 module: {
   rules: [
     // 1. 提取单独文件
@@ -356,7 +356,7 @@ module: {
 
 当然，webapck@5 也支持兼容模式，如果不想采用 webpack@5 这种 `asset module` 的模式，也可以设置回退成使用 `url-loader` 这类配置
 
-```patch
+```
 module.exports = {
   module: {
     rules: [
@@ -388,7 +388,7 @@ Likes tater tots and beer.',
 }
 ```
 配置：
-```patch
+```
 + const json5 = require('json5');
 module.exports = {
   module: {
@@ -416,10 +416,7 @@ console.log(json.owner.name); // output `Tom Preston-Werner`
 
 同理，`yaml / toml` 等文件添加对应的解析器，同样可以处理成对象直接调用。
 
-> [toml 语法](https://toml.io/cn/v1.0.0-rc.1)
-> [yaml 语法]()
-
-```patch
+```
 + const json5 = require('json5');
 + const toml = require('toml');
 + const yaml = require('yamljs');

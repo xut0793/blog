@@ -45,7 +45,7 @@ function add (a, b) { return a+ b; }
 - 变量声明提升只是提升声明部分，不包括赋值，提升后变量初始值是`undefined`，而函数声明提升是整体提升，包括函数体
 - let const 声明变量提升会形成暂时性死区，并且提升后初始值并不是`undefined`
 
-> 关于 var 提升与 let const 提升的区别，请点击查看[]()
+> 关于 var 提升与 let const 提升的区别，请点击查看
 
 ## P76页：典型继承中存在的问题
 

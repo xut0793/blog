@@ -64,7 +64,7 @@ console.log(kid.age) // 10
 ## 内部属性 Internal properties
 
 内部属性只存在于ES语言规范中，通常将内部属性命名用双层中括号来表示。它们不能用于JS开发中直接访问。但现代JS语言也实现了方法来间接访问其值，或者将内部属性使用Symbol类型值来定义。
-> 关于内部属性如何作用的更多例子可以查看[类型检测](/ES/type-7-checking.html#object-prototype-tostring)章节
+> 关于内部属性如何作用的更多例子可以查看[类型检测](./type-7-checking.html#object-prototype-tostring)章节
 
 最典型的例子是获取对象的原型`[[prototype]]`、`__proto__`、`Object.getPrototypeOf()`方法的演进。
 

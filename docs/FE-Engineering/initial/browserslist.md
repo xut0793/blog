@@ -33,7 +33,7 @@ browserslist 配置可以直接写在 package.json 文件的 `browserslist` 属�
 }
 ```
 也可以在项目根目录上单独建立配置文件 `.browserslistrc`
-```rc
+```
 # Browsers that we support 
 > 0.5%
 last 2 versions

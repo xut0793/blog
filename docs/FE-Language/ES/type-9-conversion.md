@@ -1,6 +1,6 @@
 # 类型转换
 
-在数据类型的[第一节](/ES/type-0-index.html#基本类型和引用类型的区别)，我们已经讲了，JS是一门弱类型语言，两种不同类型的数据在运算时会在底层进行数据类型的隐式转换，来使得两个数据可以进行运算。
+在数据类型的[第一节](./type-0-index.html#基本类型和引用类型的区别)，我们已经讲了，JS是一门弱类型语言，两种不同类型的数据在运算时会在底层进行数据类型的隐式转换，来使得两个数据可以进行运算。
 
 比如：
 
@@ -23,12 +23,12 @@
 
 - 原始值之间的隐式转换
 - 对象转原始值的隐式转换
-> 原始值转对象的隐式转换存在于原始值调用对象属性或方法，在[原始值与包装对象](/ES/type-8-primitive-wrapper)有详细分析。
+> 原始值转对象的隐式转换存在于原始值调用对象属性或方法，在[原始值与包装对象](./type-8-primitive-wrapper)有详细分析。
 
 ## 原始值之间的隐式转换
 
 上面讲包装对象时提到，除null和nudefined类型外，其它类型都实现了对应的生成函数`Boolean() / String() / Number() / BigInt() / Symbol()`，它们的作用之一就是被当做纯函数使用时，将参转换为相应类型的原始值。
-> 其中`Boolean() / String() / Number()`还可以使用new运算符调用生成对应类型的包装对象。具体见[原始值与包装对象](/ES/type-8-primitive-wrapper.html#包装对象)
+> 其中`Boolean() / String() / Number()`还可以使用new运算符调用生成对应类型的包装对象。具体见[原始值与包装对象](./type-8-primitive-wrapper.html#包装对象)
 
 ### Boolean() ：将传入参数转成布尔类型的原始值
 
@@ -78,7 +78,7 @@ let obj = {
 }
 console.log(Number(obj)) // 123
 ```
-> 对Symbol作为key不理解的可以查看[Symbol类型章节](/ES/type-4-symbol)
+> 对Symbol作为key不理解的可以查看[Symbol类型章节](./type-4-symbol)
 
 > 将字符转为数值，除了Number方法，ES还提供了两个全局方法 parseInt() 和parseFloat()，具体查阅MDN
 
@@ -122,7 +122,7 @@ BigInt('abc')         // SyntaxError: Cannot convert abc to a BigInt
 
 ### Symbol() 接受的参数只作为类型值的描述
 
-> 关于Symbol类型的具体介绍请查阅[Symbol类型](/ES/type-4-symbol)
+> 关于Symbol类型的具体介绍请查阅[Symbol类型](./type-4-symbol)
 
 
 
@@ -137,7 +137,7 @@ BigInt('abc')         // SyntaxError: Cannot convert abc to a BigInt
 
 `toString()`方法返回一个表示该对象原始值的字符串。默认情况下，`toString()` 方法被每个对象继承。如果此方法在自定义对象中未被覆盖，`toString()` 返回 "[object type]"，其中 type 是对象的类型。
 
-> 关于toString()在ES语言规范中的实现原理，可以查看[类型检测](/ES/type-7-checking.html#object-prototype-tostring-调用原理)。主要是internal slot 和 @@toStringTag 作用。
+> 关于toString()在ES语言规范中的实现原理，可以查看[类型检测](./type-7-checking.html#object-prototype-tostring-调用原理)。主要是internal slot 和 @@toStringTag 作用。
 ```js
 Object.prototype.toString.call(undefined)     // [object Undefined]
 Object.prototype.toString.call(null)          // [object Null]

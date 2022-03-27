@@ -70,7 +70,7 @@ Student.prototype.describe = funciton() {
 
 ### 构造函数中通过闭包实现私有数据
 
-在前面[创建对象](/ES/oop-1-object-create.html#new-function-形式)章节，我们讲了使用new调用构造函数时，具体发生了什么：
+在前面[创建对象](./oop-1-object-create.html#new-function-形式)章节，我们讲了使用new调用构造函数时，具体发生了什么：
 - 以构造函数的 prototype 属性为原型，创建新对象；
 - 将新对象作为this 和调用参数传给构造函数；
 - 执行构造函数内的代码；
@@ -286,7 +286,7 @@ function Sub(prop1,prop2) {
 单只继承实例属性，并没有完全实现拥有继承Super所有特性的要求。因为一般会常用原型来保存共享数据，所以我们需要解决如何让Sub继承Supers构造器原型上的方法。
 
 解决方法就是让Sub原型对象的原型等于Super的原型，即`Sub.prototype.__proto__ === Super.prototype`
-> Sub.prototype也是一个对象，实例对象都有自己的内部属性`[[prototype]]`，对此不明白的可以看上一节[原型](/ES/oop-3-prototype)
+> Sub.prototype也是一个对象，实例对象都有自己的内部属性`[[prototype]]`，对此不明白的可以看上一节[原型](./oop-3-prototype)
 
 ```js
 function Super(prop1) {

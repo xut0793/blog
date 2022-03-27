@@ -16,4 +16,4 @@
 
 整个 data 的响应式处理流程图：
 
-![vue-source-reacive.png](../image/vue-source-reacive.png)
+![vue-source-reacive.png](../Vue/image/vue-source-reacive.png)

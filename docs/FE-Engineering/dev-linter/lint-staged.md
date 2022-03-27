@@ -62,4 +62,4 @@ npm install lint-staged --save-dev
 }
 ```
 
-关于 lint-staged 与 husky 集成使用，参考 [Husky](/FE-Engineering/Lint/Husky.html)
+关于 lint-staged 与 husky 集成使用，参考 [Husky](./Husky.html)

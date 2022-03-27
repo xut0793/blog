@@ -11,7 +11,7 @@
 
 ### 表达式
 
-[表达式与操作符](/ES/base-expression-operators/)
+[表达式与操作符](./base-1-expression-operators)
 
 表达式是包含着值和运算的代码，表达最终会产生一个值。表达式中也包含一个概念是运算符（操作符）。
 
@@ -37,7 +37,7 @@ void function(x){return x * 2}(2)   // undefined
 
 ## 变量
 
-[变量](/ES/base-variant)
+[变量](./base-2-variant)
 
 对表达式得到的值，可能需要将来使用，所以在JS中通过变量将这些值存储起来。
 
@@ -57,7 +57,7 @@ void function(x){return x * 2}(2)   // undefined
 
 ## 语句
 
-[语句](/ES/base-statement/)
+[语句](./base-3-statement)
 要构成完整的脚本代码，必须将表达式和变量连在一起构成语句。表达式产生一个值，语句代表一个操作。
 ```js
 // 声明语句：声明一个变量
@@ -99,7 +99,7 @@ if (1 < 3) {
 var let const function export import class break case 等等
 Infinity NaN undefined
 
-更具体的所有保留字可以查看[MDN]()
+更具体的所有保留字可以查看
 
 ### 字面量
 

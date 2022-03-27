@@ -13,7 +13,7 @@
 
 - VS Code 需要安装插件 `EditorConfig for VS Code`，然后在项目根目录下右键，点击最右的菜单项： `Generate .editorconfig`，直接生成 .editorconfig 文件。
 
-```sh
+```
 # editorconfig.org
 root = true
 
@@ -44,7 +44,7 @@ trim_trailing_whitespace = false
 
 - 安装
 
-```sh
+```
 npm install --save-dev --save-exact prettier
 ```
 
@@ -120,7 +120,7 @@ module.exports = {
 
 - 忽略文件 .prettierignor
 
-```sh
+```
 /dist/
 /node_modules/
 /static/
@@ -170,7 +170,7 @@ module.exports = {
 
 - 排除文件 .eslintignor
 
-```sh
+```
 # .eslintignor
 /node_modules/
 /build/
@@ -183,7 +183,7 @@ src/assets/
 
 - 安装：因为需要与 Prettier 集成，所以相关插件也要安装
 
-```sh
+```
 npm i -D stylelint stylelint-config-standard stylelint-order stylelint-config-prettier stylelint-plugin-prettier
 ```
 
@@ -217,7 +217,7 @@ module.exports = {
 
 - 忽略文件 .stylelintignor
 
-```sh
+```
 # .eslintignor
 /node_modules/
 /build/
@@ -230,7 +230,7 @@ src/assets/
 
 - 安装 Husky 和 lint-staged
 
-```sh
+```
 npm i -D husky lint-staged
 ```
 

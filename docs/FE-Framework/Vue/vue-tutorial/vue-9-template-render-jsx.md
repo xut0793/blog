@@ -140,7 +140,7 @@ new Vue({
 
 ## 延伸扩展知识（点击查看）
 
-[vue的`render(tagName, data, childNode)`详解]()
-[JSX语法详解]()
-[HTML5的`template`元素：内容模板元素](./HTML5_template)
-[原生DOM的方法：`outerHTML`/`innerHTML`/`outerText`/`innerText`/`textContent`区别](./outerHTML-innerTHML-outerText-innerText-textContent)
+- vue的`render(tagName, data, childNode)`详解
+- JSX语法详解
+- HTML5的`template`元素：内容模板元素
+- 原生DOM的方法：`outerHTML`/`innerHTML`/`outerText`/`innerText`/`textContent`区别

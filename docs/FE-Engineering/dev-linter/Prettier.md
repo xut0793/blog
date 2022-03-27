@@ -35,7 +35,7 @@ Prettier is an opinionated code formatter 。 Prettier 是一个 Opinionated 的
 
 使用 NPM：
 
-```sh
+```
 npm install --save-dev --save-exact prettier
 # or globally
 npm install --global prettier
@@ -43,7 +43,7 @@ npm install --global prettier
 
 使用 yarn：
 
-```sh
+```
 yarn add prettier --dev --exact
 # or globally
 yarn global add prettier
@@ -53,7 +53,7 @@ yarn global add prettier
 
 命令行格式：
 
-```sh
+```
 prettier [options] [file/dir/glob ...]
 ```
 
@@ -63,7 +63,7 @@ prettier [options] [file/dir/glob ...]
 
 看个示例：
 
-```sh
+```
 # 新建一个目录
 mkdir learn-prettier && cd learn-prettier
 
@@ -194,7 +194,7 @@ module.exports = {
 
 ### 排除文件
 
-可以在项目根目录下新建一个 `.prettierignore` 文件来设置 Prettier 格式化时需要排队的文件。.prettierignore 使用 [gitignore]() 语法。
+可以在项目根目录下新建一个 `.prettierignore` 文件来设置 Prettier 格式化时需要排队的文件。.prettierignore 使用 gitignore 语法。
 
 ```js
 // .prettierignore.js
@@ -307,7 +307,7 @@ VS Code 需要安装插件 `Prettier - Code formatter`，安装完成后，有�
 
 ## 与 Linter 工具集成
 
-Linter 工具具体的功能和意义见[ESLint](/FE-Engineering/Lint/ESLint.html)总结。总的来说，Linter 本身的规则分为两部分：
+Linter 工具具体的功能和意义见[ESLint](./Eslint)总结。总的来说，Linter 本身的规则分为两部分：
 
 - 代码质量规则 (code-quality rules)
   - no-unused-vars
@@ -400,11 +400,11 @@ IDE 整合了 Prettier 如果设置了保存自动格式基本能保证编码后
 
 - husky：简化了对 git hooks 勾子的脚本编写
 - lint-staged：限制只对已提交到 GIT 暂存区 staged 的代码进行格式化，而不是整个项目代码，这样格式更快更安全
-  > 关于工具的具体总结见 [Husky](/FE-Engineering/Lint/Husky.html) 和 [lint-staged](/FE-Engineering/Lint/lint-staged.html)
+  > 关于工具的具体总结见 [Husky](./Husky.html) 和 [lint-staged](./lint-staged.html)
 
 1. 安装工具
 
-```sh
+```
 npm install husky --save-dev
 npm install lint-staged --save-dev
 ```
@@ -437,7 +437,7 @@ npm install lint-staged --save-dev
 
 上面两步，也可以使用下面命令，一步完成：
 
-```sh
+```
 # 这一行就可以安装husky和lint-stage，并且配置好husky。
 npx mrm lint-staged
 ```
@@ -446,7 +446,7 @@ npx mrm lint-staged
 
 1. 需要安装：
 
-```sh
+```
 yarn add --dev ESLint Prettier eslint-config-prettier eslint-plugin-prettier husky lint-staged
 ```
 

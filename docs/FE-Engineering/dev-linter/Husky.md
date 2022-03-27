@@ -43,7 +43,7 @@ ls - l;
 
 1. 安装
 
-```sh
+```
 # npm
 npm install husky --save-dev
 
@@ -70,7 +70,7 @@ yarn add husky --dev
 
 ## Husky 与 lint-staged 配合使用
 
-```sh
+```
 # 安装
 npm install lint-staged husky --save-dev
 ```
