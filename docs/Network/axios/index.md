@@ -228,10 +228,8 @@ source.cancel('取消请求');
 - CancelToken 取消请求：在取消HTTP请求的逻辑中，axios巧妙的使用了一个Promise来作为触发器，将resolve函数通过callback中参数的形式传递到了外部。这样既能够保证内部逻辑的连贯性，也能够保证在需要进行取消请求时，不需要直接进行相关类的示例数据改动，最大程度上避免了侵入其他的模块。
 
 ## 实践总结
-[vue中Axios的封装和API接口的管理](https://juejin.im/post/6844903652881072141#heading-9)---实践最后更新方案
-[记一次封装Axios的经历](https://juejin.im/post/6844903545641271310)---主要是演变的思想和基于class的封装
+- [vue中Axios的封装和API接口的管理](https://juejin.im/post/6844903652881072141#heading-9)---实践最后更新方案
+- [记一次封装Axios的经历](https://juejin.im/post/6844903545641271310)---主要是演变的思想和基于class的封装
 
 ## 参考链接
-
-[使用Typescript重构axios--文字版](https://www.cnblogs.com/wangjiachen666/p/11234163.html)
-[使用Typescript重构axios--视频版]()
+- [使用Typescript重构axios--文字版](https://www.cnblogs.com/wangjiachen666/p/11234163.html)

@@ -1,7 +1,28 @@
-# XMLHttpRequest
 
-XMLHttpRequest是一个构造函数，是web提供的一个API，用于发起HTTP请求，与服务器端进行数据交互。
+# Ajax 和 XMLHttpRequest
 
+[[toc]]
+
+- Ajax: Asynchronous JavaScript and XML，异步JavaScript和XML。尽管X在Ajax中代表XML，因为最初使用XML进行打包数据，但由于JSON的许多优势，前后端数据传输基本已由JSON替代XML。
+- XMLHttpRequest 是一个构造函数，是web提供的一个API，用于发起HTTP请求，与服务器端进行数据交互。
+
+## 理解 Ajax 与 XMLHttpRequest 和 Fetch的关系
+
+Ajax本身不是一种新技术，甚至可以理解为Ajax不是一种具体的技术，而是一种解决方案，是用了一套技术的集合来解决某种问题的方案。
+
+那解决的是什么问题？
+
+在Ajax出现之前，客户端即浏览器与服务器的每一次请求响应的交互都会导致浏览器页面的重新刷新加载，这样的上网体验是什么差的。比如我们在页面填一个表单信息，输完用户名和密码，当到输入验证码的时候，因为要请求一次验证码，这个时候如果页面被重新刷新加载，那之前的用户名和密码又要重新输入，会导致这个表单功能根本没法实现。因为每次到获取验证码时就会被刷新页面，导致之前填写的用户名和密码清空。
+
+所以在 2005年被Jesse James Garrett提出了Ajax的方案，能够使得浏览器与服务器间的数据交互增量的更新到页面中，而不会导致页面整体刷新。这套解决方案实现的技术包括： HTML, CSS, JavaScript, DOM, XML, XSLT, 以及最重要的 XMLHttpRequest object。
+
+可见，XMLHttpRequest是Ajax技术集合的一种，并且是核心技术。所以平常经常会混淆两者概念，认识Ajax是一种建立HTTP请求的技术，跟XMLHttpRequest作用类似，特别是jQuery中用于HTTP请求的方法命名为ajax带来了更大的误导。
+
+最终带火Ajax技术的是Google的Gmail服务、Google Suggest动态查找界面以及Google Map地理信息服务。
+
+但 XMLHttpRequest 技术在使用时还是比较麻烦，常常需要重新进行封装便于使用，最著名的基于 XMLHttpRequest API 进行封装的请求库 Axios 就是例子。所以在现代浏览器中，实现了一个基于 Promise API 的方便使用的原生请求的 WEB API：Fetch。
+
+不管是 XMLHttpRequest 还是 Fetch，都是实现 Ajax 方案的其中关键的网络请求技术。
 
 ## XMLHttpRequest 历史
 
@@ -163,9 +184,9 @@ XHR的事件监听回调函数接受的事件参数就是一个ProgressEvent对�
 
 正常工作中，基本项目开发都涉及上百个接口调用，如果使用原生XMLHttpRequest对象请求，每次都得调用xhr对象的各属性和方法完成一次请求基本是不可能的，所以正常都会使用封装的第三方库，比如jQuery的$.ajax()方法，或者基于promise的axios，或者直接使用最新的Fetch。
 
-**参考资源：**
-
-[MDN XMLHttpRequest](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)<br>
-[XMLHttpRequest2 新技巧](https://www.html5rocks.com/zh/tutorials/file/xhr2/)<br>
-[你真的会使用XMLHttpRequest吗？](https://segmentfault.com/a/1190000004322487#articleHeader15)<br>
-[全面分析前端的网络请求方式](https://mp.weixin.qq.com/s/zSB7X2ka6GtxtupUtal7ig)
+## 参考资源
+- [网络请求：https://zh.javascript.info/network](https://zh.javascript.info/network)
+- [MDN XMLHttpRequest](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)
+- [XMLHttpRequest2 新技巧](https://www.html5rocks.com/zh/tutorials/file/xhr2/)
+- [你真的会使用XMLHttpRequest吗？](https://segmentfault.com/a/1190000004322487#articleHeader15)
+- [全面分析前端的网络请求方式](https://mp.weixin.qq.com/s/zSB7X2ka6GtxtupUtal7ig)
