@@ -814,7 +814,6 @@ module.exports = {
     { text: '概念理解', link: '/Browser/8-new-api/Blob-File-ArrayBuffer-URL' },
   ],
   '/Network/protocol/': [
-    { text: 'TCP/UDP', link: '/Network/protocol/tcp-udp' },
     {
       text: 'HTTP',
       children: [
@@ -837,6 +836,8 @@ module.exports = {
         },
       ],
     },
+    { text: 'TCP/UDP', link: '/Network/protocol/tcp-udp' },
+    { text: 'IP', link: '/Network/protocol/ip-dns' },
   ],
   '/Network/ajax/': [
     { text: 'XMLHttpRequest', link: '/Network/ajax/XMLHttpRequest' },
